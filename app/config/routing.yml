@@ -3,3 +3,6 @@ analyses:
     type:     annotation
     prefix:   /
 
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
