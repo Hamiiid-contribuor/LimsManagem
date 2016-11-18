@@ -125,4 +125,3 @@ class Echantillon
         return $this->commentaire;
     }
 }
-

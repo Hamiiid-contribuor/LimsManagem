@@ -94,4 +94,3 @@ class Analyse
         return $this->commentaire;
     }
 }
-

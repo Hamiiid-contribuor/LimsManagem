@@ -311,4 +311,3 @@ class client
         return $this->commentaire;
     }
 }
-

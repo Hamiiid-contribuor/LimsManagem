@@ -5,12 +5,12 @@ namespace Analyses\AnalysesBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * TypeEchantillon
+ * ModeOperatoire
  *
- * @ORM\Table(name="type_echantillon")
- * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\TypeEchantillonRepository")
+ * @ORM\Table(name="mode_operatoire")
+ * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\ModeOperatoireRepository")
  */
-class TypeEchantillon
+class ModeOperatoire
 {
     /**
      * @var int
@@ -31,9 +31,9 @@ class TypeEchantillon
     /**
      * @var string
      *
-     * @ORM\Column(name="commentaire", type="string", length=255)
+     * @ORM\Column(name="description", type="string", length=255)
      */
-    private $commentaire;
+    private $description;
 
 
     /**
@@ -51,7 +51,7 @@ class TypeEchantillon
      *
      * @param string $libelle
      *
-     * @return TypeEchantillon
+     * @return ModeOperatoire
      */
     public function setLibelle($libelle)
     {
@@ -71,26 +71,26 @@ class TypeEchantillon
     }
 
     /**
-     * Set commentaire
+     * Set description
      *
-     * @param string $commentaire
+     * @param string $description
      *
-     * @return TypeEchantillon
+     * @return ModeOperatoire
      */
-    public function setCommentaire($commentaire)
+    public function setDescription($description)
     {
-        $this->commentaire = $commentaire;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get commentaire
+     * Get description
      *
      * @return string
      */
-    public function getCommentaire()
+    public function getDescription()
     {
-        return $this->commentaire;
+        return $this->description;
     }
 }

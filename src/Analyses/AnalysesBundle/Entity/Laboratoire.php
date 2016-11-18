@@ -280,4 +280,3 @@ class Laboratoire
         return $this->site;
     }
 }
-

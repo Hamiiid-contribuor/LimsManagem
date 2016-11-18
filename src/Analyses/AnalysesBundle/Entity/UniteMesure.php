@@ -63,4 +63,3 @@ class UniteMesure
         return $this->libelle;
     }
 }
-

@@ -94,4 +94,3 @@ class EchantillonItem
         return $this->commentaire;
     }
 }
-
