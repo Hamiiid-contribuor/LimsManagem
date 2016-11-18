@@ -35,6 +35,11 @@ class EchantillonItem
      */
     private $commentaire;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Echantillon", inversedBy="echantillonItems")
+     * @ORM\JoinColumn(name="echantillon_id", referencedColumnName="id")
+     */
+    private $echantillon ; 
 
     /**
      * Get id
@@ -92,5 +97,29 @@ class EchantillonItem
     public function getCommentaire()
     {
         return $this->commentaire;
+    }
+
+    /**
+     * Set echantillon
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Echantillon $echantillon
+     *
+     * @return EchantillonItem
+     */
+    public function setEchantillon(\Analyses\AnalysesBundle\Entity\Echantillon $echantillon = null)
+    {
+        $this->echantillon = $echantillon;
+
+        return $this;
+    }
+
+    /**
+     * Get echantillon
+     *
+     * @return \Analyses\AnalysesBundle\Entity\Echantillon
+     */
+    public function getEchantillon()
+    {
+        return $this->echantillon;
     }
 }

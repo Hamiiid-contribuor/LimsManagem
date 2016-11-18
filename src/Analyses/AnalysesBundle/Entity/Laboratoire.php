@@ -77,7 +77,17 @@ class Laboratoire
      */
     private $site;
 
+     /**
+     * @ORM\OneToMany(targetEntity="Analyse", mappedBy="Laboratoire")
+     */
+    private $analyses ;
 
+    
+      /**
+     * @ORM\ManyToOne(targetEntity="Domaine")
+     * @ORM\JoinColumn(name="domaine_id", referencedColumnName="id")
+     */
+    private $domaine ; 
     /**
      * Get id
      *
@@ -111,6 +121,11 @@ class Laboratoire
     {
         return $this->nom;
     }
+    
+     /**
+     * @ORM\OneToMany(targetEntity="Client", mappedBy="laboratoire")
+     */
+    private $clients ; 
 
     /**
      * Set adresse
@@ -278,5 +293,104 @@ class Laboratoire
     public function getSite()
     {
         return $this->site;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->analyses = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add analysis
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Analyse $analysis
+     *
+     * @return Laboratoire
+     */
+    public function addAnalysis(\Analyses\AnalysesBundle\Entity\Analyse $analysis)
+    {
+        $this->analyses[] = $analysis;
+
+        return $this;
+    }
+
+    /**
+     * Remove analysis
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Analyse $analysis
+     */
+    public function removeAnalysis(\Analyses\AnalysesBundle\Entity\Analyse $analysis)
+    {
+        $this->analyses->removeElement($analysis);
+    }
+
+    /**
+     * Get analyses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnalyses()
+    {
+        return $this->analyses;
+    }
+
+    /**
+     * Set domaine
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Domaine $domaine
+     *
+     * @return Laboratoire
+     */
+    public function setDomaine(\Analyses\AnalysesBundle\Entity\Domaine $domaine = null)
+    {
+        $this->domaine = $domaine;
+
+        return $this;
+    }
+
+    /**
+     * Get domaine
+     *
+     * @return \Analyses\AnalysesBundle\Entity\Domaine
+     */
+    public function getDomaine()
+    {
+        return $this->domaine;
+    }
+
+    /**
+     * Add client
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Client $client
+     *
+     * @return Laboratoire
+     */
+    public function addClient(\Analyses\AnalysesBundle\Entity\Client $client)
+    {
+        $this->clients[] = $client;
+
+        return $this;
+    }
+
+    /**
+     * Remove client
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Client $client
+     */
+    public function removeClient(\Analyses\AnalysesBundle\Entity\Client $client)
+    {
+        $this->clients->removeElement($client);
+    }
+
+    /**
+     * Get clients
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClients()
+    {
+        return $this->clients;
     }
 }

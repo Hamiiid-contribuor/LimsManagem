@@ -49,6 +49,12 @@ class Test
      */
     private $commentaire;
 
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="tests")
+     * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
+     */
+    private $categorie;
 
     /**
      * Get id
@@ -154,5 +160,29 @@ class Test
     public function getCommentaire()
     {
         return $this->commentaire;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Categorie $categorie
+     *
+     * @return Test
+     */
+    public function setCategorie(\Analyses\AnalysesBundle\Entity\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \Analyses\AnalysesBundle\Entity\Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }

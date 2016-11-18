@@ -3,6 +3,8 @@
 namespace Analyses\AnalysesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Analyse
@@ -35,7 +37,15 @@ class Analyse
      */
     private $commentaire;
 
-
+     /**
+     * @ORM\OneToMany(targetEntity="Categorie", mappedBy="analyse")
+     */
+    private $categories ; 
+    
+    
+    
+    
+    
     /**
      * Get id
      *
@@ -92,5 +102,44 @@ class Analyse
     public function getCommentaire()
     {
         return $this->commentaire;
+    }
+    
+     public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
+
+    /**
+     * Add category
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Categorie $category
+     *
+     * @return Analyse
+     */
+    public function addCategory(\Analyses\AnalysesBundle\Entity\Categorie $category)
+    {
+        $this->categories[] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Remove category
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Categorie $category
+     */
+    public function removeCategory(\Analyses\AnalysesBundle\Entity\Categorie $category)
+    {
+        $this->categories->removeElement($category);
+    }
+
+    /**
+     * Get categories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategories()
+    {
+        return $this->categories;
     }
 }

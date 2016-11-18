@@ -35,6 +35,16 @@ class DemandeAnalyse
      */
     private $commentaire;
 
+    
+    
+     /**
+     * @ORM\ManyToOne(targetEntity="Client", inversedBy="demandeAnalyses")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     */
+    private $client ; 
+    
+    
+    
 
     /**
      * Get id
@@ -92,5 +102,29 @@ class DemandeAnalyse
     public function getCommentaire()
     {
         return $this->commentaire;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Client $client
+     *
+     * @return DemandeAnalyse
+     */
+    public function setClient(\Analyses\AnalysesBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \Analyses\AnalysesBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }

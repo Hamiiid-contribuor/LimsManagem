@@ -35,7 +35,18 @@ class Categorie
      */
     private $commentaire;
 
-
+     /**
+     * @ORM\ManyToOne(targetEntity="Analyse", inversedBy="categories")
+     * @ORM\JoinColumn(name="analyse_id", referencedColumnName="id")
+     */
+    private $analyse ; 
+  
+    /**
+     * @ORM\OneToMany(targetEntity="Test", mappedBy="categorie")
+     */
+    private $tests ; 
+    
+    
     /**
      * Get id
      *
@@ -92,5 +103,70 @@ class Categorie
     public function getCommentaire()
     {
         return $this->commentaire;
+    }
+
+    /**
+     * Set analyse
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Analyse $analyse
+     *
+     * @return Categorie
+     */
+    public function setAnalyse(\Analyses\AnalysesBundle\Entity\Analyse $analyse = null)
+    {
+        $this->analyse = $analyse;
+
+        return $this;
+    }
+
+    /**
+     * Get analyse
+     *
+     * @return \Analyses\AnalysesBundle\Entity\Analyse
+     */
+    public function getAnalyse()
+    {
+        return $this->analyse;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tests = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add test
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Test $test
+     *
+     * @return Categorie
+     */
+    public function addTest(\Analyses\AnalysesBundle\Entity\Test $test)
+    {
+        $this->tests[] = $test;
+
+        return $this;
+    }
+
+    /**
+     * Remove test
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Test $test
+     */
+    public function removeTest(\Analyses\AnalysesBundle\Entity\Test $test)
+    {
+        $this->tests->removeElement($test);
+    }
+
+    /**
+     * Get tests
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTests()
+    {
+        return $this->tests;
     }
 }

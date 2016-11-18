@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="client")
  * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\clientRepository")
  */
-class client
-{
+class client {
+
     /**
      * @var int
      *
@@ -84,14 +84,23 @@ class client
      */
     private $commentaire;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Laboratoire", inversedBy="clients")
+     * @ORM\JoinColumn(name="laboratoire_id", referencedColumnName="id")
+     */
+    private $laboratoire;
+
+    /**
+     * @ORM\OneToMany(targetEntity="DemandeAnalyse", mappedBy="client")
+     */
+    private $demandesAnalyses;
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -102,8 +111,7 @@ class client
      *
      * @return client
      */
-    public function setCin($cin)
-    {
+    public function setCin($cin) {
         $this->cin = $cin;
 
         return $this;
@@ -114,8 +122,7 @@ class client
      *
      * @return string
      */
-    public function getCin()
-    {
+    public function getCin() {
         return $this->cin;
     }
 
@@ -126,8 +133,7 @@ class client
      *
      * @return client
      */
-    public function setNom($nom)
-    {
+    public function setNom($nom) {
         $this->nom = $nom;
 
         return $this;
@@ -138,8 +144,7 @@ class client
      *
      * @return string
      */
-    public function getNom()
-    {
+    public function getNom() {
         return $this->nom;
     }
 
@@ -150,8 +155,7 @@ class client
      *
      * @return client
      */
-    public function setPrenom($prenom)
-    {
+    public function setPrenom($prenom) {
         $this->prenom = $prenom;
 
         return $this;
@@ -162,8 +166,7 @@ class client
      *
      * @return string
      */
-    public function getPrenom()
-    {
+    public function getPrenom() {
         return $this->prenom;
     }
 
@@ -174,8 +177,7 @@ class client
      *
      * @return client
      */
-    public function setAdresse($adresse)
-    {
+    public function setAdresse($adresse) {
         $this->adresse = $adresse;
 
         return $this;
@@ -186,8 +188,7 @@ class client
      *
      * @return string
      */
-    public function getAdresse()
-    {
+    public function getAdresse() {
         return $this->adresse;
     }
 
@@ -198,8 +199,7 @@ class client
      *
      * @return client
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
 
         return $this;
@@ -210,8 +210,7 @@ class client
      *
      * @return string
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
@@ -222,8 +221,7 @@ class client
      *
      * @return client
      */
-    public function setTel($tel)
-    {
+    public function setTel($tel) {
         $this->tel = $tel;
 
         return $this;
@@ -234,8 +232,7 @@ class client
      *
      * @return string
      */
-    public function getTel()
-    {
+    public function getTel() {
         return $this->tel;
     }
 
@@ -246,8 +243,7 @@ class client
      *
      * @return client
      */
-    public function setAge($age)
-    {
+    public function setAge($age) {
         $this->age = $age;
 
         return $this;
@@ -258,8 +254,7 @@ class client
      *
      * @return string
      */
-    public function getAge()
-    {
+    public function getAge() {
         return $this->age;
     }
 
@@ -270,8 +265,7 @@ class client
      *
      * @return client
      */
-    public function setDateNaissance($dateNaissance)
-    {
+    public function setDateNaissance($dateNaissance) {
         $this->dateNaissance = $dateNaissance;
 
         return $this;
@@ -282,8 +276,7 @@ class client
      *
      * @return \DateTime
      */
-    public function getDateNaissance()
-    {
+    public function getDateNaissance() {
         return $this->dateNaissance;
     }
 
@@ -294,8 +287,7 @@ class client
      *
      * @return client
      */
-    public function setCommentaire($commentaire)
-    {
+    public function setCommentaire($commentaire) {
         $this->commentaire = $commentaire;
 
         return $this;
@@ -306,8 +298,71 @@ class client
      *
      * @return string
      */
-    public function getCommentaire()
-    {
+    public function getCommentaire() {
         return $this->commentaire;
+    }
+
+    /**
+     * Set laboratoire
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Laboratoire $laboratoire
+     *
+     * @return client
+     */
+    public function setLaboratoire(\Analyses\AnalysesBundle\Entity\Laboratoire $laboratoire = null) {
+        $this->laboratoire = $laboratoire;
+
+        return $this;
+    }
+
+    /**
+     * Get laboratoire
+     *
+     * @return \Analyses\AnalysesBundle\Entity\Laboratoire
+     */
+    public function getLaboratoire() {
+        return $this->laboratoire;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->demandesAnalyses = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add demandesAnalysis
+     *
+     * @param \Analyses\AnalysesBundle\Entity\DemandeAnalyse $demandesAnalysis
+     *
+     * @return client
+     */
+    public function addDemandesAnalysis(\Analyses\AnalysesBundle\Entity\DemandeAnalyse $demandesAnalysis)
+    {
+        $this->demandesAnalyses[] = $demandesAnalysis;
+
+        return $this;
+    }
+
+    /**
+     * Remove demandesAnalysis
+     *
+     * @param \Analyses\AnalysesBundle\Entity\DemandeAnalyse $demandesAnalysis
+     */
+    public function removeDemandesAnalysis(\Analyses\AnalysesBundle\Entity\DemandeAnalyse $demandesAnalysis)
+    {
+        $this->demandesAnalyses->removeElement($demandesAnalysis);
+    }
+
+    /**
+     * Get demandesAnalyses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDemandesAnalyses()
+    {
+        return $this->demandesAnalyses;
     }
 }
