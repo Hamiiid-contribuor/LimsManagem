@@ -108,6 +108,7 @@
   'FOSUserBundle:Resetting:reset_content.html.twig' => 'C:\\wamp\\www\\LIMS\\vendor\\friendsofsymfony\\user-bundle/Resources/views/Resetting/reset_content.html.twig',
   'FOSUserBundle:Security:login.html.twig' => 'C:\\wamp\\www\\LIMS\\vendor\\friendsofsymfony\\user-bundle/Resources/views/Security/login.html.twig',
   'FOSUserBundle:Security:login_content.html.twig' => 'C:\\wamp\\www\\LIMS\\vendor\\friendsofsymfony\\user-bundle/Resources/views/Security/login_content.html.twig',
+  'UtilisateurBundle:Default:index.html.twig' => 'C:\\wamp\\www\\LIMS\\src\\Utilisateur\\UtilisateurBundle/Resources/views/Default/index.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => 'C:\\wamp\\www\\LIMS\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\DebugBundle/Resources/views/Profiler/dump.html.twig',
   'WebProfilerBundle:Collector:ajax.html.twig' => 'C:\\wamp\\www\\LIMS\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views/Collector/ajax.html.twig',
   'WebProfilerBundle:Collector:config.html.twig' => 'C:\\wamp\\www\\LIMS\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views/Collector/config.html.twig',
