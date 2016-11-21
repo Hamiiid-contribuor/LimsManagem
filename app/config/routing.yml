@@ -5,7 +5,7 @@ utilisateur:
 analyses:
     resource: "@AnalysesBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /analyses
 
 # app/config/routing.yml
 fos_user:

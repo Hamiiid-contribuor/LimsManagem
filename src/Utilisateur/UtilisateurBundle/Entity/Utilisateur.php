@@ -25,14 +25,14 @@ class Utilisateur extends BaseUser {
     /**
      * @var string
      *
-     * @ORM\Column(name="matricule", type="string", length=255)
+     * @ORM\Column(name="matricule", type="string", length=255 , nullable=true)
      */
     private $matricule;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255 )
      */
     private $nom;
 
@@ -46,7 +46,7 @@ class Utilisateur extends BaseUser {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateCreation", type="date")
+     * @ORM\Column(name="dateCreation", type="date" , nullable=true)
      */
     private $dateEmbauche;
 
@@ -64,13 +64,7 @@ class Utilisateur extends BaseUser {
      */
     private $adresse;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="mail", type="string", length=255)
-     */
-    private $mail;
-
+    
     /**
      * @var string
      *
@@ -81,7 +75,7 @@ class Utilisateur extends BaseUser {
     /**
      * @var string
      *
-     * @ORM\Column(name="commentaire", type="string", length=255)
+     * @ORM\Column(name="commentaire", type="string", length=255 , nullable=true)
      */
     private $commentaire;
 
@@ -226,28 +220,7 @@ class Utilisateur extends BaseUser {
         return $this->adresse;
     }
 
-    /**
-     * Set mail
-     *
-     * @param string $mail
-     *
-     * @return Utilisateur
-     */
-    public function setMail($mail) {
-        $this->mail = $mail;
-
-        return $this;
-    }
-
-    /**
-     * Get mail
-     *
-     * @return string
-     */
-    public function getMail() {
-        return $this->mail;
-    }
-
+  
     /**
      * Set telephone
      *

@@ -110,7 +110,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // analyses_analyses_default_index
-        if (rtrim($pathinfo, '/') === '') {
+        if (rtrim($pathinfo, '/') === '/analyses') {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'analyses_analyses_default_index');
             }
