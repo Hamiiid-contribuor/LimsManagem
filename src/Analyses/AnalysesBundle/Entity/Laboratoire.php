@@ -88,6 +88,17 @@ class Laboratoire
      * @ORM\JoinColumn(name="domaine_id", referencedColumnName="id")
      */
     private $domaine ; 
+    
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Utilisateur\UtilisateurBundle\Entity\Utilisateur", mappedBy="laboratoire")
+     */
+    private $utilisateurs; 
+    
+    
+    
+    
+    
     /**
      * Get id
      *
@@ -392,5 +403,39 @@ class Laboratoire
     public function getClients()
     {
         return $this->clients;
+    }
+
+    /**
+     * Add utilisateur
+     *
+     * @param \Utilisateur\UtilisateurBundle\Entity\Utilisateur $utilisateur
+     *
+     * @return Laboratoire
+     */
+    public function addUtilisateur(\Utilisateur\UtilisateurBundle\Entity\Utilisateur $utilisateur)
+    {
+        $this->utilisateurs[] = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Remove utilisateur
+     *
+     * @param \Utilisateur\UtilisateurBundle\Entity\Utilisateur $utilisateur
+     */
+    public function removeUtilisateur(\Utilisateur\UtilisateurBundle\Entity\Utilisateur $utilisateur)
+    {
+        $this->utilisateurs->removeElement($utilisateur);
+    }
+
+    /**
+     * Get utilisateurs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUtilisateurs()
+    {
+        return $this->utilisateurs;
     }
 }

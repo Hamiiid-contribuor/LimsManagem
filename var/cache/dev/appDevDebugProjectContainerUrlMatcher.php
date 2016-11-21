@@ -106,7 +106,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->redirect($pathinfo.'/', 'utilisateur_homepage');
             }
 
-            return array (  '_controller' => 'Utilisateur\\UtilisateurBundle\\Controller\\DefaultController::indexAction',  '_route' => 'utilisateur_homepage',);
+            return array (  '_controller' => 'UtilisateurBundle:Default:index',  '_route' => 'utilisateur_homepage',);
         }
 
         // analyses_analyses_default_index
