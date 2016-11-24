@@ -30,7 +30,7 @@
     <parameter key="database_name">LIMS</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
-    <parameter key="mailer_transport">smtp</parameter>
+    <parameter key="mailer_transport">gmail</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
     <parameter key="mailer_password">null</parameter>
@@ -172,7 +172,7 @@
     <parameter key="swiftmailer.spool.memory.class">Swift_MemorySpool</parameter>
     <parameter key="swiftmailer.email_sender.listener.class">Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener</parameter>
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.name">sendmail</parameter>
     <parameter key="swiftmailer.mailer.default.delivery.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.port">465</parameter>
@@ -545,7 +545,7 @@
                   <tag name="cache.pool"/>
                   <argument>+MAUNamRRp</argument>
                   <argument>0</argument>
-                  <argument>pDR6E89Juz8UvhjwNehkCA</argument>
+                  <argument>Wmh3DI1lC+ntCP2uuWPP5A</argument>
                   <argument>C:/wamp/www/LIMS/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -558,7 +558,7 @@
                   <tag name="cache.pool"/>
                   <argument>Bcz15ExopK</argument>
                   <argument>0</argument>
-                  <argument>pDR6E89Juz8UvhjwNehkCA</argument>
+                  <argument>Wmh3DI1lC+ntCP2uuWPP5A</argument>
                   <argument>C:/wamp/www/LIMS/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1209,7 +1209,7 @@
       <tag name="cache.pool"/>
       <argument>KWroebeZGB</argument>
       <argument>0</argument>
-      <argument>pDR6E89Juz8UvhjwNehkCA</argument>
+      <argument>Wmh3DI1lC+ntCP2uuWPP5A</argument>
       <argument>C:/wamp/www/LIMS/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -2006,7 +2006,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>583372764a99e6.31322666</argument>
+            <argument>583641fc5282a7.48615509</argument>
           </service>
         </argument>
       </argument>
@@ -2300,7 +2300,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>583372764a99e6.31322666</argument>
+            <argument>583641fc5282a7.48615509</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3404,7 +3404,7 @@
       </call>
     </service>
     <service id="swiftmailer.mailer.default.spool" class="Swift_MemorySpool"/>
-    <service id="swiftmailer.mailer.default.transport.real" class="Swift_Transport_EsmtpTransport">
+    <service id="swiftmailer.mailer.default.transport.real" class="Swift_Transport_SendmailTransport">
       <argument type="service">
         <service class="Swift_Transport_StreamBuffer" public="false">
           <argument type="service">
@@ -3412,48 +3412,7 @@
           </argument>
         </service>
       </argument>
-      <argument type="collection">
-        <argument type="service">
-          <service class="Swift_Transport_Esmtp_AuthHandler" public="false">
-            <argument type="collection">
-              <argument type="service">
-                <service class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator" public="false"/>
-              </argument>
-              <argument type="service">
-                <service class="Swift_Transport_Esmtp_Auth_LoginAuthenticator" public="false"/>
-              </argument>
-              <argument type="service">
-                <service class="Swift_Transport_Esmtp_Auth_PlainAuthenticator" public="false"/>
-              </argument>
-            </argument>
-            <call method="setUsername">
-              <argument>fssmisilims@gmail.com</argument>
-            </call>
-            <call method="setPassword">
-              <argument>fssmisilimsidrissi06</argument>
-            </call>
-            <call method="setAuthMode">
-              <argument>login</argument>
-            </call>
-          </service>
-        </argument>
-      </argument>
       <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
-      <call method="setHost">
-        <argument>smtp.gmail.com</argument>
-      </call>
-      <call method="setPort">
-        <argument>465</argument>
-      </call>
-      <call method="setEncryption">
-        <argument>ssl</argument>
-      </call>
-      <call method="setTimeout">
-        <argument>30</argument>
-      </call>
-      <call method="setSourceIp">
-        <argument>null</argument>
-      </call>
     </service>
     <service id="fos_user.mailer" class="FOS\UserBundle\Mailer\Mailer">
       <argument type="service" id="swiftmailer.mailer.default"/>
