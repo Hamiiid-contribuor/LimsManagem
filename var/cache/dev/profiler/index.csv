@@ -24,3 +24,12 @@ c53317,::1,GET,http://localhost/LIMS/web/app_dev.php/bootstrap/css/bootstrap.min
 bd3f07,::1,GET,http://localhost/LIMS/web/app_dev.php/bootstrap/css/bootstrap.min.css,1480293067,d062e8,200
 d062e8,::1,GET,http://localhost/LIMS/web/app_dev.php/bootstrap/css/bootstrap.min.css,1480293067,,404
 8849e4,::1,GET,http://localhost/LIMS/web/app_dev.php/?q=&search=,1480293166,,200
+e566ce,::1,GET,http://localhost/LIMS/web/app_dev.php/?q=&search=,1480293955,,200
+b1d1e3,::1,GET,http://localhost/LIMS/web/app_dev.php/?q=&search=,1480337852,,200
+ae9781,::1,GET,http://localhost/LIMS/web/app_dev.php/?q=&search=,1480340496,,200
+ef595c,::1,GET,http://localhost/LIMS/web/app_dev.php/register/,1480430863,,200
+5a4a81,::1,GET,http://localhost/LIMS/web/app_dev.php/,1480432656,,200
+2ff074,::1,GET,http://localhost/LIMS/web/app_dev.php/?q=&search=,1480433979,,200
+81dbc1,::1,GET,http://localhost/LIMS/web/app_dev.php/?q=&search=,1480439397,,200
+4341d4,::1,GET,http://localhost/LIMS/web/app_dev.php/?q=&search=,1480445265,,200
+b31e3f,::1,GET,http://localhost/LIMS/web/app_dev.php/,1480715264,,200
