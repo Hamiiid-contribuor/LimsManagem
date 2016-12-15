@@ -87,7 +87,10 @@ fos_user:
             from_email:
                 address:        fssmisilims@gmail.com
                 sender_name:    LIMS FSSM ISI THEAM
- 
+    profile:
+        form:
+            type: Utilisateur\UtilisateurBundle\Form\ProfileType
+            
     resetting:
         email:
             from_email:

@@ -20,8 +20,8 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_30edc798021e74cebf89b873e2d477aff3ecbb94d48b096fb3358e72d150a470 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_30edc798021e74cebf89b873e2d477aff3ecbb94d48b096fb3358e72d150a470->enter($__internal_30edc798021e74cebf89b873e2d477aff3ecbb94d48b096fb3358e72d150a470_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::base.html.twig"));
+        $__internal_35f7eacb2d5ddaab1926867273d182d1ea665bf824df72f69504f51fdebb0dde = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_35f7eacb2d5ddaab1926867273d182d1ea665bf824df72f69504f51fdebb0dde->enter($__internal_35f7eacb2d5ddaab1926867273d182d1ea665bf824df72f69504f51fdebb0dde_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -40,7 +40,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
         // line 10
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 46
-        echo "        
+        echo "
         ";
         // line 47
         $this->displayBlock('javascripts', $context, $blocks);
@@ -50,34 +50,34 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
         ";
         // line 88
         $this->displayBlock('body', $context, $blocks);
-        // line 527
+        // line 450
         echo "
-        
+
     </body>
 </html>
 ";
         
-        $__internal_30edc798021e74cebf89b873e2d477aff3ecbb94d48b096fb3358e72d150a470->leave($__internal_30edc798021e74cebf89b873e2d477aff3ecbb94d48b096fb3358e72d150a470_prof);
+        $__internal_35f7eacb2d5ddaab1926867273d182d1ea665bf824df72f69504f51fdebb0dde->leave($__internal_35f7eacb2d5ddaab1926867273d182d1ea665bf824df72f69504f51fdebb0dde_prof);
 
     }
 
     // line 8
     public function block_title($context, array $blocks = array())
     {
-        $__internal_aca54ce1185c9329591538d6c05c0b70d89b285b88338df7f89d95b7396cda6a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_aca54ce1185c9329591538d6c05c0b70d89b285b88338df7f89d95b7396cda6a->enter($__internal_aca54ce1185c9329591538d6c05c0b70d89b285b88338df7f89d95b7396cda6a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::base.html.twig"));
+        $__internal_5a48bcae5dfce7d0a9f1a9ebbf0ba75a31bd2e4e51e70f68176a90f46b9aa9a9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5a48bcae5dfce7d0a9f1a9ebbf0ba75a31bd2e4e51e70f68176a90f46b9aa9a9->enter($__internal_5a48bcae5dfce7d0a9f1a9ebbf0ba75a31bd2e4e51e70f68176a90f46b9aa9a9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::base.html.twig"));
 
         echo "LIMS | Dashboard";
         
-        $__internal_aca54ce1185c9329591538d6c05c0b70d89b285b88338df7f89d95b7396cda6a->leave($__internal_aca54ce1185c9329591538d6c05c0b70d89b285b88338df7f89d95b7396cda6a_prof);
+        $__internal_5a48bcae5dfce7d0a9f1a9ebbf0ba75a31bd2e4e51e70f68176a90f46b9aa9a9->leave($__internal_5a48bcae5dfce7d0a9f1a9ebbf0ba75a31bd2e4e51e70f68176a90f46b9aa9a9_prof);
 
     }
 
     // line 10
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_9f5fa811c87fd381f0e9e40a1135120baf50b2109bccaf51a446a0784d18943f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9f5fa811c87fd381f0e9e40a1135120baf50b2109bccaf51a446a0784d18943f->enter($__internal_9f5fa811c87fd381f0e9e40a1135120baf50b2109bccaf51a446a0784d18943f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::base.html.twig"));
+        $__internal_840e94c78089b48d155431cdeecdde7d3a09dcde831092cb7899a4d05e867f3a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_840e94c78089b48d155431cdeecdde7d3a09dcde831092cb7899a4d05e867f3a->enter($__internal_840e94c78089b48d155431cdeecdde7d3a09dcde831092cb7899a4d05e867f3a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::base.html.twig"));
 
         // line 11
         echo "
@@ -143,15 +143,15 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
 
         ";
         
-        $__internal_9f5fa811c87fd381f0e9e40a1135120baf50b2109bccaf51a446a0784d18943f->leave($__internal_9f5fa811c87fd381f0e9e40a1135120baf50b2109bccaf51a446a0784d18943f_prof);
+        $__internal_840e94c78089b48d155431cdeecdde7d3a09dcde831092cb7899a4d05e867f3a->leave($__internal_840e94c78089b48d155431cdeecdde7d3a09dcde831092cb7899a4d05e867f3a_prof);
 
     }
 
     // line 47
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_f2b795783679a3cc6a34a0e0707990227cf302154e1545d280438d2edd707958 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f2b795783679a3cc6a34a0e0707990227cf302154e1545d280438d2edd707958->enter($__internal_f2b795783679a3cc6a34a0e0707990227cf302154e1545d280438d2edd707958_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::base.html.twig"));
+        $__internal_25bc90076423af057d8bd0015b4ed9d9f85c05a15bacdbc00e6f2cfd2171fdc3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_25bc90076423af057d8bd0015b4ed9d9f85c05a15bacdbc00e6f2cfd2171fdc3->enter($__internal_25bc90076423af057d8bd0015b4ed9d9f85c05a15bacdbc00e6f2cfd2171fdc3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::base.html.twig"));
 
         // line 48
         echo "            <!-- jQuery 2.1.4 -->
@@ -238,15 +238,15 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
         echo "\"></script>
         ";
         
-        $__internal_f2b795783679a3cc6a34a0e0707990227cf302154e1545d280438d2edd707958->leave($__internal_f2b795783679a3cc6a34a0e0707990227cf302154e1545d280438d2edd707958_prof);
+        $__internal_25bc90076423af057d8bd0015b4ed9d9f85c05a15bacdbc00e6f2cfd2171fdc3->leave($__internal_25bc90076423af057d8bd0015b4ed9d9f85c05a15bacdbc00e6f2cfd2171fdc3_prof);
 
     }
 
     // line 88
     public function block_body($context, array $blocks = array())
     {
-        $__internal_2677c07a764fbe6447611c53da31966fd2824f124e2354184764cd7059916f70 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2677c07a764fbe6447611c53da31966fd2824f124e2354184764cd7059916f70->enter($__internal_2677c07a764fbe6447611c53da31966fd2824f124e2354184764cd7059916f70_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::base.html.twig"));
+        $__internal_eaa23e51bae4d968352cd6f6ca30f17e1fb4edc4151c3fb64eacee438ba38932 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_eaa23e51bae4d968352cd6f6ca30f17e1fb4edc4151c3fb64eacee438ba38932->enter($__internal_eaa23e51bae4d968352cd6f6ca30f17e1fb4edc4151c3fb64eacee438ba38932_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::base.html.twig"));
 
         // line 89
         echo "
@@ -256,9 +256,9 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                     <!-- Logo -->
                     <a href=\"#\" class=\"logo\">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
-                        <span class=\"logo-mini\"><b>A</b>LT</span>
+
                         <!-- logo for regular state and mobile devices -->
-                        <span class=\"logo-lg\"><b>Admin</b>LTE</span>
+                        <span class=\"logo-lg\"><b>LIMS</b></span>
                     </a>
                     <!-- Header Navbar: style can be found in header.less -->
                     <nav class=\"navbar navbar-static-top\" role=\"navigation\">
@@ -268,6 +268,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                         </a>
                         <div class=\"navbar-custom-menu\">
                             <ul class=\"nav navbar-nav\">
+
                                 <!-- Messages: style can be found in dropdown.less-->
                                 <li class=\"dropdown messages-menu\">
                                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
@@ -283,7 +284,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                                                     <a href=\"#\">
                                                         <div class=\"pull-left\">
                                                             <img src=\"";
-        // line 122
+        // line 123
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                                         </div>
@@ -298,7 +299,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                                                     <a href=\"#\">
                                                         <div class=\"pull-left\">
                                                             <img src=\"";
-        // line 134
+        // line 135
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user3-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                                         </div>
@@ -313,7 +314,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                                                     <a href=\"#\">
                                                         <div class=\"pull-left\">
                                                             <img src=\"";
-        // line 146
+        // line 147
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user4-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                                         </div>
@@ -328,7 +329,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                                                     <a href=\"#\">
                                                         <div class=\"pull-left\">
                                                             <img src=\"";
-        // line 158
+        // line 159
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user3-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                                         </div>
@@ -343,7 +344,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                                                     <a href=\"#\">
                                                         <div class=\"pull-left\">
                                                             <img src=\"";
-        // line 170
+        // line 171
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user4-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                                         </div>
@@ -401,115 +402,47 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                                     </ul>
                                 </li>
                                 <!-- Tasks: style can be found in dropdown.less -->
-                                <li class=\"dropdown tasks-menu\">
-                                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
-                                        <i class=\"fa fa-flag-o\"></i>
-                                        <span class=\"label label-danger\">9</span>
-                                    </a>
-                                    <ul class=\"dropdown-menu\">
-                                        <li class=\"header\">You have 9 tasks</li>
-                                        <li>
-                                            <!-- inner menu: contains the actual data -->
-                                            <ul class=\"menu\">
-                                                <li><!-- Task item -->
-                                                    <a href=\"#\">
-                                                        <h3>
-                                                            Design some buttons
-                                                            <small class=\"pull-right\">20%</small>
-                                                        </h3>
-                                                        <div class=\"progress xs\">
-                                                            <div class=\"progress-bar progress-bar-aqua\" style=\"width: 20%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">
-                                                                <span class=\"sr-only\">20% Complete</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li><!-- end task item -->
-                                                <li><!-- Task item -->
-                                                    <a href=\"#\">
-                                                        <h3>
-                                                            Create a nice theme
-                                                            <small class=\"pull-right\">40%</small>
-                                                        </h3>
-                                                        <div class=\"progress xs\">
-                                                            <div class=\"progress-bar progress-bar-green\" style=\"width: 40%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">
-                                                                <span class=\"sr-only\">40% Complete</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li><!-- end task item -->
-                                                <li><!-- Task item -->
-                                                    <a href=\"#\">
-                                                        <h3>
-                                                            Some task I need to do
-                                                            <small class=\"pull-right\">60%</small>
-                                                        </h3>
-                                                        <div class=\"progress xs\">
-                                                            <div class=\"progress-bar progress-bar-red\" style=\"width: 60%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">
-                                                                <span class=\"sr-only\">60% Complete</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li><!-- end task item -->
-                                                <li><!-- Task item -->
-                                                    <a href=\"#\">
-                                                        <h3>
-                                                            Make beautiful transitions
-                                                            <small class=\"pull-right\">80%</small>
-                                                        </h3>
-                                                        <div class=\"progress xs\">
-                                                            <div class=\"progress-bar progress-bar-yellow\" style=\"width: 80%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">
-                                                                <span class=\"sr-only\">80% Complete</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li><!-- end task item -->
-                                            </ul>
-                                        </li>
-                                        <li class=\"footer\">
-                                            <a href=\"#\">View all tasks</a>
-                                        </li>
-                                    </ul>
-                                </li>
+
                                 <!-- User Account: style can be found in dropdown.less -->
                                 <li class=\"dropdown user user-menu\">
                                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
                                         <img src=\"";
-        // line 298
+        // line 231
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"user-image\" alt=\"User Image\">
-                                        <span class=\"hidden-xs\">Alexander Pierce</span>
+                                        <span class=\"hidden-xs\">";
+        // line 232
+        echo " Lidrissi Hamid  </span>
                                     </a>
                                     <ul class=\"dropdown-menu\">
                                         <!-- User image -->
                                         <li class=\"user-header\">
                                             <img src=\"";
-        // line 304
+        // line 237
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                             <p>
-                                                Alexander Pierce - Web Developer
-                                                <small>Member since Nov. 2012</small>
+                                                ";
+        // line 239
+        echo "Lidrissi Hamid   - Admin
+                                                <small>Membere depuis Nov. 2012</small>
                                             </p>
                                         </li>
                                         <!-- Menu Body -->
-                                        <li class=\"user-body\">
-                                            <div class=\"col-xs-4 text-center\">
-                                                <a href=\"#\">Followers</a>
-                                            </div>
-                                            <div class=\"col-xs-4 text-center\">
-                                                <a href=\"#\">Sales</a>
-                                            </div>
-                                            <div class=\"col-xs-4 text-center\">
-                                                <a href=\"#\">Friends</a>
-                                            </div>
-                                        </li>
+
                                         <!-- Menu Footer-->
                                         <li class=\"user-footer\">
                                             <div class=\"pull-left\">
-                                                <a href=\"#\" class=\"btn btn-default btn-flat\">Profile</a>
+                                                <a href=\"";
+        // line 248
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_profile_edit");
+        echo " \" class=\"btn btn-default btn-flat\">Profil</a>
                                             </div>
                                             <div class=\"pull-right\">
-                                                <a href=\"#\" class=\"btn btn-default btn-flat\">Sign out</a>
+                                                <a href=\"";
+        // line 251
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("logout_user");
+        echo "\" class=\"btn btn-default btn-flat\">Deconexion</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -531,19 +464,21 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                         <div class=\"user-panel\">
                             <div class=\"pull-left image\">
                                 <img src=\"";
-        // line 349
+        // line 272
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                             </div>
                             <div class=\"pull-left info\">
-                                <p>Alexander Pierce</p>
+                                <p>";
+        // line 275
+        echo "Lidrissi Hamid </p>
                                 <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>
                             </div>
                         </div>
                         <!-- search form -->
                         <form action=\"#\" method=\"get\" class=\"sidebar-form\">
                             <div class=\"input-group\">
-                                <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Search...\">
+                                <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Recherche...\">
                                 <span class=\"input-group-btn\">
                                     <button type=\"submit\" name=\"search\" id=\"search-btn\" class=\"btn btn-flat\"><i class=\"fa fa-search\"></i></button>
                                 </span>
@@ -552,140 +487,63 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                         <!-- /.search form -->
                         <!-- sidebar menu: : style can be found in sidebar.less -->
                         <ul class=\"sidebar-menu\">
-                            <li class=\"header\">MAIN NAVIGATION</li>
+                            <li class=\"header\">Menu Principale</li>
                             <li class=\"active treeview\">
                                 <a href=\"#\">
-                                    <i class=\"fa fa-dashboard\"></i> <span>Dashboard</span> <i class=\"fa fa-angle-left pull-right\"></i>
+                                    <i class=\"fa fa-dashboard\"></i> <span>Gestion de Patient</span> <i class=\"fa fa-angle-left pull-right\"></i>
                                 </a>
-                                <ul class=\"treeview-menu\">
-                                    <li class=\"active\"><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v1</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v2</a></li>
-                                </ul>
-                            </li>
+                                ";
+        // line 300
+        echo "                            </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
                                     <i class=\"fa fa-files-o\"></i>
-                                    <span>Layout Options</span>
+                                    <span>LIMS</span>
                                     <span class=\"label label-primary pull-right\">4</span>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Top Navigation</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Boxed</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Fixed</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Collapsed Sidebar</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href=\"#\">
-                                    <i class=\"fa fa-th\"></i> <span>Widgets</span> <small class=\"label pull-right bg-green\">new</small>
+                                    <i class=\"fa fa-th\"></i> <span>Statistiques</span> <small class=\"label pull-right bg-green\">new</small>
                                 </a>
                             </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
                                     <i class=\"fa fa-pie-chart\"></i>
-                                    <span>Charts</span>
+                                    <span>Traitment d'images</span>
                                     <i class=\"fa fa-angle-left pull-right\"></i>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> ChartJS</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Morris</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Flot</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Inline charts</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i></a></li>
                                 </ul>
                             </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
                                     <i class=\"fa fa-laptop\"></i>
-                                    <span>UI Elements</span>
+                                    <span>Configuration</span>
                                     <i class=\"fa fa-angle-left pull-right\"></i>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> General</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Icons</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Buttons</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Sliders</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Timeline</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Modals</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
                                 </ul>
                             </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-edit\"></i> <span>Forms</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> General Elements</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Advanced Elements</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Editors</a></li>
-                                </ul>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-table\"></i> <span>Tables</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Simple tables</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Data tables</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href=\"#\">
-                                    <i class=\"fa fa-calendar\"></i> <span>Calendar</span>
-                                    <small class=\"label pull-right bg-red\">3</small>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=\"#\">
-                                    <i class=\"fa fa-envelope\"></i> <span>Mailbox</span>
-                                    <small class=\"label pull-right bg-yellow\">12</small>
-                                </a>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-folder\"></i> <span>Examples</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Invoice</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Profile</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Login</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Register</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Lockscreen</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 404 Error</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 500 Error</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Blank Page</a></li>
-                                </ul>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-share\"></i> <span>Multilevel</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
-                                    <li>
-                                        <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One <i class=\"fa fa-angle-left pull-right\"></i></a>
-                                        <ul class=\"treeview-menu\">
-                                            <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two</a></li>
-                                            <li>
-                                                <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two <i class=\"fa fa-angle-left pull-right\"></i></a>
-                                                <ul class=\"treeview-menu\">
-                                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
-                                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
-                                </ul>
-                            </li>
-                            <li><a href=\"#\"><i class=\"fa fa-book\"></i> <span>Documentation</span></a></li>
-                            <li class=\"header\">LABELS</li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-red\"></i> <span>Important</span></a></li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-yellow\"></i> <span>Warning</span></a></li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-aqua\"></i> <span>Information</span></a></li>
-                        </ul>
+                            ";
+        // line 424
+        echo "                        </ul>
                     </section>
                     <!-- /.sidebar -->
                 </aside>
@@ -693,9 +551,9 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                 <!-- Content Wrapper. Contains page content -->
                 <div class=\"content-wrapper\">
                     ";
-        // line 508
+        // line 431
         $this->displayBlock('content', $context, $blocks);
-        // line 511
+        // line 434
         echo "                </div><!-- /.content-wrapper -->
 
                 <footer class=\"main-footer\">
@@ -713,21 +571,21 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
             </div><!-- ./wrapper -->
         ";
         
-        $__internal_2677c07a764fbe6447611c53da31966fd2824f124e2354184764cd7059916f70->leave($__internal_2677c07a764fbe6447611c53da31966fd2824f124e2354184764cd7059916f70_prof);
+        $__internal_eaa23e51bae4d968352cd6f6ca30f17e1fb4edc4151c3fb64eacee438ba38932->leave($__internal_eaa23e51bae4d968352cd6f6ca30f17e1fb4edc4151c3fb64eacee438ba38932_prof);
 
     }
 
-    // line 508
+    // line 431
     public function block_content($context, array $blocks = array())
     {
-        $__internal_03f580d57108376d4c818ddb83114e9e56142753d4e8e470fde4ad017b44c6fa = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_03f580d57108376d4c818ddb83114e9e56142753d4e8e470fde4ad017b44c6fa->enter($__internal_03f580d57108376d4c818ddb83114e9e56142753d4e8e470fde4ad017b44c6fa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::base.html.twig"));
+        $__internal_2c6062cbdf037bf041b8fe894b75c4b3d2f8f5fdde07dcd091fabb633599165b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2c6062cbdf037bf041b8fe894b75c4b3d2f8f5fdde07dcd091fabb633599165b->enter($__internal_2c6062cbdf037bf041b8fe894b75c4b3d2f8f5fdde07dcd091fabb633599165b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::base.html.twig"));
 
-        // line 509
+        // line 432
         echo "
                     ";
         
-        $__internal_03f580d57108376d4c818ddb83114e9e56142753d4e8e470fde4ad017b44c6fa->leave($__internal_03f580d57108376d4c818ddb83114e9e56142753d4e8e470fde4ad017b44c6fa_prof);
+        $__internal_2c6062cbdf037bf041b8fe894b75c4b3d2f8f5fdde07dcd091fabb633599165b->leave($__internal_2c6062cbdf037bf041b8fe894b75c4b3d2f8f5fdde07dcd091fabb633599165b_prof);
 
     }
 
@@ -738,7 +596,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
 
     public function getDebugInfo()
     {
-        return array (  727 => 509,  721 => 508,  699 => 511,  697 => 508,  535 => 349,  487 => 304,  478 => 298,  347 => 170,  332 => 158,  317 => 146,  302 => 134,  287 => 122,  252 => 89,  246 => 88,  237 => 84,  232 => 82,  227 => 80,  222 => 78,  217 => 76,  212 => 74,  207 => 72,  202 => 70,  196 => 67,  191 => 65,  187 => 64,  182 => 62,  177 => 60,  171 => 57,  160 => 49,  157 => 48,  151 => 47,  134 => 36,  129 => 34,  124 => 32,  119 => 30,  114 => 28,  109 => 26,  104 => 24,  98 => 21,  89 => 15,  83 => 11,  77 => 10,  65 => 8,  54 => 527,  52 => 88,  48 => 86,  46 => 47,  43 => 46,  41 => 10,  38 => 9,  36 => 8,  27 => 1,);
+        return array (  585 => 432,  579 => 431,  557 => 434,  555 => 431,  546 => 424,  497 => 300,  474 => 275,  468 => 272,  444 => 251,  438 => 248,  427 => 239,  422 => 237,  415 => 232,  411 => 231,  348 => 171,  333 => 159,  318 => 147,  303 => 135,  288 => 123,  252 => 89,  246 => 88,  237 => 84,  232 => 82,  227 => 80,  222 => 78,  217 => 76,  212 => 74,  207 => 72,  202 => 70,  196 => 67,  191 => 65,  187 => 64,  182 => 62,  177 => 60,  171 => 57,  160 => 49,  157 => 48,  151 => 47,  134 => 36,  129 => 34,  124 => 32,  119 => 30,  114 => 28,  109 => 26,  104 => 24,  98 => 21,  89 => 15,  83 => 11,  77 => 10,  65 => 8,  54 => 450,  52 => 88,  48 => 86,  46 => 47,  43 => 46,  41 => 10,  38 => 9,  36 => 8,  27 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -796,7 +654,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
             <![endif]-->
 
         {% endblock %}
-        
+
         {% block javascripts %}
             <!-- jQuery 2.1.4 -->
             <script src=\" {{ asset('plugins/jQuery/jQuery-2.1.4.min.js') }}\"></script>
@@ -846,9 +704,9 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                     <!-- Logo -->
                     <a href=\"#\" class=\"logo\">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
-                        <span class=\"logo-mini\"><b>A</b>LT</span>
+
                         <!-- logo for regular state and mobile devices -->
-                        <span class=\"logo-lg\"><b>Admin</b>LTE</span>
+                        <span class=\"logo-lg\"><b>LIMS</b></span>
                     </a>
                     <!-- Header Navbar: style can be found in header.less -->
                     <nav class=\"navbar navbar-static-top\" role=\"navigation\">
@@ -858,6 +716,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                         </a>
                         <div class=\"navbar-custom-menu\">
                             <ul class=\"nav navbar-nav\">
+
                                 <!-- Messages: style can be found in dropdown.less-->
                                 <li class=\"dropdown messages-menu\">
                                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
@@ -976,109 +835,31 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                                     </ul>
                                 </li>
                                 <!-- Tasks: style can be found in dropdown.less -->
-                                <li class=\"dropdown tasks-menu\">
-                                    <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
-                                        <i class=\"fa fa-flag-o\"></i>
-                                        <span class=\"label label-danger\">9</span>
-                                    </a>
-                                    <ul class=\"dropdown-menu\">
-                                        <li class=\"header\">You have 9 tasks</li>
-                                        <li>
-                                            <!-- inner menu: contains the actual data -->
-                                            <ul class=\"menu\">
-                                                <li><!-- Task item -->
-                                                    <a href=\"#\">
-                                                        <h3>
-                                                            Design some buttons
-                                                            <small class=\"pull-right\">20%</small>
-                                                        </h3>
-                                                        <div class=\"progress xs\">
-                                                            <div class=\"progress-bar progress-bar-aqua\" style=\"width: 20%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">
-                                                                <span class=\"sr-only\">20% Complete</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li><!-- end task item -->
-                                                <li><!-- Task item -->
-                                                    <a href=\"#\">
-                                                        <h3>
-                                                            Create a nice theme
-                                                            <small class=\"pull-right\">40%</small>
-                                                        </h3>
-                                                        <div class=\"progress xs\">
-                                                            <div class=\"progress-bar progress-bar-green\" style=\"width: 40%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">
-                                                                <span class=\"sr-only\">40% Complete</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li><!-- end task item -->
-                                                <li><!-- Task item -->
-                                                    <a href=\"#\">
-                                                        <h3>
-                                                            Some task I need to do
-                                                            <small class=\"pull-right\">60%</small>
-                                                        </h3>
-                                                        <div class=\"progress xs\">
-                                                            <div class=\"progress-bar progress-bar-red\" style=\"width: 60%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">
-                                                                <span class=\"sr-only\">60% Complete</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li><!-- end task item -->
-                                                <li><!-- Task item -->
-                                                    <a href=\"#\">
-                                                        <h3>
-                                                            Make beautiful transitions
-                                                            <small class=\"pull-right\">80%</small>
-                                                        </h3>
-                                                        <div class=\"progress xs\">
-                                                            <div class=\"progress-bar progress-bar-yellow\" style=\"width: 80%\" role=\"progressbar\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\">
-                                                                <span class=\"sr-only\">80% Complete</span>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li><!-- end task item -->
-                                            </ul>
-                                        </li>
-                                        <li class=\"footer\">
-                                            <a href=\"#\">View all tasks</a>
-                                        </li>
-                                    </ul>
-                                </li>
+
                                 <!-- User Account: style can be found in dropdown.less -->
                                 <li class=\"dropdown user user-menu\">
                                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
                                         <img src=\"{{ asset('dist/img/user2-160x160.jpg') }}\" class=\"user-image\" alt=\"User Image\">
-                                        <span class=\"hidden-xs\">Alexander Pierce</span>
+                                        <span class=\"hidden-xs\">{#{{ user.nom }} {{ user.prenom }}#} Lidrissi Hamid  </span>
                                     </a>
                                     <ul class=\"dropdown-menu\">
                                         <!-- User image -->
                                         <li class=\"user-header\">
                                             <img src=\"{{ asset('dist/img/user2-160x160.jpg') }}\" class=\"img-circle\" alt=\"User Image\">
                                             <p>
-                                                Alexander Pierce - Web Developer
-                                                <small>Member since Nov. 2012</small>
+                                                {#{{ user.nom }} {{ user.prenom }}#}Lidrissi Hamid   - Admin
+                                                <small>Membere depuis Nov. 2012</small>
                                             </p>
                                         </li>
                                         <!-- Menu Body -->
-                                        <li class=\"user-body\">
-                                            <div class=\"col-xs-4 text-center\">
-                                                <a href=\"#\">Followers</a>
-                                            </div>
-                                            <div class=\"col-xs-4 text-center\">
-                                                <a href=\"#\">Sales</a>
-                                            </div>
-                                            <div class=\"col-xs-4 text-center\">
-                                                <a href=\"#\">Friends</a>
-                                            </div>
-                                        </li>
+
                                         <!-- Menu Footer-->
                                         <li class=\"user-footer\">
                                             <div class=\"pull-left\">
-                                                <a href=\"#\" class=\"btn btn-default btn-flat\">Profile</a>
+                                                <a href=\"{{ path('fos_user_profile_edit')  }} \" class=\"btn btn-default btn-flat\">Profil</a>
                                             </div>
                                             <div class=\"pull-right\">
-                                                <a href=\"#\" class=\"btn btn-default btn-flat\">Sign out</a>
+                                                <a href=\"{{ path('logout_user') }}\" class=\"btn btn-default btn-flat\">Deconexion</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -1102,14 +883,14 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                                 <img src=\"{{ asset('dist/img/user2-160x160.jpg') }}\" class=\"img-circle\" alt=\"User Image\">
                             </div>
                             <div class=\"pull-left info\">
-                                <p>Alexander Pierce</p>
+                                <p>{#{{ user.nom }}  {{ user.prenom }}#}Lidrissi Hamid </p>
                                 <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>
                             </div>
                         </div>
                         <!-- search form -->
                         <form action=\"#\" method=\"get\" class=\"sidebar-form\">
                             <div class=\"input-group\">
-                                <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Search...\">
+                                <input type=\"text\" name=\"q\" class=\"form-control\" placeholder=\"Recherche...\">
                                 <span class=\"input-group-btn\">
                                     <button type=\"submit\" name=\"search\" id=\"search-btn\" class=\"btn btn-flat\"><i class=\"fa fa-search\"></i></button>
                                 </span>
@@ -1118,139 +899,139 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
                         <!-- /.search form -->
                         <!-- sidebar menu: : style can be found in sidebar.less -->
                         <ul class=\"sidebar-menu\">
-                            <li class=\"header\">MAIN NAVIGATION</li>
+                            <li class=\"header\">Menu Principale</li>
                             <li class=\"active treeview\">
                                 <a href=\"#\">
-                                    <i class=\"fa fa-dashboard\"></i> <span>Dashboard</span> <i class=\"fa fa-angle-left pull-right\"></i>
+                                    <i class=\"fa fa-dashboard\"></i> <span>Gestion de Patient</span> <i class=\"fa fa-angle-left pull-right\"></i>
                                 </a>
-                                <ul class=\"treeview-menu\">
-                                    <li class=\"active\"><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v1</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v2</a></li>
-                                </ul>
+                                {# <ul class=\"treeview-menu\">
+                                     <li class=\"active\"><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v1</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v2</a></li>
+                                 </ul>#}
                             </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
                                     <i class=\"fa fa-files-o\"></i>
-                                    <span>Layout Options</span>
+                                    <span>LIMS</span>
                                     <span class=\"label label-primary pull-right\">4</span>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Top Navigation</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Boxed</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Fixed</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Collapsed Sidebar</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href=\"#\">
-                                    <i class=\"fa fa-th\"></i> <span>Widgets</span> <small class=\"label pull-right bg-green\">new</small>
+                                    <i class=\"fa fa-th\"></i> <span>Statistiques</span> <small class=\"label pull-right bg-green\">new</small>
                                 </a>
                             </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
                                     <i class=\"fa fa-pie-chart\"></i>
-                                    <span>Charts</span>
+                                    <span>Traitment d'images</span>
                                     <i class=\"fa fa-angle-left pull-right\"></i>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> ChartJS</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Morris</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Flot</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Inline charts</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i></a></li>
                                 </ul>
                             </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
                                     <i class=\"fa fa-laptop\"></i>
-                                    <span>UI Elements</span>
+                                    <span>Configuration</span>
                                     <i class=\"fa fa-angle-left pull-right\"></i>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> General</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Icons</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Buttons</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Sliders</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Timeline</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Modals</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
                                 </ul>
                             </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-edit\"></i> <span>Forms</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> General Elements</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Advanced Elements</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Editors</a></li>
-                                </ul>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-table\"></i> <span>Tables</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Simple tables</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Data tables</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href=\"#\">
-                                    <i class=\"fa fa-calendar\"></i> <span>Calendar</span>
-                                    <small class=\"label pull-right bg-red\">3</small>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=\"#\">
-                                    <i class=\"fa fa-envelope\"></i> <span>Mailbox</span>
-                                    <small class=\"label pull-right bg-yellow\">12</small>
-                                </a>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-folder\"></i> <span>Examples</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Invoice</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Profile</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Login</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Register</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Lockscreen</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 404 Error</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 500 Error</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Blank Page</a></li>
-                                </ul>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-share\"></i> <span>Multilevel</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
-                                    <li>
-                                        <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One <i class=\"fa fa-angle-left pull-right\"></i></a>
-                                        <ul class=\"treeview-menu\">
-                                            <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two</a></li>
-                                            <li>
-                                                <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two <i class=\"fa fa-angle-left pull-right\"></i></a>
-                                                <ul class=\"treeview-menu\">
-                                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
-                                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
-                                </ul>
-                            </li>
-                            <li><a href=\"#\"><i class=\"fa fa-book\"></i> <span>Documentation</span></a></li>
-                            <li class=\"header\">LABELS</li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-red\"></i> <span>Important</span></a></li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-yellow\"></i> <span>Warning</span></a></li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-aqua\"></i> <span>Information</span></a></li>
+                            {# <li class=\"treeview\">
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-edit\"></i> <span>Forms</span>
+                                     <i class=\"fa fa-angle-left pull-right\"></i>
+                                 </a>
+                                 <ul class=\"treeview-menu\">
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> General Elements</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Advanced Elements</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Editors</a></li>
+                                 </ul>
+                             </li>
+                             <li class=\"treeview\">
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-table\"></i> <span>Tables</span>
+                                     <i class=\"fa fa-angle-left pull-right\"></i>
+                                 </a>
+                                 <ul class=\"treeview-menu\">
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Simple tables</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Data tables</a></li>
+                                 </ul>
+                             </li>
+                             <li>
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-calendar\"></i> <span>Calendar</span>
+                                     <small class=\"label pull-right bg-red\">3</small>
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-envelope\"></i> <span>Mailbox</span>
+                                     <small class=\"label pull-right bg-yellow\">12</small>
+                                 </a>
+                             </li>
+                             <li class=\"treeview\">
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-folder\"></i> <span>Examples</span>
+                                     <i class=\"fa fa-angle-left pull-right\"></i>
+                                 </a>
+                                 <ul class=\"treeview-menu\">
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Invoice</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Profile</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Login</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Register</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Lockscreen</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 404 Error</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 500 Error</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Blank Page</a></li>
+                                 </ul>
+                             </li>
+                             <li class=\"treeview\">
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-share\"></i> <span>Multilevel</span>
+                                     <i class=\"fa fa-angle-left pull-right\"></i>
+                                 </a>
+                                 <ul class=\"treeview-menu\">
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
+                                     <li>
+                                         <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One <i class=\"fa fa-angle-left pull-right\"></i></a>
+                                         <ul class=\"treeview-menu\">
+                                             <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two</a></li>
+                                             <li>
+                                                 <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two <i class=\"fa fa-angle-left pull-right\"></i></a>
+                                                 <ul class=\"treeview-menu\">
+                                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
+                                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
+                                                 </ul>
+                                             </li>
+                                         </ul>
+                                     </li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
+                                 </ul>
+                             </li>
+                             <li><a href=\"#\"><i class=\"fa fa-book\"></i> <span>Documentation</span></a></li>
+                             <li class=\"header\">LABELS</li>
+                             <li><a href=\"#\"><i class=\"fa fa-circle-o text-red\"></i> <span>Important</span></a></li>
+                             <li><a href=\"#\"><i class=\"fa fa-circle-o text-yellow\"></i> <span>Warning</span></a></li>
+                             <li><a href=\"#\"><i class=\"fa fa-circle-o text-aqua\"></i> <span>Information</span></a></li>#}
                         </ul>
                     </section>
                     <!-- /.sidebar -->
@@ -1278,7 +1059,7 @@ class __TwigTemplate_8456f6383d89f28d7112938dedfe3962bc80e10ddb0e7f0aa9a0d05b3f9
             </div><!-- ./wrapper -->
         {% endblock %}
 
-        
+
     </body>
 </html>
 ", "::base.html.twig", "C:\\wamp\\www\\LIMS\\app/Resources\\views/base.html.twig");

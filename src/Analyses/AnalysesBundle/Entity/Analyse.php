@@ -5,15 +5,14 @@ namespace Analyses\AnalysesBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
-
 /**
  * Analyse
  *
  * @ORM\Table(name="analyse")
  * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\AnalyseRepository")
  */
-class Analyse
-{
+class Analyse {
+
     /**
      * @var int
      *
@@ -37,22 +36,17 @@ class Analyse
      */
     private $commentaire;
 
-     /**
+    /**
      * @ORM\OneToMany(targetEntity="Categorie", mappedBy="analyse")
      */
-    private $categories ; 
-    
-    
-    
-    
-    
+    private $categories;
+
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -63,8 +57,7 @@ class Analyse
      *
      * @return Analyse
      */
-    public function setNom($nom)
-    {
+    public function setNom($nom) {
         $this->nom = $nom;
 
         return $this;
@@ -75,8 +68,7 @@ class Analyse
      *
      * @return string
      */
-    public function getNom()
-    {
+    public function getNom() {
         return $this->nom;
     }
 
@@ -87,8 +79,7 @@ class Analyse
      *
      * @return Analyse
      */
-    public function setCommentaire($commentaire)
-    {
+    public function setCommentaire($commentaire) {
         $this->commentaire = $commentaire;
 
         return $this;
@@ -99,14 +90,12 @@ class Analyse
      *
      * @return string
      */
-    public function getCommentaire()
-    {
+    public function getCommentaire() {
         return $this->commentaire;
     }
-    
-     public function __construct()
-    {
-        $this->products = new ArrayCollection();
+
+    public function __construct() {
+        $this->categories = new ArrayCollection();
     }
 
     /**
@@ -116,8 +105,7 @@ class Analyse
      *
      * @return Analyse
      */
-    public function addCategory(\Analyses\AnalysesBundle\Entity\Categorie $category)
-    {
+    public function addCategory(\Analyses\AnalysesBundle\Entity\Categorie $category) {
         $this->categories[] = $category;
 
         return $this;
@@ -128,8 +116,7 @@ class Analyse
      *
      * @param \Analyses\AnalysesBundle\Entity\Categorie $category
      */
-    public function removeCategory(\Analyses\AnalysesBundle\Entity\Categorie $category)
-    {
+    public function removeCategory(\Analyses\AnalysesBundle\Entity\Categorie $category) {
         $this->categories->removeElement($category);
     }
 
@@ -138,8 +125,12 @@ class Analyse
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getCategories()
-    {
+    public function getCategories() {
         return $this->categories;
     }
+
+    public function __toString() {
+        return $this->nom;
+    }
+
 }

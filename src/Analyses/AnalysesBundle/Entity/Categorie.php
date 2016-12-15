@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="categorie")
  * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\CategorieRepository")
  */
-class Categorie
-{
+class Categorie {
+
     /**
      * @var int
      *
@@ -35,25 +35,23 @@ class Categorie
      */
     private $commentaire;
 
-     /**
+    /**
      * @ORM\ManyToOne(targetEntity="Analyse", inversedBy="categories")
      * @ORM\JoinColumn(name="analyse_id", referencedColumnName="id")
      */
-    private $analyse ; 
-  
+    private $analyse;
+
     /**
      * @ORM\OneToMany(targetEntity="Test", mappedBy="categorie")
      */
-    private $tests ; 
-    
-    
+    private $tests;
+
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -64,8 +62,7 @@ class Categorie
      *
      * @return Categorie
      */
-    public function setLibelle($libelle)
-    {
+    public function setLibelle($libelle) {
         $this->libelle = $libelle;
 
         return $this;
@@ -76,8 +73,7 @@ class Categorie
      *
      * @return string
      */
-    public function getLibelle()
-    {
+    public function getLibelle() {
         return $this->libelle;
     }
 
@@ -88,8 +84,7 @@ class Categorie
      *
      * @return Categorie
      */
-    public function setCommentaire($commentaire)
-    {
+    public function setCommentaire($commentaire) {
         $this->commentaire = $commentaire;
 
         return $this;
@@ -100,8 +95,7 @@ class Categorie
      *
      * @return string
      */
-    public function getCommentaire()
-    {
+    public function getCommentaire() {
         return $this->commentaire;
     }
 
@@ -112,8 +106,7 @@ class Categorie
      *
      * @return Categorie
      */
-    public function setAnalyse(\Analyses\AnalysesBundle\Entity\Analyse $analyse = null)
-    {
+    public function setAnalyse(\Analyses\AnalysesBundle\Entity\Analyse $analyse = null) {
         $this->analyse = $analyse;
 
         return $this;
@@ -124,15 +117,14 @@ class Categorie
      *
      * @return \Analyses\AnalysesBundle\Entity\Analyse
      */
-    public function getAnalyse()
-    {
+    public function getAnalyse() {
         return $this->analyse;
     }
+
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->tests = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -143,8 +135,7 @@ class Categorie
      *
      * @return Categorie
      */
-    public function addTest(\Analyses\AnalysesBundle\Entity\Test $test)
-    {
+    public function addTest(\Analyses\AnalysesBundle\Entity\Test $test) {
         $this->tests[] = $test;
 
         return $this;
@@ -155,8 +146,7 @@ class Categorie
      *
      * @param \Analyses\AnalysesBundle\Entity\Test $test
      */
-    public function removeTest(\Analyses\AnalysesBundle\Entity\Test $test)
-    {
+    public function removeTest(\Analyses\AnalysesBundle\Entity\Test $test) {
         $this->tests->removeElement($test);
     }
 
@@ -165,8 +155,12 @@ class Categorie
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getTests()
-    {
+    public function getTests() {
         return $this->tests;
     }
+
+    public function __toString() {
+        return $this->libelle;
+    }
+
 }

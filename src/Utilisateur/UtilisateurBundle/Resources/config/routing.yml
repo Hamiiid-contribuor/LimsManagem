@@ -4,3 +4,7 @@ utilisateur_homepage:
 testMailer:
     path:     /testMailer
     defaults: { _controller: UtilisateurBundle:Default:testMailer }
+    
+logout_user:
+    path:     /logoutUser
+    defaults: { _controller: UtilisateurBundle:Default:logout }

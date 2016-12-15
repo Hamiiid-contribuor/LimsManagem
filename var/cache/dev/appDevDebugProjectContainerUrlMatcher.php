@@ -114,16 +114,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'Utilisateur\\UtilisateurBundle\\Controller\\DefaultController::testMailerAction',  '_route' => 'testMailer',);
         }
 
-        // analyses_analyses_default_index
-        if (rtrim($pathinfo, '/') === '/analyses') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'analyses_analyses_default_index');
+        if (0 === strpos($pathinfo, '/log')) {
+            // logout_user
+            if ($pathinfo === '/logoutUser') {
+                return array (  '_controller' => 'Utilisateur\\UtilisateurBundle\\Controller\\DefaultController::logoutAction',  '_route' => 'logout_user',);
             }
 
-            return array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\DefaultController::indexAction',  '_route' => 'analyses_analyses_default_index',);
-        }
-
-        if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login
                 if ($pathinfo === '/login') {
