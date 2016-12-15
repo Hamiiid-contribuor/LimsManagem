@@ -74,3 +74,5 @@ ae9d0f,::1,GET,http://localhost/LIMS/web/app_dev.php/,1481808568,,200
 e6acb2,::1,POST,http://localhost/LIMS/web/app_dev.php/login_check,1481814404,,302
 5c27d2,::1,GET,http://localhost/LIMS/web/app_dev.php/,1481814408,,200
 59c4b1,::1,GET,http://localhost/LIMS/web/app_dev.php/profile/edit,1481814451,,200
+49807a,::1,GET,http://localhost/LIMS/web/app_dev.php/logoutUser,1481831797,,302
+f53aa3,::1,GET,http://localhost/LIMS/web/app_dev.php/login,1481831809,,200
