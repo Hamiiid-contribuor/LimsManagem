@@ -5,29 +5,29 @@ namespace Analyses\AnalysesBundle\Controller;
 use Analyses\AnalysesBundle\Entity\Analyse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Analyse controller.
  *
  * @Route("analyse")
  */
-class AnalyseController extends Controller {
-
+class AnalyseController extends Controller
+{
     /**
      * Lists all analyse entities.
      *
      * @Route("/", name="analyse_index")
      * @Method("GET")
      */
-    public function indexAction() {
+    public function indexAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $analyses = $em->getRepository('AnalysesBundle:Analyse')->findAll();
 
         return $this->render('analyse/index.html.twig', array(
-                    'analyses' => $analyses,
+            'analyses' => $analyses,
         ));
     }
 
@@ -37,7 +37,8 @@ class AnalyseController extends Controller {
      * @Route("/new", name="analyse_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request) {
+    public function newAction(Request $request)
+    {
         $analyse = new Analyse();
         $form = $this->createForm('Analyses\AnalysesBundle\Form\AnalyseType', $analyse);
         $form->handleRequest($request);
@@ -61,12 +62,13 @@ class AnalyseController extends Controller {
      * @Route("/{id}", name="analyse_show")
      * @Method("GET")
      */
-    public function showAction(Analyse $analyse) {
+    public function showAction(Analyse $analyse)
+    {
         $deleteForm = $this->createDeleteForm($analyse);
 
         return $this->render('analyse/show.html.twig', array(
-                    'analyse' => $analyse,
-                    'delete_form' => $deleteForm->createView(),
+            'analyse' => $analyse,
+            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -76,7 +78,8 @@ class AnalyseController extends Controller {
      * @Route("/{id}/edit", name="analyse_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Analyse $analyse) {
+    public function editAction(Request $request, Analyse $analyse)
+    {
         $deleteForm = $this->createDeleteForm($analyse);
         $editForm = $this->createForm('Analyses\AnalysesBundle\Form\AnalyseType', $analyse);
         $editForm->handleRequest($request);
@@ -88,9 +91,9 @@ class AnalyseController extends Controller {
         }
 
         return $this->render('analyse/edit.html.twig', array(
-                    'analyse' => $analyse,
-                    'edit_form' => $editForm->createView(),
-                    'delete_form' => $deleteForm->createView(),
+            'analyse' => $analyse,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -100,7 +103,8 @@ class AnalyseController extends Controller {
      * @Route("/{id}", name="analyse_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, Analyse $analyse) {
+    public function deleteAction(Request $request, Analyse $analyse)
+    {
         $form = $this->createDeleteForm($analyse);
         $form->handleRequest($request);
 
@@ -120,12 +124,12 @@ class AnalyseController extends Controller {
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Analyse $analyse) {
+    private function createDeleteForm(Analyse $analyse)
+    {
         return $this->createFormBuilder()
-                        ->setAction($this->generateUrl('analyse_delete', array('id' => $analyse->getId())))
-                        ->setMethod('DELETE')
-                        ->getForm()
+            ->setAction($this->generateUrl('analyse_delete', array('id' => $analyse->getId())))
+            ->setMethod('DELETE')
+            ->getForm()
         ;
     }
-
 }

@@ -44,6 +44,14 @@ class Analyse {
     private $prix;
 
     /**
+     * @var text
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+    
+    
+    /**
      * @ORM\OneToMany(targetEntity="Categorie", mappedBy="analyse")
      */
     private $categories;
@@ -162,4 +170,28 @@ class Analyse {
         return $this->prix;
     }
 
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Analyse
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
 }

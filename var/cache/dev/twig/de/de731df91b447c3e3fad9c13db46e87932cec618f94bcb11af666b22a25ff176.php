@@ -15,14 +15,16 @@ class __TwigTemplate_4fa31bc2b9e28180ebad679290a0a7ff020e6fd09048343f2603a002569
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c7c3bbb7700af2909843af2eeeff2b70724af5c1489a1bcda00d423e21bdc271 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c7c3bbb7700af2909843af2eeeff2b70724af5c1489a1bcda00d423e21bdc271->enter($__internal_c7c3bbb7700af2909843af2eeeff2b70724af5c1489a1bcda00d423e21bdc271_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnalysesBundle:Default:index.html.twig"));
+        $__internal_81b7433f9c34bf3714d8361f1bcc00517d56e2580298762704639a25ce20ab91 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_81b7433f9c34bf3714d8361f1bcc00517d56e2580298762704639a25ce20ab91->enter($__internal_81b7433f9c34bf3714d8361f1bcc00517d56e2580298762704639a25ce20ab91_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AnalysesBundle:Default:index.html.twig"));
 
         // line 1
-        echo "Hello World!
+        echo "
+
+Hello World!
 ";
         
-        $__internal_c7c3bbb7700af2909843af2eeeff2b70724af5c1489a1bcda00d423e21bdc271->leave($__internal_c7c3bbb7700af2909843af2eeeff2b70724af5c1489a1bcda00d423e21bdc271_prof);
+        $__internal_81b7433f9c34bf3714d8361f1bcc00517d56e2580298762704639a25ce20ab91->leave($__internal_81b7433f9c34bf3714d8361f1bcc00517d56e2580298762704639a25ce20ab91_prof);
 
     }
 
@@ -46,7 +48,9 @@ class __TwigTemplate_4fa31bc2b9e28180ebad679290a0a7ff020e6fd09048343f2603a002569
 
     public function getSourceContext()
     {
-        return new Twig_Source("Hello World!
+        return new Twig_Source("
+
+Hello World!
 ", "AnalysesBundle:Default:index.html.twig", "C:\\wamp\\www\\LIMS\\src\\Analyses\\AnalysesBundle/Resources/views/Default/index.html.twig");
     }
 }

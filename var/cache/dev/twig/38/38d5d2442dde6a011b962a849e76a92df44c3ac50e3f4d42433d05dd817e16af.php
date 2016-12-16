@@ -21,25 +21,25 @@ class __TwigTemplate_6e42755b3b3c068ab61696fc278a6bb05f2526cba8ca49dfa11e92ad98e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9bf5d0a10e20e21ef5fc6e5168cd170176355b7cfb38dcae27164e4c8e966d88 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9bf5d0a10e20e21ef5fc6e5168cd170176355b7cfb38dcae27164e4c8e966d88->enter($__internal_9bf5d0a10e20e21ef5fc6e5168cd170176355b7cfb38dcae27164e4c8e966d88_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/ChangePassword/change_password.html.twig"));
+        $__internal_b9597a5ceb62a87878ce3fdc509358ff5f620d6fb94b4f187a0b0f6c3b383893 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b9597a5ceb62a87878ce3fdc509358ff5f620d6fb94b4f187a0b0f6c3b383893->enter($__internal_b9597a5ceb62a87878ce3fdc509358ff5f620d6fb94b4f187a0b0f6c3b383893_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/ChangePassword/change_password.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_9bf5d0a10e20e21ef5fc6e5168cd170176355b7cfb38dcae27164e4c8e966d88->leave($__internal_9bf5d0a10e20e21ef5fc6e5168cd170176355b7cfb38dcae27164e4c8e966d88_prof);
+        $__internal_b9597a5ceb62a87878ce3fdc509358ff5f620d6fb94b4f187a0b0f6c3b383893->leave($__internal_b9597a5ceb62a87878ce3fdc509358ff5f620d6fb94b4f187a0b0f6c3b383893_prof);
 
     }
 
     // line 3
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_a743541e17c619d81473e0836f0da90f29ab3e4f18513363f4c699a746ec3357 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a743541e17c619d81473e0836f0da90f29ab3e4f18513363f4c699a746ec3357->enter($__internal_a743541e17c619d81473e0836f0da90f29ab3e4f18513363f4c699a746ec3357_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "@FOSUser/ChangePassword/change_password.html.twig"));
+        $__internal_4624c6766c9281afca3dc888593566d91f8c2722efb7b81ad4faf26f0b7cd6c6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_4624c6766c9281afca3dc888593566d91f8c2722efb7b81ad4faf26f0b7cd6c6->enter($__internal_4624c6766c9281afca3dc888593566d91f8c2722efb7b81ad4faf26f0b7cd6c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "@FOSUser/ChangePassword/change_password.html.twig"));
 
         // line 4
         $this->loadTemplate("FOSUserBundle:ChangePassword:change_password_content.html.twig", "@FOSUser/ChangePassword/change_password.html.twig", 4)->display($context);
         
-        $__internal_a743541e17c619d81473e0836f0da90f29ab3e4f18513363f4c699a746ec3357->leave($__internal_a743541e17c619d81473e0836f0da90f29ab3e4f18513363f4c699a746ec3357_prof);
+        $__internal_4624c6766c9281afca3dc888593566d91f8c2722efb7b81ad4faf26f0b7cd6c6->leave($__internal_4624c6766c9281afca3dc888593566d91f8c2722efb7b81ad4faf26f0b7cd6c6_prof);
 
     }
 

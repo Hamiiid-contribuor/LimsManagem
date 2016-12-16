@@ -20,8 +20,8 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_257af2f04796efa6c4e1a2096ecbb0cf66c70c1a2674db4072881e2e2c842832 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_257af2f04796efa6c4e1a2096ecbb0cf66c70c1a2674db4072881e2e2c842832->enter($__internal_257af2f04796efa6c4e1a2096ecbb0cf66c70c1a2674db4072881e2e2c842832_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_2c0dcc2a9109cde680bdd0a727c18f972b3d3249eeca287753f4f8fdf1f35599 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2c0dcc2a9109cde680bdd0a727c18f972b3d3249eeca287753f4f8fdf1f35599->enter($__internal_2c0dcc2a9109cde680bdd0a727c18f972b3d3249eeca287753f4f8fdf1f35599_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -39,53 +39,60 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
         ";
         // line 10
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 46
-        echo "        
+        // line 50
+        echo "
         ";
-        // line 47
+        // line 51
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 86
+        // line 93
         echo "    </head>
     <body>
         ";
-        // line 88
+        // line 95
         $this->displayBlock('body', $context, $blocks);
-        // line 449
+        // line 453
         echo "
-        
+
     </body>
 </html>
 ";
         
-        $__internal_257af2f04796efa6c4e1a2096ecbb0cf66c70c1a2674db4072881e2e2c842832->leave($__internal_257af2f04796efa6c4e1a2096ecbb0cf66c70c1a2674db4072881e2e2c842832_prof);
+        $__internal_2c0dcc2a9109cde680bdd0a727c18f972b3d3249eeca287753f4f8fdf1f35599->leave($__internal_2c0dcc2a9109cde680bdd0a727c18f972b3d3249eeca287753f4f8fdf1f35599_prof);
 
     }
 
     // line 8
     public function block_title($context, array $blocks = array())
     {
-        $__internal_a574c83354845f2d40a3efc2bf741dbb152734eb1e2411ea115f997a316b8e02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a574c83354845f2d40a3efc2bf741dbb152734eb1e2411ea115f997a316b8e02->enter($__internal_a574c83354845f2d40a3efc2bf741dbb152734eb1e2411ea115f997a316b8e02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "base.html.twig"));
+        $__internal_fae4a8dd5f7531d090a6b0a2fc91b206bdaf750250dea4e93c4d0610c68918bf = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_fae4a8dd5f7531d090a6b0a2fc91b206bdaf750250dea4e93c4d0610c68918bf->enter($__internal_fae4a8dd5f7531d090a6b0a2fc91b206bdaf750250dea4e93c4d0610c68918bf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "base.html.twig"));
 
         echo "LIMS | Dashboard";
         
-        $__internal_a574c83354845f2d40a3efc2bf741dbb152734eb1e2411ea115f997a316b8e02->leave($__internal_a574c83354845f2d40a3efc2bf741dbb152734eb1e2411ea115f997a316b8e02_prof);
+        $__internal_fae4a8dd5f7531d090a6b0a2fc91b206bdaf750250dea4e93c4d0610c68918bf->leave($__internal_fae4a8dd5f7531d090a6b0a2fc91b206bdaf750250dea4e93c4d0610c68918bf_prof);
 
     }
 
     // line 10
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_ea588fdbeeea369ff83a0b7d37b99c11b2aad07cc6257dbfc170bdf2f8bfb407 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ea588fdbeeea369ff83a0b7d37b99c11b2aad07cc6257dbfc170bdf2f8bfb407->enter($__internal_ea588fdbeeea369ff83a0b7d37b99c11b2aad07cc6257dbfc170bdf2f8bfb407_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "base.html.twig"));
+        $__internal_b995cdc43bdfcbe98879f916da71cf9e848fcbe130a027133de5232b24fed009 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b995cdc43bdfcbe98879f916da71cf9e848fcbe130a027133de5232b24fed009->enter($__internal_b995cdc43bdfcbe98879f916da71cf9e848fcbe130a027133de5232b24fed009_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "base.html.twig"));
 
         // line 11
         echo "
+           
+           <link class=\"main-stylesheet\" href=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("pages/css/btn-animated.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\"/>
+
+
             <!-- Tell the browser to be responsive to screen width -->
             <meta content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" name=\"viewport\">
             <!-- Bootstrap 3.3.5 -->
             <link rel=\"stylesheet\" href=\"";
-        // line 15
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\">
             <!-- Font Awesome -->
@@ -94,43 +101,43 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
             <link rel=\"stylesheet\" href=\"https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css\">
             <!-- Theme style -->
             <link rel=\"stylesheet\" href=\"";
-        // line 21
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/css/AdminLTE.min.css"), "html", null, true);
         echo "\">
             <!-- AdminLTE Skins. Choose a skin from the css/skins
                  folder instead of downloading all of them to reduce the load. -->
             <link rel=\"stylesheet\" href=\"";
-        // line 24
+        // line 28
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/css/skins/_all-skins.min.css"), "html", null, true);
         echo "\">
             <!-- iCheck -->
             <link rel=\"stylesheet\" href=\"";
-        // line 26
+        // line 30
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/iCheck/flat/blue.css"), "html", null, true);
         echo "\">
             <!-- Morris chart -->
             <link rel=\"stylesheet\" href=\"";
-        // line 28
+        // line 32
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/morris/morris.css"), "html", null, true);
         echo " \">
             <!-- jvectormap -->
             <link rel=\"stylesheet\" href=\"";
-        // line 30
+        // line 34
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-1.2.2.css"), "html", null, true);
         echo "\">
             <!-- Date Picker -->
             <link rel=\"stylesheet\" href=\"";
-        // line 32
+        // line 36
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/datepicker/datepicker3.css"), "html", null, true);
         echo "\">
             <!-- Daterange picker -->
             <link rel=\"stylesheet\" href=\"";
-        // line 34
+        // line 38
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/daterangepicker/daterangepicker-bs3.css"), "html", null, true);
         echo "\">
             <!-- bootstrap wysihtml5 - text editor -->
             <link rel=\"stylesheet\" href=\"";
-        // line 36
+        // line 40
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"), "html", null, true);
         echo "\">
 
@@ -143,20 +150,23 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
 
         ";
         
-        $__internal_ea588fdbeeea369ff83a0b7d37b99c11b2aad07cc6257dbfc170bdf2f8bfb407->leave($__internal_ea588fdbeeea369ff83a0b7d37b99c11b2aad07cc6257dbfc170bdf2f8bfb407_prof);
+        $__internal_b995cdc43bdfcbe98879f916da71cf9e848fcbe130a027133de5232b24fed009->leave($__internal_b995cdc43bdfcbe98879f916da71cf9e848fcbe130a027133de5232b24fed009_prof);
 
     }
 
-    // line 47
+    // line 51
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_26aab0f99a1e8b0a2c95e936bbc6a3a6973b29e1ccbf2d04aaf4cf3d59279b85 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_26aab0f99a1e8b0a2c95e936bbc6a3a6973b29e1ccbf2d04aaf4cf3d59279b85->enter($__internal_26aab0f99a1e8b0a2c95e936bbc6a3a6973b29e1ccbf2d04aaf4cf3d59279b85_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "base.html.twig"));
+        $__internal_13006c0a4debbc30227fbe1e28c79103936fcc157c9b8d58918258093310e70b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_13006c0a4debbc30227fbe1e28c79103936fcc157c9b8d58918258093310e70b->enter($__internal_13006c0a4debbc30227fbe1e28c79103936fcc157c9b8d58918258093310e70b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "base.html.twig"));
 
-        // line 48
-        echo "            <!-- jQuery 2.1.4 -->
+        // line 52
+        echo "
+
+
+            <!-- jQuery 2.1.4 -->
             <script src=\" ";
-        // line 49
+        // line 56
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/jQuery/jQuery-2.1.4.min.js"), "html", null, true);
         echo "\"></script>
             <!-- jQuery UI 1.11.4 -->
@@ -167,88 +177,88 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
             </script>
             <!-- Bootstrap 3.3.5 -->
             <script src=\"";
-        // line 57
+        // line 64
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
             <!-- Morris.js charts -->
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js\"></script>
             <script src=\"";
-        // line 60
+        // line 67
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/morris/morris.min.js"), "html", null, true);
         echo "\"></script>
             <!-- Sparkline -->
             <script src=\"";
-        // line 62
+        // line 69
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/sparkline/jquery.sparkline.min.js"), "html", null, true);
         echo "\"></script>
             <!-- jvectormap -->
             <script src=\"";
-        // line 64
+        // line 71
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 65
+        // line 72
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/jvectormap/jquery-jvectormap-world-mill-en.js"), "html", null, true);
         echo "\"></script>
             <!-- jQuery Knob Chart -->
             <script src=\"";
-        // line 67
+        // line 74
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/knob/jquery.knob.js"), "html", null, true);
         echo "\"></script>
             <!-- daterangepicker -->
             <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js\"></script>
             <script src=\"";
-        // line 70
+        // line 77
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/daterangepicker/daterangepicker.js"), "html", null, true);
         echo "\"></script>
             <!-- datepicker -->
             <script src=\"";
-        // line 72
+        // line 79
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/datepicker/bootstrap-datepicker.js"), "html", null, true);
         echo "\"></script>
             <!-- Bootstrap WYSIHTML5 -->
             <script src=\"";
-        // line 74
+        // line 81
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"), "html", null, true);
         echo "\"></script>
             <!-- Slimscroll -->
             <script src=\"";
-        // line 76
+        // line 83
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/slimScroll/jquery.slimscroll.min.js"), "html", null, true);
         echo "\"></script>
             <!-- FastClick -->
             <script src=\"";
-        // line 78
+        // line 85
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("plugins/fastclick/fastclick.min.js"), "html", null, true);
         echo "\"></script>
             <!-- AdminLTE App -->
             <script src=\"";
-        // line 80
+        // line 87
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/js/app.min.js"), "html", null, true);
         echo "\"></script>
             <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
             <script src=\"";
-        // line 82
+        // line 89
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/js/pages/dashboard.js"), "html", null, true);
         echo "\"></script>
             <!-- AdminLTE for demo purposes -->
             <script src=\"";
-        // line 84
+        // line 91
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/js/demo.js"), "html", null, true);
         echo "\"></script>
         ";
         
-        $__internal_26aab0f99a1e8b0a2c95e936bbc6a3a6973b29e1ccbf2d04aaf4cf3d59279b85->leave($__internal_26aab0f99a1e8b0a2c95e936bbc6a3a6973b29e1ccbf2d04aaf4cf3d59279b85_prof);
+        $__internal_13006c0a4debbc30227fbe1e28c79103936fcc157c9b8d58918258093310e70b->leave($__internal_13006c0a4debbc30227fbe1e28c79103936fcc157c9b8d58918258093310e70b_prof);
 
     }
 
-    // line 88
+    // line 95
     public function block_body($context, array $blocks = array())
     {
-        $__internal_50f07c7c1385af76de3083ae6c9d529c6abc37d602ff9de6b88c3f46e24c1818 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_50f07c7c1385af76de3083ae6c9d529c6abc37d602ff9de6b88c3f46e24c1818->enter($__internal_50f07c7c1385af76de3083ae6c9d529c6abc37d602ff9de6b88c3f46e24c1818_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "base.html.twig"));
+        $__internal_705f8073fc4da0e0e36e470c65b72f05b6776b27dad600d915881d5e1ef5ca0b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_705f8073fc4da0e0e36e470c65b72f05b6776b27dad600d915881d5e1ef5ca0b->enter($__internal_705f8073fc4da0e0e36e470c65b72f05b6776b27dad600d915881d5e1ef5ca0b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "base.html.twig"));
 
-        // line 89
+        // line 96
         echo "
         <body class=\"hold-transition skin-blue sidebar-mini\">
             <div class=\"wrapper\">
@@ -256,7 +266,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                     <!-- Logo -->
                     <a href=\"#\" class=\"logo\">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
-                        
+
                         <!-- logo for regular state and mobile devices -->
                         <span class=\"logo-lg\"><b>LIMS</b></span>
                     </a>
@@ -268,6 +278,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                         </a>
                         <div class=\"navbar-custom-menu\">
                             <ul class=\"nav navbar-nav\">
+
                                 <!-- Messages: style can be found in dropdown.less-->
                                 <li class=\"dropdown messages-menu\">
                                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
@@ -283,7 +294,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                                                     <a href=\"#\">
                                                         <div class=\"pull-left\">
                                                             <img src=\"";
-        // line 122
+        // line 130
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                                         </div>
@@ -298,7 +309,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                                                     <a href=\"#\">
                                                         <div class=\"pull-left\">
                                                             <img src=\"";
-        // line 134
+        // line 142
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user3-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                                         </div>
@@ -313,7 +324,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                                                     <a href=\"#\">
                                                         <div class=\"pull-left\">
                                                             <img src=\"";
-        // line 146
+        // line 154
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user4-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                                         </div>
@@ -328,7 +339,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                                                     <a href=\"#\">
                                                         <div class=\"pull-left\">
                                                             <img src=\"";
-        // line 158
+        // line 166
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user3-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                                         </div>
@@ -343,7 +354,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                                                     <a href=\"#\">
                                                         <div class=\"pull-left\">
                                                             <img src=\"";
-        // line 170
+        // line 178
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user4-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                                         </div>
@@ -401,57 +412,54 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                                     </ul>
                                 </li>
                                 <!-- Tasks: style can be found in dropdown.less -->
-                               
+
                                 <!-- User Account: style can be found in dropdown.less -->
                                 <li class=\"dropdown user user-menu\">
                                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
                                         <img src=\"";
-        // line 230
+        // line 238
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"user-image\" alt=\"User Image\">
                                         <span class=\"hidden-xs\">";
-        // line 231
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "nom", array()), "html", null, true);
-        echo " ";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "prenom", array()), "html", null, true);
-        echo "  </span>
+        // line 239
+        echo " Lidrissi Hamid  </span>
                                     </a>
                                     <ul class=\"dropdown-menu\">
                                         <!-- User image -->
                                         <li class=\"user-header\">
                                             <img src=\"";
-        // line 236
+        // line 244
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                                             <p>
                                                 ";
-        // line 238
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "nom", array()), "html", null, true);
-        echo " ";
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : $this->getContext($context, "user")), "prenom", array()), "html", null, true);
-        echo "  - Admin
+        // line 246
+        echo "Lidrissi Hamid   - Admin
                                                 <small>Membere depuis Nov. 2012</small>
                                             </p>
                                         </li>
                                         <!-- Menu Body -->
-                                       
+
                                         <!-- Menu Footer-->
                                         <li class=\"user-footer\">
                                             <div class=\"pull-left\">
                                                 <a href=\"";
-        // line 247
+        // line 255
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_profile_edit");
         echo " \" class=\"btn btn-default btn-flat\">Profil</a>
                                             </div>
                                             <div class=\"pull-right\">
-                                                <a href=\"#\" class=\"btn btn-default btn-flat\">Deconexion</a>
+                                                <a href=\"";
+        // line 258
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("logout_user");
+        echo "\" class=\"btn btn-default btn-flat\">Deconexion</a>
                                             </div>
                                         </li>
                                     </ul>
                                 </li>
                                 <!-- Control Sidebar Toggle Button -->
                                 <li>
-                                    <a href=\"#\" data-toggle=\"control-sidebar\"><i class=\"fa fa-gears\"></i></a>
+                                    <a href=\"#\" data-toggle=\"control-sidebar\"><i class=\"\"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -466,12 +474,14 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                         <div class=\"user-panel\">
                             <div class=\"pull-left image\">
                                 <img src=\"";
-        // line 271
+        // line 279
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("dist/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\">
                             </div>
                             <div class=\"pull-left info\">
-                                <p>Lidrissi Hamid</p>
+                                <p>";
+        // line 282
+        echo "Lidrissi Hamid </p>
                                 <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>
                             </div>
                         </div>
@@ -490,137 +500,63 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                             <li class=\"header\">Menu Principale</li>
                             <li class=\"active treeview\">
                                 <a href=\"#\">
-                                    <i class=\"fa fa-dashboard\"></i> <span>Dashboard</span> <i class=\"fa fa-angle-left pull-right\"></i>
+                                    <i class=\"fa fa-dashboard\"></i> <span>Gestion de Patient</span> <i class=\"fa fa-angle-left pull-right\"></i>
                                 </a>
-                                <ul class=\"treeview-menu\">
-                                    <li class=\"active\"><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v1</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v2</a></li>
-                                </ul>
-                            </li>
+                                ";
+        // line 307
+        echo "                            </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
                                     <i class=\"fa fa-files-o\"></i>
-                                    <span>Layout Options</span>
+                                    <span>LIMS</span>
                                     <span class=\"label label-primary pull-right\">4</span>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Top Navigation</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Boxed</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Fixed</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Collapsed Sidebar</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href=\"#\">
-                                    <i class=\"fa fa-th\"></i> <span>Widgets</span> <small class=\"label pull-right bg-green\">new</small>
+                                    <i class=\"fa fa-th\"></i> <span>Statistiques</span> <small class=\"label pull-right bg-green\">new</small>
                                 </a>
                             </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
                                     <i class=\"fa fa-pie-chart\"></i>
-                                    <span>Charts</span>
+                                    <span>Traitment d'images</span>
                                     <i class=\"fa fa-angle-left pull-right\"></i>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> ChartJS</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Morris</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Flot</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Inline charts</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i></a></li>
                                 </ul>
                             </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
-                                    <i class=\"fa fa-laptop\"></i>
-                                    <span>UI Elements</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
+                                    <i class=\"fa fa-cogs\"></i>
+                                    <span>Configuration</span>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> General</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Icons</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Buttons</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Sliders</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Timeline</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Modals</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i>Configuration Lobaratoire </a></li>
+                                    <li><a href=\"";
+        // line 346
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_registration_register");
+        echo "\"><i class=\"fa fa-circle-o\"></i>Gestion Utilisateurs</a></li>
+                                    <li><a href=\"";
+        // line 347
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("analyse_new");
+        echo "\"><i class=\"fa fa-circle-o\"></i>Gestion d'analyses  </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i>Personalisation  </a></li>
                                 </ul>
                             </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-edit\"></i> <span>Forms</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> General Elements</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Advanced Elements</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Editors</a></li>
-                                </ul>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-table\"></i> <span>Tables</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Simple tables</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Data tables</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href=\"#\">
-                                    <i class=\"fa fa-calendar\"></i> <span>Calendar</span>
-                                    <small class=\"label pull-right bg-red\">3</small>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=\"#\">
-                                    <i class=\"fa fa-envelope\"></i> <span>Mailbox</span>
-                                    <small class=\"label pull-right bg-yellow\">12</small>
-                                </a>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-folder\"></i> <span>Examples</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Invoice</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Profile</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Login</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Register</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Lockscreen</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 404 Error</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 500 Error</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Blank Page</a></li>
-                                </ul>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-share\"></i> <span>Multilevel</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
-                                    <li>
-                                        <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One <i class=\"fa fa-angle-left pull-right\"></i></a>
-                                        <ul class=\"treeview-menu\">
-                                            <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two</a></li>
-                                            <li>
-                                                <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two <i class=\"fa fa-angle-left pull-right\"></i></a>
-                                                <ul class=\"treeview-menu\">
-                                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
-                                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
-                                </ul>
-                            </li>
-                            <li><a href=\"#\"><i class=\"fa fa-book\"></i> <span>Documentation</span></a></li>
-                            <li class=\"header\">LABELS</li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-red\"></i> <span>Important</span></a></li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-yellow\"></i> <span>Warning</span></a></li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-aqua\"></i> <span>Information</span></a></li>
-                        </ul>
+                            ";
+        // line 428
+        echo "                        </ul>
                     </section>
                     <!-- /.sidebar -->
                 </aside>
@@ -628,16 +564,15 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                 <!-- Content Wrapper. Contains page content -->
                 <div class=\"content-wrapper\">
                     ";
-        // line 430
+        // line 435
         $this->displayBlock('content', $context, $blocks);
-        // line 433
+        // line 438
         echo "                </div><!-- /.content-wrapper -->
 
                 <footer class=\"main-footer\">
-                    <div class=\"pull-right hidden-xs\">
-                        <b>Version</b> 2.3.0
+                    <div class=\"pull-center\">
+                        <strong>Copyright &copy; 2016-2017 <a href=\"#\">Group ISI FSSM</a>.</strong> All rights reserved.
                     </div>
-                    <strong>Copyright &copy; 2014-2015 <a href=\"http://almsaeedstudio.com\">Almsaeed Studio</a>.</strong> All rights reserved.
                 </footer>
 
 
@@ -648,21 +583,21 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
             </div><!-- ./wrapper -->
         ";
         
-        $__internal_50f07c7c1385af76de3083ae6c9d529c6abc37d602ff9de6b88c3f46e24c1818->leave($__internal_50f07c7c1385af76de3083ae6c9d529c6abc37d602ff9de6b88c3f46e24c1818_prof);
+        $__internal_705f8073fc4da0e0e36e470c65b72f05b6776b27dad600d915881d5e1ef5ca0b->leave($__internal_705f8073fc4da0e0e36e470c65b72f05b6776b27dad600d915881d5e1ef5ca0b_prof);
 
     }
 
-    // line 430
+    // line 435
     public function block_content($context, array $blocks = array())
     {
-        $__internal_73bca14f266843393ce1b1e66d9a872069ec20a2cde349c7dc0ed2b5895bd0e2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_73bca14f266843393ce1b1e66d9a872069ec20a2cde349c7dc0ed2b5895bd0e2->enter($__internal_73bca14f266843393ce1b1e66d9a872069ec20a2cde349c7dc0ed2b5895bd0e2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "base.html.twig"));
+        $__internal_95257d27a06a1f52948b2f63e2fc79cf1c1955b40431223ec911b4a20191e62e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_95257d27a06a1f52948b2f63e2fc79cf1c1955b40431223ec911b4a20191e62e->enter($__internal_95257d27a06a1f52948b2f63e2fc79cf1c1955b40431223ec911b4a20191e62e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "base.html.twig"));
 
-        // line 431
+        // line 436
         echo "
                     ";
         
-        $__internal_73bca14f266843393ce1b1e66d9a872069ec20a2cde349c7dc0ed2b5895bd0e2->leave($__internal_73bca14f266843393ce1b1e66d9a872069ec20a2cde349c7dc0ed2b5895bd0e2_prof);
+        $__internal_95257d27a06a1f52948b2f63e2fc79cf1c1955b40431223ec911b4a20191e62e->leave($__internal_95257d27a06a1f52948b2f63e2fc79cf1c1955b40431223ec911b4a20191e62e_prof);
 
     }
 
@@ -673,7 +608,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
 
     public function getDebugInfo()
     {
-        return array (  662 => 431,  656 => 430,  634 => 433,  632 => 430,  470 => 271,  443 => 247,  429 => 238,  424 => 236,  414 => 231,  410 => 230,  347 => 170,  332 => 158,  317 => 146,  302 => 134,  287 => 122,  252 => 89,  246 => 88,  237 => 84,  232 => 82,  227 => 80,  222 => 78,  217 => 76,  212 => 74,  207 => 72,  202 => 70,  196 => 67,  191 => 65,  187 => 64,  182 => 62,  177 => 60,  171 => 57,  160 => 49,  157 => 48,  151 => 47,  134 => 36,  129 => 34,  124 => 32,  119 => 30,  114 => 28,  109 => 26,  104 => 24,  98 => 21,  89 => 15,  83 => 11,  77 => 10,  65 => 8,  54 => 449,  52 => 88,  48 => 86,  46 => 47,  43 => 46,  41 => 10,  38 => 9,  36 => 8,  27 => 1,);
+        return array (  597 => 436,  591 => 435,  570 => 438,  568 => 435,  559 => 428,  552 => 347,  548 => 346,  507 => 307,  484 => 282,  478 => 279,  454 => 258,  448 => 255,  437 => 246,  432 => 244,  425 => 239,  421 => 238,  358 => 178,  343 => 166,  328 => 154,  313 => 142,  298 => 130,  262 => 96,  256 => 95,  247 => 91,  242 => 89,  237 => 87,  232 => 85,  227 => 83,  222 => 81,  217 => 79,  212 => 77,  206 => 74,  201 => 72,  197 => 71,  192 => 69,  187 => 67,  181 => 64,  170 => 56,  164 => 52,  158 => 51,  141 => 40,  136 => 38,  131 => 36,  126 => 34,  121 => 32,  116 => 30,  111 => 28,  105 => 25,  96 => 19,  87 => 13,  83 => 11,  77 => 10,  65 => 8,  54 => 453,  52 => 95,  48 => 93,  46 => 51,  43 => 50,  41 => 10,  38 => 9,  36 => 8,  27 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -696,6 +631,10 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
             {% block title %}LIMS | Dashboard{% endblock %}
         </title>
         {% block stylesheets %}
+
+           
+           <link class=\"main-stylesheet\" href=\"{{ asset('pages/css/btn-animated.css') }}\" rel=\"stylesheet\" type=\"text/css\"/>
+
 
             <!-- Tell the browser to be responsive to screen width -->
             <meta content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" name=\"viewport\">
@@ -731,8 +670,11 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
             <![endif]-->
 
         {% endblock %}
-        
+
         {% block javascripts %}
+
+
+
             <!-- jQuery 2.1.4 -->
             <script src=\" {{ asset('plugins/jQuery/jQuery-2.1.4.min.js') }}\"></script>
             <!-- jQuery UI 1.11.4 -->
@@ -781,7 +723,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                     <!-- Logo -->
                     <a href=\"#\" class=\"logo\">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
-                        
+
                         <!-- logo for regular state and mobile devices -->
                         <span class=\"logo-lg\"><b>LIMS</b></span>
                     </a>
@@ -793,6 +735,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                         </a>
                         <div class=\"navbar-custom-menu\">
                             <ul class=\"nav navbar-nav\">
+
                                 <!-- Messages: style can be found in dropdown.less-->
                                 <li class=\"dropdown messages-menu\">
                                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
@@ -911,38 +854,38 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                                     </ul>
                                 </li>
                                 <!-- Tasks: style can be found in dropdown.less -->
-                               
+
                                 <!-- User Account: style can be found in dropdown.less -->
                                 <li class=\"dropdown user user-menu\">
                                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
                                         <img src=\"{{ asset('dist/img/user2-160x160.jpg') }}\" class=\"user-image\" alt=\"User Image\">
-                                        <span class=\"hidden-xs\">{{ user.nom }} {{ user.prenom }}  </span>
+                                        <span class=\"hidden-xs\">{#{{ user.nom }} {{ user.prenom }}#} Lidrissi Hamid  </span>
                                     </a>
                                     <ul class=\"dropdown-menu\">
                                         <!-- User image -->
                                         <li class=\"user-header\">
                                             <img src=\"{{ asset('dist/img/user2-160x160.jpg') }}\" class=\"img-circle\" alt=\"User Image\">
                                             <p>
-                                                {{ user.nom }} {{ user.prenom }}  - Admin
+                                                {#{{ user.nom }} {{ user.prenom }}#}Lidrissi Hamid   - Admin
                                                 <small>Membere depuis Nov. 2012</small>
                                             </p>
                                         </li>
                                         <!-- Menu Body -->
-                                       
+
                                         <!-- Menu Footer-->
                                         <li class=\"user-footer\">
                                             <div class=\"pull-left\">
                                                 <a href=\"{{ path('fos_user_profile_edit')  }} \" class=\"btn btn-default btn-flat\">Profil</a>
                                             </div>
                                             <div class=\"pull-right\">
-                                                <a href=\"#\" class=\"btn btn-default btn-flat\">Deconexion</a>
+                                                <a href=\"{{ path('logout_user') }}\" class=\"btn btn-default btn-flat\">Deconexion</a>
                                             </div>
                                         </li>
                                     </ul>
                                 </li>
                                 <!-- Control Sidebar Toggle Button -->
                                 <li>
-                                    <a href=\"#\" data-toggle=\"control-sidebar\"><i class=\"fa fa-gears\"></i></a>
+                                    <a href=\"#\" data-toggle=\"control-sidebar\"><i class=\"\"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -959,7 +902,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                                 <img src=\"{{ asset('dist/img/user2-160x160.jpg') }}\" class=\"img-circle\" alt=\"User Image\">
                             </div>
                             <div class=\"pull-left info\">
-                                <p>Lidrissi Hamid</p>
+                                <p>{#{{ user.nom }}  {{ user.prenom }}#}Lidrissi Hamid </p>
                                 <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Online</a>
                             </div>
                         </div>
@@ -978,136 +921,133 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                             <li class=\"header\">Menu Principale</li>
                             <li class=\"active treeview\">
                                 <a href=\"#\">
-                                    <i class=\"fa fa-dashboard\"></i> <span>Dashboard</span> <i class=\"fa fa-angle-left pull-right\"></i>
+                                    <i class=\"fa fa-dashboard\"></i> <span>Gestion de Patient</span> <i class=\"fa fa-angle-left pull-right\"></i>
                                 </a>
-                                <ul class=\"treeview-menu\">
-                                    <li class=\"active\"><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v1</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v2</a></li>
-                                </ul>
+                                {# <ul class=\"treeview-menu\">
+                                     <li class=\"active\"><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v1</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Dashboard v2</a></li>
+                                 </ul>#}
                             </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
                                     <i class=\"fa fa-files-o\"></i>
-                                    <span>Layout Options</span>
+                                    <span>LIMS</span>
                                     <span class=\"label label-primary pull-right\">4</span>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Top Navigation</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Boxed</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Fixed</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Collapsed Sidebar</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href=\"#\">
-                                    <i class=\"fa fa-th\"></i> <span>Widgets</span> <small class=\"label pull-right bg-green\">new</small>
+                                    <i class=\"fa fa-th\"></i> <span>Statistiques</span> <small class=\"label pull-right bg-green\">new</small>
                                 </a>
                             </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
                                     <i class=\"fa fa-pie-chart\"></i>
-                                    <span>Charts</span>
+                                    <span>Traitment d'images</span>
                                     <i class=\"fa fa-angle-left pull-right\"></i>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> ChartJS</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Morris</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Flot</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Inline charts</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i></a></li>
                                 </ul>
                             </li>
                             <li class=\"treeview\">
                                 <a href=\"#\">
-                                    <i class=\"fa fa-laptop\"></i>
-                                    <span>UI Elements</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
+                                    <i class=\"fa fa-cogs\"></i>
+                                    <span>Configuration</span>
                                 </a>
                                 <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> General</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Icons</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Buttons</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Sliders</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Timeline</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Modals</a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i>Configuration Lobaratoire </a></li>
+                                    <li><a href=\"{{ path('fos_user_registration_register') }}\"><i class=\"fa fa-circle-o\"></i>Gestion Utilisateurs</a></li>
+                                    <li><a href=\"{{ path('analyse_new')  }}\"><i class=\"fa fa-circle-o\"></i>Gestion d'analyses  </a></li>
+                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i>Personalisation  </a></li>
                                 </ul>
                             </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-edit\"></i> <span>Forms</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> General Elements</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Advanced Elements</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Editors</a></li>
-                                </ul>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-table\"></i> <span>Tables</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Simple tables</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Data tables</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href=\"#\">
-                                    <i class=\"fa fa-calendar\"></i> <span>Calendar</span>
-                                    <small class=\"label pull-right bg-red\">3</small>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=\"#\">
-                                    <i class=\"fa fa-envelope\"></i> <span>Mailbox</span>
-                                    <small class=\"label pull-right bg-yellow\">12</small>
-                                </a>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-folder\"></i> <span>Examples</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Invoice</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Profile</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Login</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Register</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Lockscreen</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 404 Error</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 500 Error</a></li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Blank Page</a></li>
-                                </ul>
-                            </li>
-                            <li class=\"treeview\">
-                                <a href=\"#\">
-                                    <i class=\"fa fa-share\"></i> <span>Multilevel</span>
-                                    <i class=\"fa fa-angle-left pull-right\"></i>
-                                </a>
-                                <ul class=\"treeview-menu\">
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
-                                    <li>
-                                        <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One <i class=\"fa fa-angle-left pull-right\"></i></a>
-                                        <ul class=\"treeview-menu\">
-                                            <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two</a></li>
-                                            <li>
-                                                <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two <i class=\"fa fa-angle-left pull-right\"></i></a>
-                                                <ul class=\"treeview-menu\">
-                                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
-                                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
-                                </ul>
-                            </li>
-                            <li><a href=\"#\"><i class=\"fa fa-book\"></i> <span>Documentation</span></a></li>
-                            <li class=\"header\">LABELS</li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-red\"></i> <span>Important</span></a></li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-yellow\"></i> <span>Warning</span></a></li>
-                            <li><a href=\"#\"><i class=\"fa fa-circle-o text-aqua\"></i> <span>Information</span></a></li>
+                            {# <li class=\"treeview\">
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-edit\"></i> <span>Forms</span>
+                                     <i class=\"fa fa-angle-left pull-right\"></i>
+                                 </a>
+                                 <ul class=\"treeview-menu\">
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> General Elements</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Advanced Elements</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Editors</a></li>
+                                 </ul>
+                             </li>
+                             <li class=\"treeview\">
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-table\"></i> <span>Tables</span>
+                                     <i class=\"fa fa-angle-left pull-right\"></i>
+                                 </a>
+                                 <ul class=\"treeview-menu\">
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Simple tables</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Data tables</a></li>
+                                 </ul>
+                             </li>
+                             <li>
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-calendar\"></i> <span>Calendar</span>
+                                     <small class=\"label pull-right bg-red\">3</small>
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-envelope\"></i> <span>Mailbox</span>
+                                     <small class=\"label pull-right bg-yellow\">12</small>
+                                 </a>
+                             </li>
+                             <li class=\"treeview\">
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-folder\"></i> <span>Examples</span>
+                                     <i class=\"fa fa-angle-left pull-right\"></i>
+                                 </a>
+                                 <ul class=\"treeview-menu\">
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Invoice</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Profile</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Login</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Register</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Lockscreen</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 404 Error</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> 500 Error</a></li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Blank Page</a></li>
+                                 </ul>
+                             </li>
+                             <li class=\"treeview\">
+                                 <a href=\"#\">
+                                     <i class=\"fa fa-share\"></i> <span>Multilevel</span>
+                                     <i class=\"fa fa-angle-left pull-right\"></i>
+                                 </a>
+                                 <ul class=\"treeview-menu\">
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
+                                     <li>
+                                         <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One <i class=\"fa fa-angle-left pull-right\"></i></a>
+                                         <ul class=\"treeview-menu\">
+                                             <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two</a></li>
+                                             <li>
+                                                 <a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Two <i class=\"fa fa-angle-left pull-right\"></i></a>
+                                                 <ul class=\"treeview-menu\">
+                                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
+                                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level Three</a></li>
+                                                 </ul>
+                                             </li>
+                                         </ul>
+                                     </li>
+                                     <li><a href=\"#\"><i class=\"fa fa-circle-o\"></i> Level One</a></li>
+                                 </ul>
+                             </li>
+                             <li><a href=\"#\"><i class=\"fa fa-book\"></i> <span>Documentation</span></a></li>
+                             <li class=\"header\">LABELS</li>
+                             <li><a href=\"#\"><i class=\"fa fa-circle-o text-red\"></i> <span>Important</span></a></li>
+                             <li><a href=\"#\"><i class=\"fa fa-circle-o text-yellow\"></i> <span>Warning</span></a></li>
+                             <li><a href=\"#\"><i class=\"fa fa-circle-o text-aqua\"></i> <span>Information</span></a></li>#}
                         </ul>
                     </section>
                     <!-- /.sidebar -->
@@ -1121,10 +1061,9 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
                 </div><!-- /.content-wrapper -->
 
                 <footer class=\"main-footer\">
-                    <div class=\"pull-right hidden-xs\">
-                        <b>Version</b> 2.3.0
+                    <div class=\"pull-center\">
+                        <strong>Copyright &copy; 2016-2017 <a href=\"#\">Group ISI FSSM</a>.</strong> All rights reserved.
                     </div>
-                    <strong>Copyright &copy; 2014-2015 <a href=\"http://almsaeedstudio.com\">Almsaeed Studio</a>.</strong> All rights reserved.
                 </footer>
 
 
@@ -1135,7 +1074,7 @@ class __TwigTemplate_a61535d952e6f420bd0500ba095e8397a24e116f77670c2b161499e58f1
             </div><!-- ./wrapper -->
         {% endblock %}
 
-        
+
     </body>
 </html>
 ", "base.html.twig", "C:\\wamp\\www\\LIMS\\app\\Resources\\views\\base.html.twig");

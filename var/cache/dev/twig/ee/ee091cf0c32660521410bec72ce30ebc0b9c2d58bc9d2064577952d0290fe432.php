@@ -23,20 +23,20 @@ class __TwigTemplate_133175561398d9dbabb6e9598136df17c5774e35947684547c39609ab0e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c0b7c58a39ed9da2d350497f79e1944d8547e0591cf4fde3e072e3f36ad6a4f9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c0b7c58a39ed9da2d350497f79e1944d8547e0591cf4fde3e072e3f36ad6a4f9->enter($__internal_c0b7c58a39ed9da2d350497f79e1944d8547e0591cf4fde3e072e3f36ad6a4f9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Security/login.html.twig"));
+        $__internal_db2153db6cb449b25b8797ba7ad6021c1aee56913036c3ea4d6c1787e24f9f15 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_db2153db6cb449b25b8797ba7ad6021c1aee56913036c3ea4d6c1787e24f9f15->enter($__internal_db2153db6cb449b25b8797ba7ad6021c1aee56913036c3ea4d6c1787e24f9f15_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Security/login.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c0b7c58a39ed9da2d350497f79e1944d8547e0591cf4fde3e072e3f36ad6a4f9->leave($__internal_c0b7c58a39ed9da2d350497f79e1944d8547e0591cf4fde3e072e3f36ad6a4f9_prof);
+        $__internal_db2153db6cb449b25b8797ba7ad6021c1aee56913036c3ea4d6c1787e24f9f15->leave($__internal_db2153db6cb449b25b8797ba7ad6021c1aee56913036c3ea4d6c1787e24f9f15_prof);
 
     }
 
     // line 2
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_63a439f70ebca66a61e0db416755ff6e23d69e3570ae38e17092dbd1870a4f7e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_63a439f70ebca66a61e0db416755ff6e23d69e3570ae38e17092dbd1870a4f7e->enter($__internal_63a439f70ebca66a61e0db416755ff6e23d69e3570ae38e17092dbd1870a4f7e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "@FOSUser/Security/login.html.twig"));
+        $__internal_fbb7399cfea876a08d0f77109e97b8c950b7effc89813f6b5d4342818e39bfd1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_fbb7399cfea876a08d0f77109e97b8c950b7effc89813f6b5d4342818e39bfd1->enter($__internal_fbb7399cfea876a08d0f77109e97b8c950b7effc89813f6b5d4342818e39bfd1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "@FOSUser/Security/login.html.twig"));
 
         // line 3
         echo "
@@ -51,28 +51,28 @@ class __TwigTemplate_133175561398d9dbabb6e9598136df17c5774e35947684547c39609ab0e
     </style>
 ";
         
-        $__internal_63a439f70ebca66a61e0db416755ff6e23d69e3570ae38e17092dbd1870a4f7e->leave($__internal_63a439f70ebca66a61e0db416755ff6e23d69e3570ae38e17092dbd1870a4f7e_prof);
+        $__internal_fbb7399cfea876a08d0f77109e97b8c950b7effc89813f6b5d4342818e39bfd1->leave($__internal_fbb7399cfea876a08d0f77109e97b8c950b7effc89813f6b5d4342818e39bfd1_prof);
 
     }
 
     // line 12
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d1276494399b82b4c64df0e2094b054f40edfc48738d0de93a91474e343d9954 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_d1276494399b82b4c64df0e2094b054f40edfc48738d0de93a91474e343d9954->enter($__internal_d1276494399b82b4c64df0e2094b054f40edfc48738d0de93a91474e343d9954_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "@FOSUser/Security/login.html.twig"));
+        $__internal_67cc8f69ebab6cb0871113867ff69edb54de4d1b37f982e57cec5cf22342ee4d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_67cc8f69ebab6cb0871113867ff69edb54de4d1b37f982e57cec5cf22342ee4d->enter($__internal_67cc8f69ebab6cb0871113867ff69edb54de4d1b37f982e57cec5cf22342ee4d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "@FOSUser/Security/login.html.twig"));
 
         // line 14
         echo "    ";
         $this->displayBlock('fos_user_content', $context, $blocks);
         
-        $__internal_d1276494399b82b4c64df0e2094b054f40edfc48738d0de93a91474e343d9954->leave($__internal_d1276494399b82b4c64df0e2094b054f40edfc48738d0de93a91474e343d9954_prof);
+        $__internal_67cc8f69ebab6cb0871113867ff69edb54de4d1b37f982e57cec5cf22342ee4d->leave($__internal_67cc8f69ebab6cb0871113867ff69edb54de4d1b37f982e57cec5cf22342ee4d_prof);
 
     }
 
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_ea336a147c44f2ee620829783cc2b0ad0151ee696bf6c262ab5746e95e185efb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ea336a147c44f2ee620829783cc2b0ad0151ee696bf6c262ab5746e95e185efb->enter($__internal_ea336a147c44f2ee620829783cc2b0ad0151ee696bf6c262ab5746e95e185efb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "@FOSUser/Security/login.html.twig"));
+        $__internal_60caad91eb700a52765ae1a6ea75b0de5a9f1888b3bad4b4442374987d37aace = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_60caad91eb700a52765ae1a6ea75b0de5a9f1888b3bad4b4442374987d37aace->enter($__internal_60caad91eb700a52765ae1a6ea75b0de5a9f1888b3bad4b4442374987d37aace_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "@FOSUser/Security/login.html.twig"));
 
         // line 15
         echo "    <div class=\"login-wrapper \">
@@ -81,28 +81,21 @@ class __TwigTemplate_133175561398d9dbabb6e9598136df17c5774e35947684547c39609ab0e
             <!-- START Background Pic-->
             <img src=\"";
         // line 19
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assetsE/img/demo/lims.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assetsE/img/demo/lims1.jpg"), "html", null, true);
         echo "\" data-src=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assetsE/img/demo/lims.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assetsE/img/demo/lims1.jpg"), "html", null, true);
         echo "\" data-src-retina=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/img/demo/lims.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/img/demo/lims1.jpg"), "html", null, true);
         echo "\" alt=\"\" class=\"lazy\">
             <!-- END Background Pic-->
             <!-- START Background Caption-->
             <div class=\"bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20\">
                 <div class=\"col-lg-2\">
-                    <img src=\"";
-        // line 24
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assetsE/img/demo/koko.png"), "html", null, true);
-        echo "\" style=\"height: 200px; width: 200px;margin-left: 16px;\" data-src=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assetsE/img/demo/koko.png"), "html", null, true);
-        echo "\" data-src-retina=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assetsE/img/demo/koko.png"), "html", null, true);
-        echo "\" alt=\"\" class=\"\">
+                    <img src=\"\" style=\"height: 200px; width: 200px;margin-left: 16px;\" data-src=\"\" data-src-retina=\"\" alt=\"\" class=\"\">
                 </div>
                 </br>
                 <h2  style=\"font-family: Fertigo ;\" class=\"semi-bold text-white\" style=\"margin-left: 37px;\">
-                    ISILims vous offre une meilleure gestion pour votre cabinet dentaire</h2>
+                    YYYYY vous offre une meilleure gestion pour votre Laboratoire</h2>
             </div>
             <!-- END Background Caption-->
         </div>
@@ -110,14 +103,7 @@ class __TwigTemplate_133175561398d9dbabb6e9598136df17c5774e35947684547c39609ab0e
         <!-- START Login Right Container-->
         <div class=\"login-container bg-white\">
             <div class=\"p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40\">
-                <img src=\"";
-        // line 36
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/img/demo/koko.png"), "html", null, true);
-        echo "\" alt=\"logo\" data-src=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/img/demo/koko.png"), "html", null, true);
-        echo "\" data-src-retina=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/img/demo/koko.png"), "html", null, true);
-        echo "\" width=\"350\" height=\"109\">
+                <img src=\"\" alt=\"logo\" data-src=\"\" data-src-retina=\"\" width=\"350\" height=\"109\">
                 <p class=\"p-t-35\">Se connecter à Votre application</p>
 
 
@@ -188,7 +174,7 @@ class __TwigTemplate_133175561398d9dbabb6e9598136df17c5774e35947684547c39609ab0e
                     <button type=\"submit\"  id=\"_submit\" name=\"_submit\" value=\"";
         // line 75
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("security.login.submit"), "html", null, true);
-        echo "\" class=\"btn btn-danger btn-cons m-t-10 btn-animated from-left fa fa-unlock\" >
+        echo "\" class=\"btn btn-info btn-cons m-t-10 btn-animated from-left fa fa-unlock\" >
                         <span class=\"bold\">Se Connecter</span>
                     </button>
 
@@ -210,7 +196,7 @@ class __TwigTemplate_133175561398d9dbabb6e9598136df17c5774e35947684547c39609ab0e
 
 ";
         
-        $__internal_ea336a147c44f2ee620829783cc2b0ad0151ee696bf6c262ab5746e95e185efb->leave($__internal_ea336a147c44f2ee620829783cc2b0ad0151ee696bf6c262ab5746e95e185efb_prof);
+        $__internal_60caad91eb700a52765ae1a6ea75b0de5a9f1888b3bad4b4442374987d37aace->leave($__internal_60caad91eb700a52765ae1a6ea75b0de5a9f1888b3bad4b4442374987d37aace_prof);
 
     }
 
@@ -226,7 +212,7 @@ class __TwigTemplate_133175561398d9dbabb6e9598136df17c5774e35947684547c39609ab0e
 
     public function getDebugInfo()
     {
-        return array (  203 => 82,  199 => 81,  190 => 75,  182 => 70,  169 => 60,  160 => 54,  156 => 53,  151 => 50,  145 => 48,  143 => 47,  138 => 45,  134 => 43,  128 => 41,  126 => 40,  115 => 36,  96 => 24,  84 => 19,  78 => 15,  65 => 14,  59 => 12,  47 => 6,  42 => 3,  36 => 2,  11 => 1,);
+        return array (  189 => 82,  185 => 81,  176 => 75,  168 => 70,  155 => 60,  146 => 54,  142 => 53,  137 => 50,  131 => 48,  129 => 47,  124 => 45,  120 => 43,  114 => 41,  112 => 40,  84 => 19,  78 => 15,  65 => 14,  59 => 12,  47 => 6,  42 => 3,  36 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -257,16 +243,16 @@ class __TwigTemplate_133175561398d9dbabb6e9598136df17c5774e35947684547c39609ab0e
         <!-- START Login Background Pic Wrapper-->
         <div class=\"bg-pic\">
             <!-- START Background Pic-->
-            <img src=\"{{asset('assetsE/img/demo/lims.jpg')}}\" data-src=\"{{asset('assetsE/img/demo/lims.jpg')}}\" data-src-retina=\"{{asset('assets/img/demo/lims.jpg')}}\" alt=\"\" class=\"lazy\">
+            <img src=\"{{asset('assetsE/img/demo/lims1.jpg')}}\" data-src=\"{{asset('assetsE/img/demo/lims1.jpg')}}\" data-src-retina=\"{{asset('assets/img/demo/lims1.jpg')}}\" alt=\"\" class=\"lazy\">
             <!-- END Background Pic-->
             <!-- START Background Caption-->
             <div class=\"bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20\">
                 <div class=\"col-lg-2\">
-                    <img src=\"{{asset('assetsE/img/demo/koko.png')}}\" style=\"height: 200px; width: 200px;margin-left: 16px;\" data-src=\"{{asset('assetsE/img/demo/koko.png')}}\" data-src-retina=\"{{asset('assetsE/img/demo/koko.png')}}\" alt=\"\" class=\"\">
+                    <img src=\"\" style=\"height: 200px; width: 200px;margin-left: 16px;\" data-src=\"\" data-src-retina=\"\" alt=\"\" class=\"\">
                 </div>
                 </br>
                 <h2  style=\"font-family: Fertigo ;\" class=\"semi-bold text-white\" style=\"margin-left: 37px;\">
-                    ISILims vous offre une meilleure gestion pour votre cabinet dentaire</h2>
+                    YYYYY vous offre une meilleure gestion pour votre Laboratoire</h2>
             </div>
             <!-- END Background Caption-->
         </div>
@@ -274,7 +260,7 @@ class __TwigTemplate_133175561398d9dbabb6e9598136df17c5774e35947684547c39609ab0e
         <!-- START Login Right Container-->
         <div class=\"login-container bg-white\">
             <div class=\"p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40\">
-                <img src=\"{{asset('assets/img/demo/koko.png')}}\" alt=\"logo\" data-src=\"{{asset('assets/img/demo/koko.png')}}\" data-src-retina=\"{{asset('assets/img/demo/koko.png')}}\" width=\"350\" height=\"109\">
+                <img src=\"\" alt=\"logo\" data-src=\"\" data-src-retina=\"\" width=\"350\" height=\"109\">
                 <p class=\"p-t-35\">Se connecter à Votre application</p>
 
 
@@ -313,7 +299,7 @@ class __TwigTemplate_133175561398d9dbabb6e9598136df17c5774e35947684547c39609ab0e
                         </div>
                     </div>
 
-                    <button type=\"submit\"  id=\"_submit\" name=\"_submit\" value=\"{{ 'security.login.submit'|trans }}\" class=\"btn btn-danger btn-cons m-t-10 btn-animated from-left fa fa-unlock\" >
+                    <button type=\"submit\"  id=\"_submit\" name=\"_submit\" value=\"{{ 'security.login.submit'|trans }}\" class=\"btn btn-info btn-cons m-t-10 btn-animated from-left fa fa-unlock\" >
                         <span class=\"bold\">Se Connecter</span>
                     </button>
 

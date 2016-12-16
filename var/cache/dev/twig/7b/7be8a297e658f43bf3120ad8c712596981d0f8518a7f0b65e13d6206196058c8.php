@@ -8,7 +8,7 @@ class __TwigTemplate_aed60c3d7fca90f489c2a3edc17a73075e05327a5edbdd20af23ec8e117
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("FOSUserBundle::layout.html.twig", "@FOSUser/Profile/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("FOSUserBundle::layout1.html.twig", "@FOSUser/Profile/edit.html.twig", 1);
         $this->blocks = array(
             'fos_user_content' => array($this, 'block_fos_user_content'),
         );
@@ -16,30 +16,34 @@ class __TwigTemplate_aed60c3d7fca90f489c2a3edc17a73075e05327a5edbdd20af23ec8e117
 
     protected function doGetParent(array $context)
     {
-        return "FOSUserBundle::layout.html.twig";
+        return "FOSUserBundle::layout1.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4697946fd410b78bc17286e823bf635fc5dd07f30527a9aaae0f21e8b50cb34c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4697946fd410b78bc17286e823bf635fc5dd07f30527a9aaae0f21e8b50cb34c->enter($__internal_4697946fd410b78bc17286e823bf635fc5dd07f30527a9aaae0f21e8b50cb34c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/edit.html.twig"));
+        $__internal_da549511df4ab3910702140d5f3be5e98557f9378ac4cc45aad8f1f095dca343 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_da549511df4ab3910702140d5f3be5e98557f9378ac4cc45aad8f1f095dca343->enter($__internal_da549511df4ab3910702140d5f3be5e98557f9378ac4cc45aad8f1f095dca343_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/Profile/edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_4697946fd410b78bc17286e823bf635fc5dd07f30527a9aaae0f21e8b50cb34c->leave($__internal_4697946fd410b78bc17286e823bf635fc5dd07f30527a9aaae0f21e8b50cb34c_prof);
+        $__internal_da549511df4ab3910702140d5f3be5e98557f9378ac4cc45aad8f1f095dca343->leave($__internal_da549511df4ab3910702140d5f3be5e98557f9378ac4cc45aad8f1f095dca343_prof);
 
     }
 
     // line 3
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_5d81768f4726a265d0f3a8ea7e92cc6b903d61780f7a829d4930a45e58d0dbeb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5d81768f4726a265d0f3a8ea7e92cc6b903d61780f7a829d4930a45e58d0dbeb->enter($__internal_5d81768f4726a265d0f3a8ea7e92cc6b903d61780f7a829d4930a45e58d0dbeb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "@FOSUser/Profile/edit.html.twig"));
+        $__internal_82a33aad3976b7ba0ac5e980f75d90ff72f3d94b837519e5c99560d9b6a22f2e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_82a33aad3976b7ba0ac5e980f75d90ff72f3d94b837519e5c99560d9b6a22f2e->enter($__internal_82a33aad3976b7ba0ac5e980f75d90ff72f3d94b837519e5c99560d9b6a22f2e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "@FOSUser/Profile/edit.html.twig"));
 
         // line 4
-        $this->loadTemplate("FOSUserBundle:Profile:edit_content.html.twig", "@FOSUser/Profile/edit.html.twig", 4)->display($context);
+        echo "    
+    
+";
+        // line 6
+        $this->loadTemplate("FOSUserBundle:Profile:edit_content.html.twig", "@FOSUser/Profile/edit.html.twig", 6)->display($context);
         
-        $__internal_5d81768f4726a265d0f3a8ea7e92cc6b903d61780f7a829d4930a45e58d0dbeb->leave($__internal_5d81768f4726a265d0f3a8ea7e92cc6b903d61780f7a829d4930a45e58d0dbeb_prof);
+        $__internal_82a33aad3976b7ba0ac5e980f75d90ff72f3d94b837519e5c99560d9b6a22f2e->leave($__internal_82a33aad3976b7ba0ac5e980f75d90ff72f3d94b837519e5c99560d9b6a22f2e_prof);
 
     }
 
@@ -55,7 +59,7 @@ class __TwigTemplate_aed60c3d7fca90f489c2a3edc17a73075e05327a5edbdd20af23ec8e117
 
     public function getDebugInfo()
     {
-        return array (  40 => 4,  34 => 3,  11 => 1,);
+        return array (  44 => 6,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -68,9 +72,11 @@ class __TwigTemplate_aed60c3d7fca90f489c2a3edc17a73075e05327a5edbdd20af23ec8e117
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends \"FOSUserBundle::layout.html.twig\" %}
+        return new Twig_Source("{% extends \"FOSUserBundle::layout1.html.twig\" %}
 
 {% block fos_user_content %}
+    
+    
 {% include \"FOSUserBundle:Profile:edit_content.html.twig\" %}
 {% endblock fos_user_content %}
 ", "@FOSUser/Profile/edit.html.twig", "C:\\wamp\\www\\LIMS\\app\\Resources\\FOSUserBundle\\views\\Profile\\edit.html.twig");
