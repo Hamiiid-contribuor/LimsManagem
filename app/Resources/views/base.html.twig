@@ -9,10 +9,13 @@
         </title>
         {% block stylesheets %}
 
-            
-            <link href="{{ asset('assets/plugins/boostrapv3/css/bootstrap-theme.min.css') }}" rel="stylesheet" type="text/css"/>
 
-            <!-- Tell the browser to be responsive to screen width -->
+            <!-- DataTables -->
+            <link rel="stylesheet" href="{{ asset('plugins/datatables/dataTables.bootstrap.css') }}">
+
+            <!-- BEGIN CORE CSS FRAMEWORK -->
+            <link href="{{ asset('assets/plugins/boostrapv3/css/bootstrap-theme.min.css') }}" rel="stylesheet" type="text/css"/>
+            <!-- Tell the browser to be responsive to screen width -->   
             <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
             <!-- Bootstrap 3.3.5 -->
             <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
@@ -49,10 +52,8 @@
 
         {% block javascripts %}
 
-
-         
             <!-- jQuery 2.1.4 -->
-            <script src=" {{ asset('plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
+            <script src="{{ asset('plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
             <!-- jQuery UI 1.11.4 -->
             <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
             <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -88,6 +89,15 @@
             <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
             <!-- AdminLTE for demo purposes -->
             <script src="{{ asset('dist/js/demo.js') }}"></script>
+            <!-- DataTables -->
+            <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+            <script src="{{ asset('plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
+
+            <script>
+                $(function () {
+                    $('#koko').DataTable();
+                });
+            </script>
         {% endblock %}
     </head>
     <body>
