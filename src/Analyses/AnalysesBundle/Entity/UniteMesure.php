@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="unite_mesure")
  * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\UniteMesureRepository")
  */
-class UniteMesure
-{
+class UniteMesure {
+
     /**
      * @var int
      *
@@ -28,14 +28,12 @@ class UniteMesure
      */
     private $libelle;
 
-
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -46,8 +44,7 @@ class UniteMesure
      *
      * @return UniteMesure
      */
-    public function setLibelle($libelle)
-    {
+    public function setLibelle($libelle) {
         $this->libelle = $libelle;
 
         return $this;
@@ -58,8 +55,12 @@ class UniteMesure
      *
      * @return string
      */
-    public function getLibelle()
-    {
+    public function getLibelle() {
         return $this->libelle;
     }
+
+    public function __toString() {
+        return $this->getLibelle();
+    }
+
 }

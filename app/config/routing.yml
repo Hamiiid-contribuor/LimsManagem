@@ -1,3 +1,7 @@
+analyses_test:
+    resource: "@AnalysesBundle/Controller/TestController.php"
+    type:     annotation
+
 analyses_categorie:
     resource: "@AnalysesBundle/Controller/CategorieController.php"
     type:     annotation

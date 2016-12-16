@@ -59,7 +59,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
 
-                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Rechercher Des Categories d'Analyses</div>
+                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Rechercher Des Tests</div>
                 <div class="panel-body ">
                     <form method="post"  action=""  >              
                         <div class="col-md-10 row col-md-offset-1">
@@ -70,6 +70,16 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Analyse</label>
+                                <select class="form-control input">
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                    <option>Option 4</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Categorie</label>
                                 <select class="form-control input">
                                     <option>Option 1</option>
                                     <option>Option 2</option>
@@ -98,7 +108,7 @@
         <div class="col-md-4 col-md-offset-1">
             <div class="panel panel-default">
 
-                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouvelle Categorie d'Analyse</div>
+                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouveau Test </div>
                 <div class="panel-body ">
                     {{ form_start(form) }}           
 
@@ -110,11 +120,27 @@
                     </div>
 
                     <div class="form-group ">
-                        <label>Analyse  </label>
-                        <label><span style="color: #f68484!important">{{form_errors(form.analyse)}}</span></label>
+                        <label>Categorie  </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.)}}</span></label>
                             {{ form_widget(form.analyse , { 'attr': {'class': 'form-control input select2' }  }) }}
                     </div>
 
+
+                    <div class="form-group ">
+                        <label>Valeur Minimale </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.valeurMin)}}</span></label>
+                            {{ form_widget(form.valeurMin , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
+                    <div class="form-group ">
+                        <label>Valeur Maximale  </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.valeurMax)}}</span></label>
+                            {{ form_widget(form.valeurMax , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
+                    <div class="form-group ">
+                        <label>Unite de Mesure  </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.uniteMesure)}}</span></label>
+                            {{ form_widget(form.uniteMesure , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
 
                     <div class="form-group ">
                         <label>Description </label>
@@ -142,24 +168,28 @@
         <div class="col-md-6 ">
             <div class="panel panel-default">
 
-                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">listes des Categories d'Analyses </div>
+                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">listes des Tests</div>
                 <div class="panel-body ">
 
                     <table id="koko" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Libelle</th>
+                                <th>Categorie</th>
+                                <th>Norme</th>
+                                <th>Unite_Mesure</th>
                                 <th>Description</th>
-                                <th>Analyse</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for categorie in categories %}
+                            {% for test in tests %}
                                 <tr>
-                                    <td>{{ categorie.libelle }}</td>
-                                    <td>{{ categorie.commentaire }}</td>
-                                    <td>{{ categorie.analyse }}</td>
+                                    <td>{{ test.libelle }}</td>
+                                    <td>{{ test.categorie }}</td>
+                                    <td>[ {{ test.valeurMin }} , {{ test.valeurMax }} ] </td>
+                                    <td>{{ test.commentaire }}</td>
+                                    <td>{{ test.analyse }}</td>
                                     <td> 
                                         <a href=""  style="color : red ; " class="fa fa-trash">     </a>
                                         <a href="" style="color : green ; " class="fa  fa-pencil-square">     </a>

@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="test")
  * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\TestRepository")
  */
-class Test
-{
+class Test {
+
     /**
      * @var int
      *
@@ -49,7 +49,6 @@ class Test
      */
     private $commentaire;
 
-    
     /**
      * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="tests")
      * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
@@ -57,12 +56,17 @@ class Test
     private $categorie;
 
     /**
+     * @ORM\ManyToOne(targetEntity="UniteMesure")
+     * @ORM\JoinColumn(name="uniteMesure_id", referencedColumnName="id")
+     */
+    private $uniteMesure;
+
+    /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -73,8 +77,7 @@ class Test
      *
      * @return Test
      */
-    public function setLibelle($libelle)
-    {
+    public function setLibelle($libelle) {
         $this->libelle = $libelle;
 
         return $this;
@@ -85,8 +88,7 @@ class Test
      *
      * @return string
      */
-    public function getLibelle()
-    {
+    public function getLibelle() {
         return $this->libelle;
     }
 
@@ -97,8 +99,7 @@ class Test
      *
      * @return Test
      */
-    public function setValeurMin($valeurMin)
-    {
+    public function setValeurMin($valeurMin) {
         $this->valeurMin = $valeurMin;
 
         return $this;
@@ -109,8 +110,7 @@ class Test
      *
      * @return float
      */
-    public function getValeurMin()
-    {
+    public function getValeurMin() {
         return $this->valeurMin;
     }
 
@@ -121,8 +121,7 @@ class Test
      *
      * @return Test
      */
-    public function setValeurMax($valeurMax)
-    {
+    public function setValeurMax($valeurMax) {
         $this->valeurMax = $valeurMax;
 
         return $this;
@@ -133,8 +132,7 @@ class Test
      *
      * @return float
      */
-    public function getValeurMax()
-    {
+    public function getValeurMax() {
         return $this->valeurMax;
     }
 
@@ -145,8 +143,7 @@ class Test
      *
      * @return Test
      */
-    public function setCommentaire($commentaire)
-    {
+    public function setCommentaire($commentaire) {
         $this->commentaire = $commentaire;
 
         return $this;
@@ -157,8 +154,7 @@ class Test
      *
      * @return string
      */
-    public function getCommentaire()
-    {
+    public function getCommentaire() {
         return $this->commentaire;
     }
 
@@ -169,8 +165,7 @@ class Test
      *
      * @return Test
      */
-    public function setCategorie(\Analyses\AnalysesBundle\Entity\Categorie $categorie = null)
-    {
+    public function setCategorie(\Analyses\AnalysesBundle\Entity\Categorie $categorie = null) {
         $this->categorie = $categorie;
 
         return $this;
@@ -181,8 +176,32 @@ class Test
      *
      * @return \Analyses\AnalysesBundle\Entity\Categorie
      */
-    public function getCategorie()
-    {
+    public function getCategorie() {
         return $this->categorie;
+    }
+
+
+    /**
+     * Set uniteMesure
+     *
+     * @param \Analyses\AnalysesBundle\Entity\UniteMesure $uniteMesure
+     *
+     * @return Test
+     */
+    public function setUniteMesure(\Analyses\AnalysesBundle\Entity\UniteMesure $uniteMesure = null)
+    {
+        $this->uniteMesure = $uniteMesure;
+
+        return $this;
+    }
+
+    /**
+     * Get uniteMesure
+     *
+     * @return \Analyses\AnalysesBundle\Entity\UniteMesure
+     */
+    public function getUniteMesure()
+    {
+        return $this->uniteMesure;
     }
 }
