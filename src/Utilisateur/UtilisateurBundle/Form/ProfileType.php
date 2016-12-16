@@ -14,7 +14,6 @@ class ProfileType extends AbstractType
         $builder->add('prenom');
         $builder->add('adresse');
         $builder->add('telephone');
-        $builder->add('commentaire');
         
     }
 

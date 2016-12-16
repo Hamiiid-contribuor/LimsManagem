@@ -9,6 +9,7 @@
         </title>
         {% block stylesheets %}
 
+
             <!-- Tell the browser to be responsive to screen width -->
             <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
             <!-- Bootstrap 3.3.5 -->
@@ -45,6 +46,9 @@
         {% endblock %}
 
         {% block javascripts %}
+
+
+
             <!-- jQuery 2.1.4 -->
             <script src=" {{ asset('plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
             <!-- jQuery UI 1.11.4 -->
@@ -255,7 +259,7 @@
                                 </li>
                                 <!-- Control Sidebar Toggle Button -->
                                 <li>
-                                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                                    <a href="#" data-toggle="control-sidebar"><i class=""></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -331,17 +335,14 @@
                             </li>
                             <li class="treeview">
                                 <a href="#">
-                                    <i class="fa fa-laptop"></i>
+                                    <i class="fa fa-cogs"></i>
                                     <span>Configuration</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> </a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> </a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> </a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> </a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> </a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> </a></li>
+                                    <li><a href="#"><i class="fa fa-circle-o"></i>Configuration Lobaratoire </a></li>
+                                    <li><a href="{{ path('fos_user_registration_register') }}"><i class="fa fa-circle-o"></i>Gestion Utilisateurs</a></li>
+                                    <li><a href="{{ path('analyse_new')  }}"><i class="fa fa-circle-o"></i>Gestion d'analyses  </a></li>
+                                    <li><a href="#"><i class="fa fa-circle-o"></i>Personalisation  </a></li>
                                 </ul>
                             </li>
                             {# <li class="treeview">
@@ -434,10 +435,9 @@
                 </div><!-- /.content-wrapper -->
 
                 <footer class="main-footer">
-                    <div class="pull-right hidden-xs">
-                        <b>Version</b> 2.3.0
+                    <div class="pull-center">
+                        <strong>Copyright &copy; 2016-2017 <a href="#">Group ISI FSSM</a>.</strong> All rights reserved.
                     </div>
-                    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
                 </footer>
 
 

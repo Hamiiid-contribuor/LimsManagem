@@ -1,3 +1,8 @@
+analyses_analyse:
+    resource: "@AnalysesBundle/Controller/AnalyseController.php"
+    type:     annotation
+
+
 utilisateur:
     resource: "@UtilisateurBundle/Resources/config/routing.yml"
     prefix:   /

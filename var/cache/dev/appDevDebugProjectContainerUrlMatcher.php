@@ -114,12 +114,74 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'Utilisateur\\UtilisateurBundle\\Controller\\DefaultController::testMailerAction',  '_route' => 'testMailer',);
         }
 
-        if (0 === strpos($pathinfo, '/log')) {
-            // logout_user
-            if ($pathinfo === '/logoutUser') {
-                return array (  '_controller' => 'Utilisateur\\UtilisateurBundle\\Controller\\DefaultController::logoutAction',  '_route' => 'logout_user',);
-            }
+        // logout_user
+        if ($pathinfo === '/logoutUser') {
+            return array (  '_controller' => 'Utilisateur\\UtilisateurBundle\\Controller\\DefaultController::logoutAction',  '_route' => 'logout_user',);
+        }
 
+        if (0 === strpos($pathinfo, '/analyses/analyse')) {
+            // analyse_index
+            if (rtrim($pathinfo, '/') === '/analyses/analyse') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_analyse_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'analyse_index');
+                }
+
+                return array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::indexAction',  '_route' => 'analyse_index',);
+            }
+            not_analyse_index:
+
+            // analyse_new
+            if ($pathinfo === '/analyses/analyse/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_analyse_new;
+                }
+
+                return array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::newAction',  '_route' => 'analyse_new',);
+            }
+            not_analyse_new:
+
+            // analyse_show
+            if (preg_match('#^/analyses/analyse/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_analyse_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'analyse_show')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::showAction',));
+            }
+            not_analyse_show:
+
+            // analyse_edit
+            if (preg_match('#^/analyses/analyse/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_analyse_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'analyse_edit')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::editAction',));
+            }
+            not_analyse_edit:
+
+            // analyse_delete
+            if (preg_match('#^/analyses/analyse/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_analyse_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'analyse_delete')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::deleteAction',));
+            }
+            not_analyse_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login
                 if ($pathinfo === '/login') {

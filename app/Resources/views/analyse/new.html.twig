@@ -1,0 +1,78 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+
+
+
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color: rgba(86,61,124,.15);">Rechercher Des Analyses</div>
+                <div class="panel-body ">
+                    <form method="post"  action=""  >              
+                        <div class="col-md-10 row">
+
+                            <div class="form-group col-md-4">
+                                <label>Code d'Analyse </label>
+                                <input class="form-control" placeholder="Code ">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label>Libelle  </label>
+                                <input class="form-control" placeholder="Libelle">
+                            </div>
+                            <div class=" form-group col-md-3">
+                                 <label>  </label>
+                                <button type="submit" class=" form-control btn btn-primary">Rechercher</button>
+                            </div>
+
+                        </div>  
+
+                    </form>
+                </div>
+            </div><!-- /.pannel-->
+        </div><!-- /.col-->
+
+    </div><!-- /.row -->
+
+    <h1>Analyse creation</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <h1>Analyses list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for analyse in analyses %}
+                <tr>
+                    <td><a href="{{ path('analyse_show', { 'id': analyse.id }) }}">{{ analyse.id }}</a></td>
+                    <td>{{ analyse.code }}</td>
+                    <td>{{ analyse.nom }}</td>
+                    <td>{{ analyse.prix }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('analyse_show', { 'id': analyse.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('analyse_edit', { 'id': analyse.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock content %}

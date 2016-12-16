@@ -25,16 +25,23 @@ class Analyse {
     /**
      * @var string
      *
+     * @ORM\Column(name="code", type="string", length=255)
+     */
+    private $code;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="nom", type="string", length=255)
      */
     private $nom;
 
     /**
-     * @var string
+     * @var float
      *
-     * @ORM\Column(name="commentaire", type="string", length=255)
+     * @ORM\Column(name="prix", type="float")
      */
-    private $commentaire;
+    private $prix;
 
     /**
      * @ORM\OneToMany(targetEntity="Categorie", mappedBy="analyse")
@@ -70,28 +77,6 @@ class Analyse {
      */
     public function getNom() {
         return $this->nom;
-    }
-
-    /**
-     * Set commentaire
-     *
-     * @param string $commentaire
-     *
-     * @return Analyse
-     */
-    public function setCommentaire($commentaire) {
-        $this->commentaire = $commentaire;
-
-        return $this;
-    }
-
-    /**
-     * Get commentaire
-     *
-     * @return string
-     */
-    public function getCommentaire() {
-        return $this->commentaire;
     }
 
     public function __construct() {
@@ -131,6 +116,50 @@ class Analyse {
 
     public function __toString() {
         return $this->nom;
+    }
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     *
+     * @return Analyse
+     */
+    public function setCode($code) {
+        $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string
+     */
+    public function getCode() {
+        return $this->code;
+    }
+
+    /**
+     * Set prix
+     *
+     * @param \double $prix
+     *
+     * @return Analyse
+     */
+    public function setPrix($prix) {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get prix
+     *
+     * @return \double
+     */
+    public function getPrix() {
+        return $this->prix;
     }
 
 }
