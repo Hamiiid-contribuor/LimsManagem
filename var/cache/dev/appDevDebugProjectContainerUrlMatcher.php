@@ -119,65 +119,130 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'Utilisateur\\UtilisateurBundle\\Controller\\DefaultController::logoutAction',  '_route' => 'logout_user',);
         }
 
-        if (0 === strpos($pathinfo, '/analyses/analyse')) {
-            // analyse_index
-            if (rtrim($pathinfo, '/') === '/analyses/analyse') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_analyse_index;
-                }
+        if (0 === strpos($pathinfo, '/analyses')) {
+            if (0 === strpos($pathinfo, '/analyses/analyse')) {
+                // analyse_index
+                if (rtrim($pathinfo, '/') === '/analyses/analyse') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_analyse_index;
+                    }
 
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'analyse_index');
-                }
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'analyse_index');
+                    }
 
-                return array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::indexAction',  '_route' => 'analyse_index',);
+                    return array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::indexAction',  '_route' => 'analyse_index',);
+                }
+                not_analyse_index:
+
+                // analyse_new
+                if ($pathinfo === '/analyses/analyse/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_analyse_new;
+                    }
+
+                    return array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::newAction',  '_route' => 'analyse_new',);
+                }
+                not_analyse_new:
+
+                // analyse_show
+                if (preg_match('#^/analyses/analyse/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_analyse_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'analyse_show')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::showAction',));
+                }
+                not_analyse_show:
+
+                // analyse_edit
+                if (preg_match('#^/analyses/analyse/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_analyse_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'analyse_edit')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::editAction',));
+                }
+                not_analyse_edit:
+
+                // analyse_delete
+                if (preg_match('#^/analyses/analyse/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_analyse_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'analyse_delete')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::deleteAction',));
+                }
+                not_analyse_delete:
+
             }
-            not_analyse_index:
 
-            // analyse_new
-            if ($pathinfo === '/analyses/analyse/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_analyse_new;
+            if (0 === strpos($pathinfo, '/analyses/categorie')) {
+                // categorie_index
+                if (rtrim($pathinfo, '/') === '/analyses/categorie') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_categorie_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'categorie_index');
+                    }
+
+                    return array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\CategorieController::indexAction',  '_route' => 'categorie_index',);
                 }
+                not_categorie_index:
 
-                return array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::newAction',  '_route' => 'analyse_new',);
-            }
-            not_analyse_new:
+                // categorie_new
+                if ($pathinfo === '/analyses/categorie/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_categorie_new;
+                    }
 
-            // analyse_show
-            if (preg_match('#^/analyses/analyse/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_analyse_show;
+                    return array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\CategorieController::newAction',  '_route' => 'categorie_new',);
                 }
+                not_categorie_new:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'analyse_show')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::showAction',));
-            }
-            not_analyse_show:
+                // categorie_show
+                if (preg_match('#^/analyses/categorie/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_categorie_show;
+                    }
 
-            // analyse_edit
-            if (preg_match('#^/analyses/analyse/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_analyse_edit;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'categorie_show')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\CategorieController::showAction',));
                 }
+                not_categorie_show:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'analyse_edit')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::editAction',));
-            }
-            not_analyse_edit:
+                // categorie_edit
+                if (preg_match('#^/analyses/categorie/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_categorie_edit;
+                    }
 
-            // analyse_delete
-            if (preg_match('#^/analyses/analyse/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_analyse_delete;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'categorie_edit')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\CategorieController::editAction',));
                 }
+                not_categorie_edit:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'analyse_delete')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\AnalyseController::deleteAction',));
+                // categorie_delete
+                if (preg_match('#^/analyses/categorie/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_categorie_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'categorie_delete')), array (  '_controller' => 'Analyses\\AnalysesBundle\\Controller\\CategorieController::deleteAction',));
+                }
+                not_categorie_delete:
+
             }
-            not_analyse_delete:
 
         }
 

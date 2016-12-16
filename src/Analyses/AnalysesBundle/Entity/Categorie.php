@@ -29,9 +29,9 @@ class Categorie {
     private $libelle;
 
     /**
-     * @var string
+     * @var text
      *
-     * @ORM\Column(name="commentaire", type="string", length=255)
+     * @ORM\Column(name="commentaire", type="text")
      */
     private $commentaire;
 
@@ -80,7 +80,7 @@ class Categorie {
     /**
      * Set commentaire
      *
-     * @param string $commentaire
+     * @param text $commentaire
      *
      * @return Categorie
      */
@@ -93,7 +93,7 @@ class Categorie {
     /**
      * Get commentaire
      *
-     * @return string
+     * @return text
      */
     public function getCommentaire() {
         return $this->commentaire;
