@@ -28,31 +28,24 @@
 
 
     </style>
-
-
+    
+    
     <div>
         <br/>
     </div>
-    <div class="col-md-10 col-md-offset-1">
-        <nav class="navbar navbar-light bg-faded">
-
+    <!-- navbar  de parametrage  -->
+    <nav class=" col-md-10 col-md-offset-1 navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a style="font-family: 'Times New Roman' ; font-size: 25px ; font-weight: bold;" class="navbar-brand " href="#">Parametrage </a>
+            </div>
             <ul class="nav navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('analyse_new') }}">Analyses  <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('categorie_new') }}">Categories</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('test_new') }}">Tests </a>
-                </li>
-
+                <li><a href="{{ path('analyse_new') }}">Analyses</a></li>
+                <li class="active"><a href="{{ path('categorie_new') }}">Categories</a></li>
+                <li ><a  href="{{ path('test_new') }}">Tests</a></li>
             </ul>
-
-        </nav>
-
-    </div>
-
+        </div>
+    </nav>
 
     <!-- pannel  de recherche -->
     <div class="row">
