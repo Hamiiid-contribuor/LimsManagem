@@ -28,8 +28,8 @@
 
 
     </style>
-    
-    
+
+
     <div>
         <br/>
     </div>
@@ -63,7 +63,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Analyse</label>
-                                <select class="form-control input">
+                                <select class="form-control  select2">
                                     <option>Option 1</option>
                                     <option>Option 2</option>
                                     <option>Option 3</option>
@@ -88,7 +88,7 @@
 
     <div class="row">
         <!-- pannel d'ajout  d'analyses --> 
-        <div class="col-md-4 col-md-offset-1">
+        <div id="panelAjout" class="col-md-4 col-md-offset-1">
             <div class="panel panel-default">
 
                 <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouvelle Categorie d'Analyse</div>
@@ -105,7 +105,7 @@
                     <div class="form-group ">
                         <label>Analyse  </label>
                         <label><span style="color: #f68484!important">{{form_errors(form.analyse)}}</span></label>
-                            {{ form_widget(form.analyse , { 'attr': {'class': 'form-control input select2' }  }) }}
+                            {{ form_widget(form.analyse , { 'attr': {'class': 'form-control  select2' }  }) }}
                     </div>
 
 
@@ -123,7 +123,7 @@
                         </div>
                         <div class="col-md-6" >
                             <label>  </label>
-                            <button  class=" form-control btn btn-danger ">Annuler</button>
+                            <button  id="btnAnnuler" class=" form-control btn btn-danger ">Annuler</button>
                         </div>
                     </div>
                     {{ form_end(form) }}
@@ -132,13 +132,16 @@
         </div><!-- /.col-->
 
         <!-- pannel d'affchage d'analyses --> 
-        <div class="col-md-6 ">
-            <div class="panel panel-default">
+        <div id="pannelList" class="col-md-6 ">
+            <div  style="height: 410px ; "  class="panel panel-default">
 
-                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">listes des Categories d'Analyses </div>
+                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;"> 
+                    <span>Listes des Categories d'Analyses</span>
+                    <i title="Nouvelle Categorie" class="pull-right fa  fa-plus-square fa-lg"></i>
+                </div>
                 <div class="panel-body ">
 
-                    <table id="koko" class="table table-bordered table-hover">
+                    <table id="myTable" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Libelle</th>
@@ -169,3 +172,44 @@
     </div><!-- /.row -->
 
 {% endblock content %}
+
+
+
+{% block javascripts  %} 
+
+    <script>
+        $(document).ready(function () {
+
+            $('.fa-plus-square').tooltipster({
+                contentAsHTML: true,
+                animation: 'fade',
+                content: $('<p>Nouvelle Categorie</p>'),
+                delay: 200,
+                interactive: true
+
+            });
+
+            $('#panelAjout').hide();
+            $("#pannelList").removeClass("col-md-6").addClass("col-md-10");
+            $("#pannelList").addClass("col-md-offset-1");
+
+            $('#myTable').dataTable();
+            $('.select2').select2();
+
+            $('#btnAnnuler').click(function () {
+
+                $('#panelAjout').hide();
+                $("#pannelList").removeClass("col-md-6").addClass("col-md-10");
+                $("#pannelList").addClass("col-md-offset-1");
+            });
+
+            $('.fa-plus-square').click(function () {
+
+                $('#panelAjout').show();
+                $("#pannelList").removeClass("col-md-10").addClass("col-md-6");
+                $("#pannelList").removeClass("col-md-offset-1");
+            });
+        });
+
+    </script>
+{% endblock %}
