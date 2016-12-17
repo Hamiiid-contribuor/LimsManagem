@@ -119,13 +119,13 @@
                     <div class="form-group ">
                         <label>Categorie  </label>
                         <label><span style="color: #f68484!important">{{form_errors(form.categorie)}}</span></label>
-                            {{ form_widget(form.categorie , { 'attr': {'class': 'form-control input select2' }  }) }}
+                            {{ form_widget(form.categorie , { 'attr': {'class': 'form-control select2' }  }) }}
                     </div>
                     <div class="row">
                         <div class="form-group col-md-10">
                             <label>Unite de Mesure  </label>
                             <label><span style="color: #f68484!important">{{form_errors(form.uniteMesure)}}</span></label>
-                                {{ form_widget(form.uniteMesure , { 'attr': {'class': 'form-control input' }  }) }}
+                                {{ form_widget(form.uniteMesure , { 'attr': {'class': 'form-control select2' }  }) }}
                         </div>
 
                         <div class="col-md-2">
@@ -175,7 +175,7 @@
                 <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">listes des Tests</div>
                 <div class="panel-body ">
 
-                    <table id="koko" class="table table-bordered table-hover">
+                    <table  class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Libelle</th>
