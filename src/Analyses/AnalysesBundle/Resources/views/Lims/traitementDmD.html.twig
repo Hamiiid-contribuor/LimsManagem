@@ -34,21 +34,18 @@
 
     </style>
 
- 
+
     <div>
         <br/>
         <br/>
     </div>
-   
 
 
-   
+
+
 
 
     <div class="row">
-       
-
-    
         <div class="col-md-11 ">
             <div class="panel panel-default">
 
@@ -58,10 +55,10 @@
                 </div>
                 <div class="panel-body ">
                     <a id="add" class="btn btn-primary" href="{{path('traitementDmD',{'id':demande.id})}}">
-                                        <i class="fa fa-plus-square"></i> &nbsp;&nbsp;Ajouter 
-                                      </a>
-                                        
-                              <br><br><br>          
+                        <i class="fa fa-plus-square"></i> &nbsp;&nbsp;Ajouter 
+                    </a>
+
+                    <br><br><br>          
                     <table id="koko" class="table table-bordered table-hover">
                         <thead>
                             <tr>
@@ -76,18 +73,18 @@
                         <tbody>
                             {% for i in demande.Echantillons %}
                                 <tr>
-                                   <td>{{loop.index}}</td>
+                                    <td>{{loop.index}}</td>
                                     <td>{{ i.reference }}</td>
                                     <td>{{ i.date|date('Y-m-d') }}</td>
                                     <td>{{ i.typeEchantillon.libelle }}</td>
-                                    
+
                                     <td>{{ i.commentaire }}</td>
                                     <td>  
                                         <a href="" title="Supprimer" style="color : gray ; " class="fa fa-trash">     </a>
                                         <a href="" title="Modifier" style="color : gray ; " class="fa  fa-pencil-square">     </a>
                                         <a  title="Analyses demandés" data-toggle="modal"
-                                                       onclick="load({{ i.id }})"
-                                                       href="#{{ i.id }}" style="color:gray" class="fa  fa-forward">     </a>
+                                            onclick="load({{ i.id }})"
+                                            href="#{{ i.id }}" style="color:gray" class="fa  fa-forward">     </a>
                                         <a href="" title="les items de cette échantillon" style="color:gray" class="fa  fa-eyedropper">     </a>
                                     </td>
                                 </tr>
@@ -95,16 +92,16 @@
                         </tbody>
 
                     </table>
-                        
-                        
-                        
+
+
+
                 </div>
             </div><!-- /.pannel-->
         </div><!-- /.col-->
 
     </div>
-                        
-                            {% for  i in demande.Echantillons %}
+
+    {% for  i in demande.Echantillons %}
         <div style="display: none;" class="modal inmodal" tabindex="-1" id="{{ i.id }}" role="dialog"
              aria-hidden="true">
             <div class="modal-dialog">
@@ -114,23 +111,23 @@
                         <h4> Réference d'échantillon: &nbsp; {{ i.reference }}</h4>
                         <hr>
                         <h3> Les Analyses demandés :</h3>
-                        
+
                         Analyse 1 
                         Analyse 2 
                         Analyse 3 
                         Analyse 4 
-                        
-                        
+
+
                     </div>
-                    
+
                 </div>
-                    
-             </div>
-         </div>
-                    
-                    {%endfor%}
-                        
-                        
-                        <!-- /.row -->
+
+            </div>
+        </div>
+
+    {%endfor%}
+
+
+    <!-- /.row -->
 
 {% endblock content %}

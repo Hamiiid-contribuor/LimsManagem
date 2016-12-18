@@ -52,36 +52,24 @@ class Echantillon {
      * @ORM\JoinColumn(name="typeEchantillon_id", referencedColumnName="id")
      */
     private $typeEchantillon;
-    
-      /**
+
+    /**
      *
      * @ORM\ManyToOne(targetEntity="DemandeAnalyse", inversedBy="Echantillon")
      * @ORM\JoinColumn(name="idDemandeAnalyse", referencedColumnName="id")
      */
     private $DemandeAnalyse;
-    
-    
-    
-   
-    
-    
-    
-    
-    
-    
-    
-    
-      /**
+
+    /**
      * Get DemandeAnalyse
      *
      * @return \AnalysesBundle\Entity\DemandeAnalyse
      */
     public function getDemandeAnalyse() {
         return $this->DemandeAnalyse;
-        
     }
-    
-       /**
+
+    /**
      * Set DemandeAnalyse
      *
      * @param \AnalysesBundle\Entity\DemandeAnalyse $DemandeAnalyse
@@ -93,11 +81,6 @@ class Echantillon {
 
         return $this;
     }
-    
-    
-    
-    
-    
 
     /**
      * Get id
@@ -179,7 +162,6 @@ class Echantillon {
      */
     public function __construct() {
         $this->echantillonItems = new \Doctrine\Common\Collections\ArrayCollection();
-       
     }
 
     /**
@@ -213,9 +195,6 @@ class Echantillon {
         return $this->echantillonItems;
     }
 
-
-  
-
     /**
      * Set typeEchantillon
      *
@@ -223,8 +202,7 @@ class Echantillon {
      *
      * @return Echantillon
      */
-    public function setTypeEchantillon(\Analyses\AnalysesBundle\Entity\TypeEchantillon $typeEchantillon = null)
-    {
+    public function setTypeEchantillon(\Analyses\AnalysesBundle\Entity\TypeEchantillon $typeEchantillon = null) {
         $this->typeEchantillon = $typeEchantillon;
 
         return $this;
@@ -235,8 +213,8 @@ class Echantillon {
      *
      * @return \Analyses\AnalysesBundle\Entity\TypeEchantillon
      */
-    public function getTypeEchantillon()
-    {
+    public function getTypeEchantillon() {
         return $this->typeEchantillon;
     }
+
 }
