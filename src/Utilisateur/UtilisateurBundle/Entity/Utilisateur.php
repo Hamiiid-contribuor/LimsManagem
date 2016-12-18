@@ -46,14 +46,14 @@ class Utilisateur extends BaseUser {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateCreation", type="date" , nullable=true)
+     * @ORM\Column(name="dateEmbauche", type="date" , nullable=true)
      */
     private $dateEmbauche;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="age", type="integer")
+     * @ORM\Column(name="age", type="integer" , nullable=true)
      */
     private $age;
 
@@ -73,9 +73,9 @@ class Utilisateur extends BaseUser {
     private $telephone;
 
     /**
-     * @var string
+     * @var text
      *
-     * @ORM\Column(name="commentaire", type="string", length=255 , nullable=true)
+     * @ORM\Column(name="commentaire", type="text", length=255 , nullable=true)
      */
     private $commentaire;
 
@@ -155,7 +155,7 @@ class Utilisateur extends BaseUser {
     }
 
     /**
-     * Set dateCreation
+     * Set dateEmbauche
      *
      * @param \DateTime $dateEmbauche
      *
@@ -168,7 +168,7 @@ class Utilisateur extends BaseUser {
     }
 
     /**
-     * Get dateCreation
+     * Get dateEmbauche
      *
      * @return \DateTime
      */
@@ -246,7 +246,7 @@ class Utilisateur extends BaseUser {
     /**
      * Set commentaire
      *
-     * @param string $commentaire
+     * @param text $commentaire
      *
      * @return Utilisateur
      */
@@ -259,7 +259,7 @@ class Utilisateur extends BaseUser {
     /**
      * Get commentaire
      *
-     * @return string
+     * @return text
      */
     
     
