@@ -1,6 +1,29 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+
+    <div>
+        <br/>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+
+                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Vos informations sont modifier avec <b>Succes</b> </div>
+                <div class="panel-body ">
+                    <p>PRENOM : {{ user.prenom }}</p>
+                    <p>NOM : {{ user.nom }}</p>
+                    <p>TELEPHONE : {{ user.telephone }}</p>
+                    <p>EMAIL : {{ user.email }}</p>
+                    <p>ADRESSE : {{ user.adresse }}</p>
+                    <p>NOM UTILSATION ( LOGIN ): {{ user.username }}</p>
+                    <p>MOT DE PASSE : {{ user.password }}</p>
+
+                </div>
+            </div><!-- /.pannel-->
+        </div><!-- /.col-->
+
+    </div><!-- /.row -->
+
 </div>
+

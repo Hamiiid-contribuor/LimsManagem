@@ -33,94 +33,98 @@
             background-color: #ebebeb; 
         }
         .main-footer {
-            
+
             padding: 0px; 
-            
+
         }
     </style>
 
 {% endblock stylesheets   %}
+{% block fos_user_content %}
 
-<div>
-    <br/>
-</div>
 
-<!-- panel modification utilisateur  -->
-<div class="row col-md-10 col-md-offset-1">
-    <div class="col-lg-12">
-        <div class="panel panel-default">
-            <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Modifier vos Informations Personneles</div>
-            <div class="panel-body">
-                {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-                <div class="col-md-4">
+    <div>
+        <br/>
+    </div>
 
-                    <fieldset>
-                        <legend>Photo </legend>
-                        <div id="myImage" class="image">
-                            <img src="{{ asset('dist/img/myUser.png') }}" class=" img-responsive" alt="User Image">
+    <!-- panel modification utilisateur  -->
+    <div class="row col-md-10 col-md-offset-1">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Modifier vos Informations Personneles</div>
+                <div class="panel-body">
+                    {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+                    <div class="col-md-4">
+
+                        <fieldset>
+                            <legend>Photo </legend>
+                            <div id="myImage" class="image">
+                                <img src="{{ asset('dist/img/myUser.png') }}" class=" img-responsive" alt="User Image">
+                            </div>
+                        </fieldset>
+
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row"> 
+                            <div class="col-md-5 form-group">
+                                <label>Prenom </label>
+                                <label><span style="color: #f68484!important">{{form_errors(form.prenom)}}</span></label>
+                                    {{ form_widget(form.prenom, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
+                            </div>
+                            <div class="form-group col-md-7">
+                                <label>Nom </label>
+                                <label><span style="color: #f68484!important">{{form_errors(form.nom)}}</span></label>
+                                    {{ form_widget(form.nom, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
+                            </div>
+
                         </div>
-                    </fieldset>
 
+                        <div class="row"> 
+                            <div class="col-md-5 form-group">
+                                <label>Nom Utilisateur </label>
+                                <label><span style="color: #f68484!important">{{form_errors(form.username)}}</span></label>
+                                    {{ form_widget(form.username, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
+                            </div>
+                            <div class="col-md-7 form-group">
+                                <label>Password actuel (*)</label>
+                                <label><span style="color: #f68484!important">{{form_errors(form.current_password)}}</span></label>
+                                    {{ form_widget(form.current_password, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
+                            </div>
+                        </div>
+
+                        <div class="row"> 
+                            <div class="col-md-5 form-group">
+                                <label>Telephone </label>
+                                <label><span style="color: #f68484!important">{{form_errors(form.telephone)}}</span></label>
+                                    {{ form_widget(form.telephone, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
+                            </div>
+                            <div class="col-md-7 form-group">
+                                <label>Email </label>
+                                <label><span style="color: #f68484!important">{{form_errors(form.email)}}</span></label>
+                                    {{ form_widget(form.email, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Adresse </label>
+                            <label><span style="color: #f68484!important">{{form_errors(form.adresse)}}</span></label>
+                                {{ form_widget(form.adresse, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 pull-right">
+                                <label>  </label>
+                                <button type="submit" class=" form-control btn btn-primary">Modifier</button>
+                            </div>
+                        </div>
+
+                        {{ form_end(form) }}
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="row"> 
-                        <div class="col-md-5 form-group">
-                            <label>Prenom </label>
-                            <label><span style="color: #f68484!important">{{form_errors(form.prenom)}}</span></label>
-                                {{ form_widget(form.prenom, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
-                        </div>
-                        <div class="form-group col-md-7">
-                            <label>Nom </label>
-                            <label><span style="color: #f68484!important">{{form_errors(form.nom)}}</span></label>
-                                {{ form_widget(form.nom, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
-                        </div>
+            </div><!-- /.pannel-->
+        </div><!-- /.col-->
 
-                    </div>
+    </div><!-- /.row -->
 
-                    <div class="row"> 
-                        <div class="col-md-5 form-group">
-                            <label>Nom Utilisateur </label>
-                            <label><span style="color: #f68484!important">{{form_errors(form.username)}}</span></label>
-                                {{ form_widget(form.username, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
-                        </div>
-                        <div class="col-md-7 form-group">
-                            <label>Password actuel (*)</label>
-                            <label><span style="color: #f68484!important">{{form_errors(form.current_password)}}</span></label>
-                                {{ form_widget(form.current_password, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
-                        </div>
-                    </div>
-
-                    <div class="row"> 
-                        <div class="col-md-5 form-group">
-                            <label>Telephone </label>
-                            <label><span style="color: #f68484!important">{{form_errors(form.telephone)}}</span></label>
-                                {{ form_widget(form.telephone, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
-                        </div>
-                        <div class="col-md-7 form-group">
-                            <label>Email </label>
-                            <label><span style="color: #f68484!important">{{form_errors(form.email)}}</span></label>
-                                {{ form_widget(form.email, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label>Adresse </label>
-                        <label><span style="color: #f68484!important">{{form_errors(form.adresse)}}</span></label>
-                            {{ form_widget(form.adresse, { 'attr': {'class': 'form-control ui-autocomplete-input'} }) }}
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-3 pull-right">
-                            <label>  </label>
-                            <button type="submit" class=" form-control btn btn-primary">Modifier</button>
-                        </div>
-                    </div>
-
-                    {{ form_end(form) }}
-                </div>
-            </div>
-        </div><!-- /.pannel-->
-    </div><!-- /.col-->
-
-</div><!-- /.row -->
+{% endblock fos_user_content %}
