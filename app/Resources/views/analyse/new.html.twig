@@ -82,7 +82,7 @@
 
     <div class="row">
         <!-- pannel d'ajout  d'analyses --> 
-        <div class="col-md-4 col-md-offset-1">
+        <div id="panelAjout" class="col-md-4 col-md-offset-1">
             <div class="panel panel-default">
 
                 <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouvelle Analyse</div>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="col-md-6" >
                             <label>  </label>
-                            <button  class=" form-control btn btn-danger ">Annuler</button>
+                            <button  id="btnAnnuler"  class=" form-control btn btn-danger ">Annuler</button>
                         </div>
                     </div>
                     {{ form_end(form) }}
@@ -128,13 +128,16 @@
         </div><!-- /.col-->
 
         <!-- pannel d'affchage d'analyses --> 
-        <div class="col-md-6 ">
-            <div class="panel panel-default">
+        <div id="pannelList" class="col-md-6 ">
+            <div style="height: 484px ; " class="panel panel-default">
 
-                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouvelle Analyse</div>
-                <div class="panel-body ">
+                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">
+                    <span>Liste des Analyses</span>
+                    <i  style="color: #3c8dbc;" class="pull-right fa  fa-plus-square fa-lg"></i>
+                </div>
+                <div class="panel-body " style="overflow: scroll ; height: 456px;">
 
-                    <table id="koko" class="table table-bordered table-hover">
+                    <table  id="myTable" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Code</th>
@@ -144,6 +147,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             {% for analyse in analyses %}
                                 <tr>
@@ -152,7 +156,7 @@
                                     <td>{{ analyse.description }}</td>
                                     <td>{{ analyse.prix }}</td>
                                     <td>  
-                                        <a href=""  style="color : red ; " class="fa fa-trash">     </a>
+                                        <a href=""  style="color : red ; " class="koko fa fa-trash">     </a>
                                         <a href="" style="color : green ; " class="fa  fa-pencil-square">     </a>
                                     </td>
                                 </tr>
@@ -167,3 +171,51 @@
     </div><!-- /.row -->
 
 {% endblock content %}
+
+
+
+{% block javascripts  %} 
+
+    <script>
+        $(document).ready(function () {
+
+            $('.fa-plus-square').tooltipster({
+                contentAsHTML: true,
+                animation: 'fade',
+                content: $('<p>Nouvelle Analyse</p>'),
+                delay: 200,
+                interactive: true
+
+            });
+
+            $('#panelAjout').hide();
+            $("#pannelList").removeClass("col-md-6").addClass("col-md-10");
+            $("#pannelList").addClass("col-md-offset-1");
+
+            $('#myTable').dataTable({
+                "ordering": false,
+                "info": false,
+                "dom": '<"toolbar">frtip'
+
+
+            });
+            $("div.toolbar").html('');
+            $('.select2').select2();
+
+            $('#btnAnnuler').click(function () {
+
+                $('#panelAjout').hide();
+                $("#pannelList").removeClass("col-md-6").addClass("col-md-10");
+                $("#pannelList").addClass("col-md-offset-1");
+            });
+
+            $('.fa-plus-square').click(function () {
+
+                $('#panelAjout').show();
+                $("#pannelList").removeClass("col-md-10").addClass("col-md-6");
+                $("#pannelList").removeClass("col-md-offset-1");
+            });
+        });
+
+    </script>
+{% endblock %}
