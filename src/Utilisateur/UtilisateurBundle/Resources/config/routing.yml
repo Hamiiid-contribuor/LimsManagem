@@ -8,3 +8,8 @@ testMailer:
 logout_user:
     path:     /logoutUser
     defaults: { _controller: UtilisateurBundle:Default:logout }
+
+    
+Lims:
+    resource: "@AnalysesBundle/Resources/config/lims/routing.yml"
+    prefix:   /Lims
