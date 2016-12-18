@@ -38,10 +38,38 @@ class DemandeAnalyse
     
     
      /**
-     * @ORM\ManyToOne(targetEntity="Client", inversedBy="demandeAnalyses")
+     * @ORM\ManyToOne(targetEntity="client", inversedBy="demandeAnalyses")
      * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      */
-    private $client ; 
+    private $client ;
+    
+      /**
+     * @ORM\OneToMany(targetEntity="Echantillon", mappedBy="DemandeAnalyse")
+     */
+    private $Echantillons;
+    
+     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Echantillons = new \Doctrine\Common\Collections\ArrayCollection();
+      
+        
+        
+        
+    }
+    
+     /**
+     * Get Echantillons
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEchantillons()
+    {
+        return $this->Echantillons;
+    }
+    
     
     
     

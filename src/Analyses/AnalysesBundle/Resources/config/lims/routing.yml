@@ -1,0 +1,9 @@
+LimsIndex:
+    path:     /LimsIndex
+    defaults: { _controller: AnalysesBundle:LimsA:index }
+    
+traitementDmD:
+    path: /traitementDmD/{id}
+    defaults: {_controller: AnalysesBundle:LimsA:traitementDmD}
+    requirements:
+        id:  \d+ 

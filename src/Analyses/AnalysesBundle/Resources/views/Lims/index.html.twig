@@ -1,0 +1,169 @@
+{% extends '::base.html.twig' %}
+{% block content %}
+      <style>
+        th{
+            font-size: 11.55px !important;
+        }
+        .im:hover, .im:active{
+	transform: scale(1.2);
+	box-shadow: 0 0 40px #CDBE9F inset, 0 0 20px #BEAE8C inset, 0 0 15px #b6a684;
+	transition: all 0.3s ease-in;
+}
+
+        </style>
+        
+        
+        
+        
+        
+  <section class="content">
+                      <div class="row">
+                          <div class="col-xs-12">
+                              <div class="box">
+                                  <div class="box-header">
+                                      <h5 class="box-title">Liste des  demandes D'analyses:</h5>
+                                  </div>
+                                  <div class="box-body">
+<table class="footable table table-stripped toggle-arrow-tiny" id="myTable" data-filter=#filter data-page-size="6" style="padding: 2px !important;
+    font-size: 13px;
+    font-weight: 200;">                                     <thead>
+                                        <tr>
+                                            
+                                          
+                                          <th></th>
+                                           <th>Client(demandeur)</th>
+                                            <th>Date de Reception  </th>
+                                            <th>Priorité</th>
+                                            <th>Description</th>
+                                           <th>Actions</th>
+                                            
+                                            
+                                        </tr>
+                                    </thead>
+                                     <tbody>
+                                      {% for dmd in demandes %}
+                                   
+                                    <tr class="gradeX">
+                                        <td>{{loop.index}}</td>
+                                        <td class="center">{{dmd.client.nom}} &nbsp; &nbsp;{{dmd.client.prenom}} </td>
+                                        <td class="center">{{dmd.date}}</td>
+                                        
+                                        <td class="center">Lorem ipsum </td>
+                                       
+                                        <td class="center">{{dmd.commentaire}} </td> 
+                                        
+                                        
+                                        <td>
+                                   <a class="btn btn-primary" href="{{path('traitementDmD',{'id':dmd.id})}}">
+                                        <i class="fa fa-angle-double-right"></i> &nbsp;&nbsp;Traitement
+                                      </a>
+                                        
+                                    </td>    
+                                    </tr>
+                                     {% endfor %}
+                                     
+                                     
+                                      
+                                     
+                                    
+                                     
+                                     
+                                     
+                                     
+                                    </tbody>
+                                    
+                                </table>
+                                  </div>
+                    </div></div></div>
+{%endblock%}
+
+ {% block javascripts %}             
+<script src="{{ asset('js/jquery-2.1.1.js')}}"></script>
+<script src="{{ asset('js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
+<script src="{{asset('js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="{{asset('js/inspinia.js')}}"></script>
+<script src="{{asset('js/plugins/pace/pace.min.js')}}"></script>
+
+<!-- SUMMERNOTE -->
+<script src="{{asset('js/plugins/summernote/summernote.min.js')}}"></script>
+
+<!-- Data picker -->
+<script src="{{asset('js/plugins/datapicker/bootstrap-datepicker.js')}}"></script>
+
+{#<script src="{{asset('js/plugins/footable/footable.all.min.js')}}"></script>
+#}
+<script src="{{asset('js/plugins/dataTables/jquery.dataTables.js')}}"></script>
+   <script async src="{{asset('//jsfiddle.net/4r6g4cfu/3/embed/')}}"></script>
+<script src="{{asset('https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('https://nightly.datatables.net/js/jquery.dataTables.js')}}"></script>
+
+  
+<script type="text/javascript" charset="utf8" src="{{asset('//cdn.datatables.net/1.10.12/js/jquery.dataTables.js')}}"></script>
+<script>
+    
+     var url = window.location;
+// Will only work if string in href matches with location
+$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+
+// Will also work for relative and absolute hrefs
+$('ul.nav a').filter(function() {
+    return this.href ==url;
+}).parent().addClass('active');
+      $.fn.DataTable.ext.pager.numbers_length = 5;
+    $(document).ready(function(){
+      
+        $('[data-toggle="tooltip"]').tooltip();   
+{#$('.footable').footable();
+            $('.footable2').footable();#}
+        
+        $('.summernote').summernote();
+
+        $('.input-group.date').datepicker({
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            calendarWeeks: true,
+            autoclose: true
+        });
+   $('#myTable').DataTable( {
+       "dom": '<"top"lif>rt<"bottom"p><"clear">',
+       
+        "language": {
+           
+            
+    "sProcessing":     "Traitement en cours...",
+    "sSearch":         "Rechercher&nbsp;:",
+    "sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
+    "sInfo":           "Affichage de l'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+    "sInfoEmpty":      "Affichage de l'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ment",
+    "sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+    "sInfoPostFix":    "",
+    "sLoadingRecords": "Chargement en cours...",
+    "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+    "sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
+    "oPaginate": {
+        "sFirst":      "Premier",
+        "sPrevious":   "Pr&eacute;c&eacute;dent",
+        "sNext":       "Suivant",
+        "sLast":       "Dernier"
+    },
+    
+    "oAria": {
+        "sSortAscending":  ": activer pour trier la colonne par ordre croissant",
+        "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
+    }
+
+        }
+    } );
+       
+        
+            
+      });
+    
+      
+      
+</script>
+ {% endblock %}  
