@@ -60,20 +60,9 @@ class Echantillon {
      */
     private $DemandeAnalyse;
     
-     /**
-     * @ORM\OneToMany(targetEntity="Analyse", mappedBy="Echantillon")
-     */
-    private $Analyses;
     
-      /**
-     * Get Analyses
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAnalyses()
-    {
-        return $this->Analyses;
-    }
+    
+   
     
     
     
@@ -190,7 +179,7 @@ class Echantillon {
      */
     public function __construct() {
         $this->echantillonItems = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->Analyses = new \Doctrine\Common\Collections\ArrayCollection();
+       
     }
 
     /**
