@@ -26,11 +26,13 @@
             font-size   : 100%;
         }
         .row{
-            margin-left: 50px;
+            margin-left: 20px;
         }
-        #add{
-            margin-left: 870px;
+
+        #panelAjout{
+            margin-left: 5px !important;
         }
+
 
     </style>
 
@@ -46,52 +48,149 @@
 
 
     <div class="row">
+
         <div class="col-md-11 ">
             <div class="panel panel-default">
 
                 <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">
                     La liste des échantillons concernant la demande de client <b> {{demande.client.nom}}</b>
                     &nbsp; <b>{{demande.client.prenom}}</b> à <b>{{demande.date}}</b>
+
                 </div>
+                <i  style="color: gray;" class="pull-right fa  fa-plus-square fa-lg"></i>
                 <div class="panel-body ">
-                    <a id="add" class="btn btn-primary" href="{{path('traitementDmD',{'id':demande.id})}}">
-                        <i class="fa fa-plus-square"></i> &nbsp;&nbsp;Ajouter 
-                    </a>
 
-                    <br><br><br>          
-                    <table id="koko" class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Réference</th>
-                                <th>Date</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for i in demande.Echantillons %}
+                    <div id="panelAjout" class="col-md-5 col-md-offset-1">
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouvel échantillon</div>
+                            <div class="panel-body ">
+                                <form method="post"  action="{{path('AddEchantillonL',{'id':demande.id})}}" >  
+
+                                    <div class="form-group ">
+
+                                        <label><span style="color: gray!important">Réference :</span></label>
+                                        <input type="text" class="form-control" name="ref">
+
+                                    </div>
+
+                                    <div class="form-group ">
+
+                                        <label><span style="color: gray!important">Date :</span></label>
+                                        <input type="Date" class="form-control" name="date">
+
+
+
+                                    </div>
+
+                                    <div class="form-group ">
+
+                                        <label><span style="color: gray!important">La forme (type) :</span></label>
+                                        <select name="forme" class="form-control" style="width:60%;  ">
+                                            <option>Choisir un type</option>
+                                            {% for l in types%}
+                                                <option value="{{l.id}}" >{{l.libelle}}</option>;
+                                            {% endfor%}
+                                        </select>
+
+                                    </div>
+                                    <div class="form-group ">
+
+                                        <label><span style="color: gray!important">Description :</span></label>
+                                        <textarea name="Description" class="form-control"  placeholder="Description">
+                            
+                                        </textarea>
+
+                                    </div>
+
+                                    <div class="hr-line-dashed">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label><span style="color: gray!important">Préciser des Analyses :</span></label>
+                                        <div class="col-sm-10">
+                                            {% for a in analyses %}
+
+                                                <label> 
+
+                                                    <input type="checkbox" name="delete[]" value="{{a.id}}">
+                                                    {{a.code}}<b>:</b> {{a.nom}}</label>
+
+                                                <hr>
+                                            {% endfor %}
+
+
+                                        </div>
+
+
+                                    </div> 
+
+                                    <div class=" col-md-offset-2 form-group row  ">
+                                        <div class="col-md-6">
+                                            <label>  </label>
+                                            <button type="submit" class=" form-control btn btn-primary">Ajouter</button>
+                                        </div>
+                                        <div class="col-md-6" >
+                                            <label>  </label>
+                                        </div>
+                                    </div>
+                                </form>
+                                                                                        <button  id="btnAnnuler"  class=" form-control btn btn-danger ">Annuler</button>
+
+                            </div>
+                        </div>
+                    </div>           
+
+
+
+
+
+
+
+
+                    <br><br><br> 
+                    <div id="pannelList" class="col-md-6 ">     
+                        <table id="myTable" class="table table-bordered table-hover">
+                            <thead>
                                 <tr>
-                                    <td>{{loop.index}}</td>
-                                    <td>{{ i.reference }}</td>
-                                    <td>{{ i.date|date('Y-m-d') }}</td>
-                                    <td>{{ i.typeEchantillon.libelle }}</td>
-
-                                    <td>{{ i.commentaire }}</td>
-                                    <td>  
-                                        <a href="" title="Supprimer" style="color : gray ; " class="fa fa-trash">     </a>
-                                        <a href="" title="Modifier" style="color : gray ; " class="fa  fa-pencil-square">     </a>
-                                        <a  title="Analyses demandés" data-toggle="modal"
-                                            onclick="load({{ i.id }})"
-                                            href="#{{ i.id }}" style="color:gray" class="fa  fa-forward">     </a>
-                                        <a href="" title="les items de cette échantillon" style="color:gray" class="fa  fa-eyedropper">     </a>
-                                    </td>
+                                    <th></th>
+                                    <th>Réference</th>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Actions</th>
                                 </tr>
-                            {% endfor %}
-                        </tbody>
+                            </thead>
+                            <tbody>
+                                {% for i in demande.Echantillons %}
+                                    <tr>
+                                        <td>{{loop.index}}</td>
+                                        <td>{{ i.reference }}</td>
+                                        <td>{{ i.date|date('Y-m-d') }}</td>
+                                        <td>{{ i.typeEchantillon.libelle }}</td>
 
-                    </table>
+                                        <td>{{ i.commentaire }}</td>
+                                        <td>  
+                                            <a href="" title="Supprimer" style="color : gray ; " class="fa fa-trash">     </a>
+                                            <a href="" title="Modifier" style="color : gray ; " class="fa  fa-pencil-square">     </a>
+                                            <a  title="Analyses demandés" data-toggle="modal"
+                                                onclick="load({{ i.id }})"
+                                                href="#{{ i.id }}" style="color:gray" class="fa  fa-forward">     </a>
+                                             <a  title="les Echantillons Items :" 
+                                               href="{{path('EchantillonItem',{'id':i.id})}}" style="color:gray" class="fa  fa-eyedropper">     </a>
+                                            
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+
+                        </table>
+
+
+                    </div>
+
+
+
 
 
 
@@ -99,35 +198,152 @@
             </div><!-- /.pannel-->
         </div><!-- /.col-->
 
-    </div>
 
-    {% for  i in demande.Echantillons %}
-        <div style="display: none;" class="modal inmodal" tabindex="-1" id="{{ i.id }}" role="dialog"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content animated bounceInRight">
 
-                    <div class="modal-header">
-                        <h4> Réference d'échantillon: &nbsp; {{ i.reference }}</h4>
-                        <hr>
-                        <h3> Les Analyses demandés :</h3>
+        {% for  i in demande.Echantillons %}
+            <div style="display: none;" class="modal inmodal" tabindex="-1" id="{{ i.id }}" role="dialog"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content animated bounceInRight">
 
-                        Analyse 1 
-                        Analyse 2 
-                        Analyse 3 
-                        Analyse 4 
+                        <div class="modal-header">
+                            <h4> Réference d'échantillon: &nbsp; {{ i.reference }}</h4>
+                            <hr>
+                            <h3> Les Analyses demandés :</h3>
+                            {% for  m in i.echantillonHasAnalyses %}
+                                <h4 style="display: inline-block"> <u> {{ m.analyse.code }} :</u></i></h4>
+                                <h5 style="display: inline-block">  {{ m.analyse.nom }} :</h5><br>
 
+
+                            {% endfor %}
+
+                        </div>
 
                     </div>
 
                 </div>
-
             </div>
-        </div>
 
-    {%endfor%}
+        {%endfor%}
 
 
-    <!-- /.row -->
+        <!-- partie d'echantillon itemms -->
+        
+      {#      <div id="panelAjoutEchantItems" class="col-md-10 col-md-offset-1">
+                {% for  i in demande.Echantillons %}
+                <div class="panel panel-default">
 
+                    <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouvel échantillon</div>
+                    <div class="panel-body ">
+                        <form method="post"  action="{{path('AddEchantillonL',{'id':demande.id})}}" >  
+
+                            <div class=" col-md-offset-2 form-group row  ">
+                                <div class="col-md-6">
+                                    <label>  </label>
+                                    <button type="submit" class=" form-control btn btn-primary">Ajouter</button>
+                                </div>
+                                <div class="col-md-6" >
+                                    <label>  </label>
+                                    <button  id="btnAnnuler"  class=" form-control btn btn-danger ">Annuler</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                  {% endfor %}                 
+            </div> #}
+
+     
+
+
+
+
+
+
+
+
+
+
+    </div>  
+
+
+
+
+
+
+
+
+
+    <!-- fin de partie --> 
 {% endblock content %}
+
+{% block javascripts  %} 
+
+    <script>
+
+        $(window).load(function () {
+            $('#panelAjout').hide();
+        });
+        $(document).ready(function () {
+
+            $('.fa-plus-square').tooltipster({
+                contentAsHTML: true,
+                animation: 'fade',
+                content: $('<p>Nouvel Echantillon</p>'),
+                delay: 200,
+                interactive: true
+
+            });
+
+            $('#panelAjout').hide();
+            $("#pannelList").removeClass("col-md-6").addClass("col-md-10");
+            $("#pannelList").addClass("col-md-offset-1");
+
+            $('#myTable').dataTable({
+                "ordering": false,
+                "info": false,
+                "dom": '<"toolbar">frtip'
+
+
+            });
+            $("div.toolbar").html('');
+            $('.select2').select2();
+
+            $('#btnAnnuler').click(function () {
+
+                $('#panelAjout').hide();
+                $("#pannelList").removeClass("col-md-6").addClass("col-md-10");
+                $("#pannelList").addClass("col-md-offset-1");
+            });
+
+            $('.fa-plus-square').click(function () {
+
+                $('#panelAjout').show();
+                $("#pannelList").removeClass("col-md-10").addClass("col-md-6");
+                $("#pannelList").removeClass("col-md-offset-1");
+            });
+
+
+            $(window).load(function () {
+                $('#panelAjoutEchantItems').hide();
+
+                $('.fa-eyedropper').click(function () {
+
+                    $('#panelAjoutEchantItems').show();
+                    //$("#pannelList").removeClass("col-md-10").addClass("col-md-6");
+                    //$("#pannelList").removeClass("col-md-offset-1");
+                });
+
+
+
+            });
+
+
+
+
+
+        });
+
+
+    </script>
+{% endblock %}

@@ -30,11 +30,64 @@ class LimsAController extends Controller
            $em = $this->getDoctrine()->getEntityManager();
 
     $dmd = $em->getRepository('AnalysesBundle:DemandeAnalyse')->findOneById($id);
+    $analyse = $em->getRepository('AnalysesBundle:Analyse')->findAll();
+    $types = $em->getRepository('AnalysesBundle:TypeEchantillon')->findAll();
+    $ANECH = $em->getRepository('AnalysesBundle:Echantillonanalyse')->findAll();
+    
+    
     
      return $this
             ->render("AnalysesBundle:Lims:traitementDmD.html.twig",
-            array('demande'=>$dmd));
+            array('demande'=>$dmd, 'analyses'=>$analyse, 'types'=>$types, 'AnalysesHas'=>$ANECH));
         
+        
+    }
+    
+        public function AddEchantillonLAction($id,Request $request){
+         $em = $this->getDoctrine()->getEntityManager();
+        $data = $request->request->all();
+        $dmd = $em->getRepository('AnalysesBundle:DemandeAnalyse')->findOneById($id);
+        $type = $em->getRepository('AnalysesBundle:TypeEchantillon')->findOneById($data['forme']);
+        
+        $echantillon = new \Analyses\AnalysesBundle\Entity\Echantillon();
+        $echantillon->setReference($data['ref']);
+        $echantillon->setTypeEchantillon($type);
+        $echantillon->setDate($data['date']);
+        $echantillon->setDemandeAnalyse($dmd);
+        $echantillon->setCommentaire($data['Description']);
+      
+        $em->persist($echantillon);
+        $em->flush();
+        
+        $delete = $request->get('delete');
+        foreach($delete  as $Id) {
+           $echantillonhasAnalyse = new \Analyses\AnalysesBundle\Entity\Echantillonanalyse();
+           $analyse = $em->getRepository('AnalysesBundle:Analyse')->findOneById($Id);
+           $echa = $em->getRepository('AnalysesBundle:Echantillon')->findOneById($echantillon->getId());
+           $echantillonhasAnalyse->setAnalyse($analyse);
+           $echantillonhasAnalyse->setEchantillon($echa);
+           $echantillonhasAnalyse->setDate($data['date']);
+           $em->persist($echantillonhasAnalyse);
+           $em->flush();
+     }
+         $this->addFlash('message','les donnée été validé avec succès');
+         return $this->redirectToRoute('traitementDmD',array('id'=>$id));
+        
+   
+    }
+    
+    public function EchantillonItemAction($id){
+     $em = $this->getDoctrine()->getEntityManager();
+     
+    $echantillon = $em->getRepository('AnalysesBundle:Echantillon')->findOneById($id);
+    $analyse = $em->getRepository('AnalysesBundle:Test')->findAll();
+   
+    $list = $echantillon->getEchantillonItems();
+    
+    
+     return $this
+            ->render("AnalysesBundle:Lims:EchantillonItem.html.twig",
+            array('echantillon'=>$echantillon,'liste'=>$list));
         
     }
 

@@ -7,3 +7,16 @@ traitementDmD:
     defaults: {_controller: AnalysesBundle:LimsA:traitementDmD}
     requirements:
         id:  \d+ 
+
+        
+AddEchantillonL:
+    path: /AddNew/{id}
+    defaults: {_controller: AnalysesBundle:LimsA:AddEchantillonL}
+    requirements:
+        id:  \d+
+        
+EchantillonItem:
+    path: /EchantillonItem/{id}
+    defaults: {_controller: AnalysesBundle:LimsA:EchantillonItem}
+    requirements:
+        id:  \d+

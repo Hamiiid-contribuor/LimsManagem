@@ -1,0 +1,209 @@
+{% extends '::base.html.twig' %}
+
+
+{% block content %}
+
+
+    <style> 
+        .input {
+            border: 1px solid #eee;
+            box-shadow: none;
+            border-radius: 7px ; 
+            font-family : inherit;
+            font-size   : 100%;
+            padding: 10px;
+
+            box-shadow: inset 1px 1px 1px 0 #707070;
+            transition: box-shadow 0.3s;
+
+        }
+
+        .input:focus {
+            border: 1px solid #30a5ff;
+            outline: 0;
+            box-shadow: inset 0px 0px 0px 1px #30a5ff;
+            font-family : inherit;
+            font-size   : 100%;
+        }
+        .row{
+            margin-left: 20px;
+        }
+
+        #panelAjout{
+            margin-left: 5px !important;
+        }
+
+
+    </style>
+
+
+    <div>
+        <br/>
+        <br/>
+    </div>
+
+
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-md-11 ">
+            <div class="panel panel-default">
+                <div class="">
+                    <div class="">
+
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="{{path('traitementDmD',{'id':echantillon.DemandeAnalyse.id})}}">
+                                    échantillonnage </a>
+                            </li>
+                            <li>
+                                <a>Echantillon :{{echantillon.reference}}</a>
+                            </li>
+                            <li class="active">
+                                <strong>Les échantillons Items</strong>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="panel-heading" style=" margin-left: 630px;font-family: 'Times New Roman' ; font-size: 15px ;">
+                        Demande de  <b> {{echantillon.DemandeAnalyse.client.nom}}</b>
+                        &nbsp; <b>{{echantillon.DemandeAnalyse.client.prenom}}</b> à <b>{{echantillon.DemandeAnalyse.date}}</b>
+
+                        <br>
+                        <br>
+                        
+                        <a style="margin-left: 240px;" class="btn btn-primary" href="#">
+                                            <i class="fa fa-angle-double-right"></i> &nbsp;&nbsp;Ajouter
+                                        </a> 
+                        
+                        
+                    </div>
+
+                </div>       
+
+
+
+
+                <div class="panel-body ">
+
+
+                    <div class="col-lg-10">
+                        <div class="tabs-container">
+                            <ul class="nav nav-tabs">
+                                {% for  i in liste %} 
+                                    {% if loop.index==1%}
+                                        <li class="active">
+                                            <a data-toggle="tab"  href="#tab-{{i.id}}">
+                                                <b>Item Numéro {{loop.index}}  :</b><b>{{i.reference}}</b>
+                                            </a>
+                                        </li>
+                                    {%else%}
+                                        <li>
+                                            <a data-toggle="tab" href="#tab-{{i.id}}">
+                                                <b>Item Numéro {{loop.index}}  :</b><b>{{i.reference}}</b>
+                                            </a>
+                                        </li>
+                                    {%endif%}  
+                                {%endfor%}
+                            </ul>
+                            <div class="tab-content">
+
+                                {% for  i in liste %}
+                                    {% if loop.index==1%}
+                                        <div id="tab-{{i.id}}" class="tab-pane active">
+                                            <div class="panel-body">
+                                                <strong> Description :   </strong>   {{i.commentaire}}<br> 
+                                                <strong> Quantité :   </strong>   <br> 
+                                                <strong> Date de création :   </strong> <br>  
+                                                <p><b>  les tests demandés : </b></p>
+                                                <button  style="width: 15%; margin-left: 660px;"  class=" form-control btn btn-danger ">Valider</button>
+
+                                            </div>
+                                        </div>
+                                    {%else%}    
+                                        <div id="tab-{{i.id}}" class="tab-pane">
+                                            <div class="panel-body">
+                                                <strong> Description :   </strong>   {{i.commentaire}}<br> 
+                                                <strong> Quantité :   </strong>  <br> 
+                                                <strong> Date de création :   </strong>  <br> 
+                                                <p><b>  les tests demandés : </b></p> 
+
+                                                {#  {%for j in i.echantillohnHastests %}
+                                                      
+                                                      {{j.test.libelle}}
+                                                      {%endfor%}#}
+                                                <button  style="width: 15%; margin-left: 660px;"  class=" form-control btn btn-danger ">Valider</button>
+                                            </div>
+                                        </div>
+                                    {%endif%}
+                                {%endfor%}
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div><!-- /.pannel-->
+        </div><!-- /.col-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>  
+
+
+
+
+
+
+
+
+
+    <!-- fin de partie --> 
+{% endblock content %}
+
+{% block javascripts  %} 
+
+    <script>
+
+
+
+
+    </script>
+{% endblock %}

@@ -13,3 +13,4 @@
 !bin/symfony_requirements
 /vendor/
 /nbproject/private/
+/JavaApplication6/nbproject/private/

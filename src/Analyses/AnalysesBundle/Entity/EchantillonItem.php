@@ -36,10 +36,35 @@ class EchantillonItem
     private $commentaire;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Echantillon", inversedBy="echantillonItems")
-     * @ORM\JoinColumn(name="echantillon_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Echantillon")
+     * @ORM\JoinColumn(name="id_echantillon", referencedColumnName="id")
      */
     private $echantillon ; 
+    
+      /**
+     * @ORM\OneToMany(targetEntity="Test", mappedBy="EchantillonItem")
+     */
+    private $echantillohnHastests;
+    
+    /**
+     * Get echantillohnHastests
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getechantillohnHastests() {
+        return $this->echantillohnHastests;
+    }
+    
+    
+      /**
+     * Constructor
+     */
+    public function __construct() {
+       
+        $this->echantillohnHastests = new \Doctrine\Common\Collections\ArrayCollection();
+        
+    }
+    
 
     /**
      * Get id

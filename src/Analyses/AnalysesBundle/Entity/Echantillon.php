@@ -31,7 +31,7 @@ class Echantillon {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date", type="date")
+     * @ORM\Column(name="date", type="string", length=244)
      */
     private $date;
 
@@ -46,6 +46,13 @@ class Echantillon {
      * @ORM\OneToMany(targetEntity="EchantillonItem", mappedBy="echantillon")
      */
     private $echantillonItems;
+    
+       /**
+     * @ORM\OneToMany(targetEntity="Echantillonanalyse", mappedBy="echantillon")
+     */
+    private $echantillonHasAnalyses;
+    
+    
 
     /**
      * @ORM\ManyToOne(targetEntity="TypeEchantillon")
@@ -162,6 +169,8 @@ class Echantillon {
      */
     public function __construct() {
         $this->echantillonItems = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->echantillonHasAnalyses = new \Doctrine\Common\Collections\ArrayCollection();
+        
     }
 
     /**
@@ -193,6 +202,16 @@ class Echantillon {
      */
     public function getEchantillonItems() {
         return $this->echantillonItems;
+    }
+    
+    
+      /**
+     * Get echantillonHasAnalyses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getechantillonHasAnalyses() {
+        return $this->echantillonHasAnalyses;
     }
 
     /**
