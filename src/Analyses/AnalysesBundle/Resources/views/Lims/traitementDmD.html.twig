@@ -52,12 +52,11 @@
         <div class="col-md-11 ">
             <div class="panel panel-default">
 
-                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">
-                    La liste des échantillons concernant la demande de client <b> {{demande.client.nom}}</b>
-                    &nbsp; <b>{{demande.client.prenom}}</b> à <b>{{demande.date}}</b>
 
+                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">
+                    <span>Liste des Analyses</span>
+                    <i  style="color: #3c8dbc;" class="pull-right fa  fa-plus-square fa-lg"></i>
                 </div>
-                <i  style="color: gray;" class="pull-right fa  fa-plus-square fa-lg"></i>
                 <div class="panel-body ">
 
                     <div id="panelAjout" class="col-md-5 col-md-offset-1">
@@ -130,22 +129,18 @@
                                             <label>  </label>
                                             <button type="submit" class=" form-control btn btn-primary">Ajouter</button>
                                         </div>
-                                        <div class="col-md-6" >
-                                            <label>  </label>
-                                        </div>
+
                                     </div>
                                 </form>
-                                                                                        <button  id="btnAnnuler"  class=" form-control btn btn-danger ">Annuler</button>
+                                            <div style="    margin-top: -69PX; margin-left: 177px;" class="col-md-6" >
+                                    <label>  </label>
+                                    <button id="btnAnnuler"  class=" form-control btn btn-danger ">Annuler</button>
+                                </div>
+
 
                             </div>
                         </div>
                     </div>           
-
-
-
-
-
-
 
 
                     <br><br><br> 
@@ -170,15 +165,34 @@
                                         <td>{{ i.typeEchantillon.libelle }}</td>
 
                                         <td>{{ i.commentaire }}</td>
-                                        <td>  
-                                            <a href="" title="Supprimer" style="color : gray ; " class="fa fa-trash">     </a>
-                                            <a href="" title="Modifier" style="color : gray ; " class="fa  fa-pencil-square">     </a>
-                                            <a  title="Analyses demandés" data-toggle="modal"
+                                        <td> 
+                                            <a href="#" title="modifier" class="table-link">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                            <a href="#" title="Supprimer" class="table-link danger">
+                                                <span style="color :red ; " class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                            <a  title="Analyses demandés" class="table-link danger" data-toggle="modal"
                                                 onclick="load({{ i.id }})"
-                                                href="#{{ i.id }}" style="color:gray" class="fa  fa-forward">     </a>
-                                             <a  title="les Echantillons Items :" 
-                                               href="{{path('EchantillonItem',{'id':i.id})}}" style="color:gray" class="fa  fa-eyedropper">     </a>
-                                            
+                                                href="#{{ i.id }}" style="color:gray">
+                                                <span style="" class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-forward fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                            <a  title="Analyses demandés" class="table-link danger"
+                                                href="{{path('EchantillonItem',{'id':i.id})}}" style="color:gray">
+                                                <span style="" class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-eyedropper fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
                                         </td>
                                     </tr>
                                 {% endfor %}
@@ -228,32 +242,32 @@
 
 
         <!-- partie d'echantillon itemms -->
-        
-      {#      <div id="panelAjoutEchantItems" class="col-md-10 col-md-offset-1">
-                {% for  i in demande.Echantillons %}
-                <div class="panel panel-default">
 
-                    <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouvel échantillon</div>
-                    <div class="panel-body ">
-                        <form method="post"  action="{{path('AddEchantillonL',{'id':demande.id})}}" >  
+        {#      <div id="panelAjoutEchantItems" class="col-md-10 col-md-offset-1">
+                  {% for  i in demande.Echantillons %}
+                  <div class="panel panel-default">
+    
+                      <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouvel échantillon</div>
+                      <div class="panel-body ">
+                          <form method="post"  action="{{path('AddEchantillonL',{'id':demande.id})}}" >  
+    
+                              <div class=" col-md-offset-2 form-group row  ">
+                                  <div class="col-md-6">
+                                      <label>  </label>
+                                      <button type="submit" class=" form-control btn btn-primary">Ajouter</button>
+                                  </div>
+                                  <div class="col-md-6" >
+                                      <label>  </label>
+                                      <button  id="btnAnnuler"  class=" form-control btn btn-danger ">Annuler</button>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+                    {% endfor %}                 
+              </div> #}
 
-                            <div class=" col-md-offset-2 form-group row  ">
-                                <div class="col-md-6">
-                                    <label>  </label>
-                                    <button type="submit" class=" form-control btn btn-primary">Ajouter</button>
-                                </div>
-                                <div class="col-md-6" >
-                                    <label>  </label>
-                                    <button  id="btnAnnuler"  class=" form-control btn btn-danger ">Annuler</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                  {% endfor %}                 
-            </div> #}
 
-     
 
 
 
