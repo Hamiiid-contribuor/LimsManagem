@@ -1,7 +1,35 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "FOSUserBundle::layout1.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-    <p>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>
+
+    <!-- le navbar de parametrage -->
+    <div>
+        <br/>
+    </div>
+    <nav class=" col-md-10 col-md-offset-1 navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a style="font-family: 'Times New Roman' ; font-size: 25px ; font-weight: bold;" class="navbar-brand " href="#">Utisateurs</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{{ path('fos_user_registration_register') }}">Ajouter </a></li>
+                <li ><a href="{{ path('list_of_user') }}">Liste</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <nav class=" col-md-10 col-md-offset-1 box-info">
+        <div class="box-header">
+
+        </div>
+        <div class="box-body">
+            <h3>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</h3>
+        </div>
+    </nav>
+
+
 {% endblock fos_user_content %}
+

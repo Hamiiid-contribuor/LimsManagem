@@ -1,13 +1,4 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
-{#{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-{{ form_widget(form) }}
-<div>
-    <input type="submit" value="{{ 'registration.submit'|trans }}" />
-</div>
-{{ form_end(form) }}
-#}
-
 {% block stylesheets  %}
 
 
@@ -54,62 +45,103 @@
 </nav>
 
 <!-- pannel d'ajout d'utilisateur  -->
-<div  class="col-md-10 col-md-offset-1">
-    <div class="panel panel-default">
 
-        <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouveau Utilisateur </div>
-        <div class="panel-body ">
-            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}        
+<div  class="row">
+    <div  class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
 
-            <div class="row col-md-10 col-md-offset-1">
-                <div class="col-md-4 form-group ">
-                    <label> Prenom  (*) </label>
-                    <label><span style="color: #f68484!important">{{form_errors(form.prenom)}}</span></label>
-                        {{ form_widget(form.prenom , { 'attr': {'class': 'form-control input' }  }) }}
+            <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouveau Utilisateur </div>
+            <div class="panel-body ">
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}        
+
+                <div class="row col-md-10 col-md-offset-1">
+                    <div class="col-md-4 form-group ">
+                        <label> Prenom  (*) </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.prenom)}}</span></label>
+                            {{ form_widget(form.prenom , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
+
+                    <div class="col-md-5 form-group ">
+                        <label> Nom   (*)</label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.nom)}}</span></label>
+                            {{ form_widget(form.nom , { 'attr': {'class': 'form-control  input' }  }) }}
+                    </div>
+                    <div class="col-md-3 form-group ">
+                        <label>Telephone  </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.telephone)}}</span></label>
+                            {{ form_widget(form.telephone , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
+                </div>
+                <div class="row col-md-10 col-md-offset-1">
+                    <div class="col-md-4 form-group ">
+                        <label>Email (*) </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.email)}}</span></label>
+                            {{ form_widget(form.email , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
+                    <div class="col-md-5 form-group ">
+                        <label>Adresse   </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.adresse)}}</span></label>
+                            {{ form_widget(form.adresse , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
+                    <div class="col-md-3 form-group ">
+                        <label>Fonction</label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.fonction)}}</span></label>
+                            {{ form_widget(form.fonction , { 'attr': {'class': 'form-control input'}  }) }}
+                    </div>
+                </div>
+                <div class="row col-md-10 col-md-offset-1">
+                    <div class="col-md-4 form-group ">
+                        <label>Nom Utilisation (*) </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.username)}}</span></label>
+                            {{ form_widget(form.username , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
+                    <div class="col-md-5 form-group ">
+                        <label>Date Embauche </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.dateEmbauche)}}</span></label>
+                            {{ form_widget(form.dateEmbauche , { 'attr': {'class': 'form-control input'}  }) }}
+                    </div>
+                    <div class="col-md-3 form-group ">
+
+                    </div>
+                </div>
+                <div class="row col-md-10 col-md-offset-1">
+                    <div class="col-md-4 form-group ">
+                        <label>Mot de passe (*) </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.plainPassword.first)}}</span></label>
+                            {{ form_widget(form.plainPassword.first , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
+                    <div class="col-md-5 form-group ">
+                        <label>Confirmer  </label>
+                        <label>Mot de passe (*) </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.plainPassword.second)}}</span></label>
+                            {{ form_widget(form.plainPassword.second , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
+                    <div class="col-md-3 form-group ">
+
+                    </div>
+                </div>
+                <div>
+                    <br/>
+                </div>
+                <div class="row col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                        <label>Description   </label>
+                        <label><span style="color: #f68484!important">{{form_errors(form.commentaire)}}</span></label>
+                            {{ form_widget(form.commentaire , { 'attr': {'class': 'form-control input' }  }) }}
+                    </div>
+                </div>
+                <div class="col-md-3 pull-right">
+                    <label>  </label>
+                    <button type="submit" class=" form-control btn btn-primary">Ajouter</button>
                 </div>
 
-                <div class="col-md-5 form-group ">
-                    <label> Nom   (*)</label>
-                    <label><span style="color: #f68484!important">{{form_errors(form.nom)}}</span></label>
-                        {{ form_widget(form.nom , { 'attr': {'class': 'form-control  input' }  }) }}
-                </div>
-                <div class="col-md-3 form-group ">
-                    <label>Telephone  </label>
-                    <label><span style="color: #f68484!important">{{form_errors(form.telephone)}}</span></label>
-                        {{ form_widget(form.telephone , { 'attr': {'class': 'form-control input' }  }) }}
-                </div>
+                {{ form_end(form) }}
             </div>
-            <div class="row col-md-10 col-md-offset-1">
-                <div class="col-md-4 form-group ">
-                    <label>Email (*) </label>
-                    <label><span style="color: #f68484!important">{{form_errors(form.email)}}</span></label>
-                        {{ form_widget(form.email , { 'attr': {'class': 'form-control input' }  }) }}
-                </div>
-                <div class="col-md-5 form-group ">
-                    <label>Adresse   </label>
-                    <label><span style="color: #f68484!important">{{form_errors(form.adresse)}}</span></label>
-                        {{ form_widget(form.adresse , { 'attr': {'class': 'form-control input' }  }) }}
-                </div>
-                <div class="col-md-3 form-group ">
-                    <label>Date Embauche </label>
-                    <label><span style="color: #f68484!important">{{form_errors(form.dateEmbauche)}}</span></label>
-                        {{ form_widget(form.dateEmbauche , { 'attr': {'class': 'form-control input' }  }) }}
-                </div>
-            </div>
-
-            <div class="row col-md-10 col-md-offset-1">
-                <div class="form-group">
-                    <label>Description   </label>
-                    <label><span style="color: #f68484!important">{{form_errors(form.commentaire)}}</span></label>
-                        {{ form_widget(form.commentaire , { 'attr': {'class': 'form-control input' }  }) }}
-                </div>
-            </div>
-            <div class="col-md-3 pull-right">
-                <label>  </label>
-                <button type="submit" class=" form-control btn btn-primary">Ajouter</button>
-            </div>
-
-            {{ form_end(form) }}
-        </div>
-    </div><!-- /.pannel-->
+        </div><!-- /.pannel-->
+    </div><!-- /.col-->
 </div><!-- /.col-->
+
+
+{% block javascripts %}
+
+{% endblock %}
