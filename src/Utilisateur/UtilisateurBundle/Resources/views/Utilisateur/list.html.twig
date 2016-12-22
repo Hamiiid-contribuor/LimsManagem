@@ -1,0 +1,244 @@
+{% extends '::base.html.twig' %}
+
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+
+        .form-control {
+            border: 1px solid #eee;
+            box-shadow: none;
+            border-radius: 7px ; 
+            font-family : inherit;
+            font-size   : 100%;
+            padding: 10px;
+
+            box-shadow: inset 1px 1px 1px 0 #707070;
+            transition: box-shadow 0.3s;
+
+        }
+
+        .form-control:focus {
+            border: 1px solid #30a5ff;
+            outline: 0;
+            box-shadow: inset 0px 0px 0px 1px #30a5ff;
+            font-family : inherit;
+            font-size   : 100%;
+        }
+
+        #myImage{
+            margin-left: 15px;
+            margin-top: 0px;
+            width: 200px ; 
+            height: 200px ;
+            background-color: #ebebeb; 
+        }
+        .main-footer {
+
+            padding: 0px; 
+
+        }
+
+        body{
+            background:#eee;    
+        }
+        .main-box.no-header {
+            padding-top: 20px;
+        }
+        .main-box {
+            background: #FFFFFF;
+            -webkit-box-shadow: 1px 1px 2px 0 #CCCCCC;
+            -moz-box-shadow: 1px 1px 2px 0 #CCCCCC;
+            -o-box-shadow: 1px 1px 2px 0 #CCCCCC;
+            -ms-box-shadow: 1px 1px 2px 0 #CCCCCC;
+            box-shadow: 1px 1px 2px 0 #CCCCCC;
+            margin-bottom: 16px;
+            -webikt-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+        .table a.table-link.danger {
+            color: #e74c3c;
+        }
+        .label {
+            border-radius: 3px;
+            font-size: 0.875em;
+            font-weight: 600;
+        }
+        .user-list tbody td .user-subhead {
+            font-size: 0.875em;
+            font-style: italic;
+        }
+        .user-list tbody td .user-link {
+            display: block;
+            font-size: 1.25em;
+            padding-top: 3px;
+            margin-left: 60px;
+        }
+        a {
+            color: #3498db;
+            outline: none!important;
+        }
+        .user-list tbody td>img {
+            position: relative;
+            max-width: 50px;
+            float: left;
+            margin-right: 15px;
+        }
+
+        .table thead tr th {
+            text-transform: uppercase;
+            font-size: 0.875em;
+        }
+        .table thead tr th {
+            border-bottom: 2px solid #e7ebee;
+        }
+        .table tbody tr td:first-child {
+            font-size: 1.125em;
+            font-weight: 300;
+        }
+        .table tbody tr td {
+            font-size: 0.875em;
+            vertical-align: middle;
+            border-top: 1px solid #e7ebee;
+            padding: 12px 8px;
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+
+    <!-- le navbar de parametrage -->
+    <div>
+        <br/>
+    </div>
+    <nav class=" col-md-10 col-md-offset-1 navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a style="font-family: 'Times New Roman' ; font-size: 25px ; font-weight: bold;" class="navbar-brand " href="#">Utisateurs</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ><a href="{{ path('fos_user_registration_register') }}">Ajouter </a></li>
+                <li class="active"><a href="{{ path('list_of_user') }}">Liste</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <hr>
+    <div class="container bootstrap snippet col-md-10 col-md-offset-1">
+        <div class="row">
+            <div class="panel panel-default ">
+
+                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">List des Utilisateurs </div>
+                <div class="panel-body ">
+                    <div class="table-responsive">
+                        <table class="table user-list table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th><span>Utilisateur</span></th>
+                                    <th class="text-center"><span>Etat</span></th>
+                                    <th><span>Telephone</span></th>
+                                    <th><span>Email</span></th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in users %}
+                                    <tr>
+                                        <td>
+                                            <img src="{{ asset('dist/img/myUser.png') }}" alt="">
+                                            <a href="#" class="user-link">{{ user.nom }} {{ user.prenom }} </a>
+                                            <span class="user-subhead">{{ user.fonction }}</span>
+                                        </td>
+                                        <td class="text-center">
+                                            {% if( user.enabled == 1 ) %}
+                                                <span class="label label-success">Activé</span>
+                                            {% elseif (user.enabled == 0)  %}
+                                                <span class="label label-danger">Desactivé</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a href="#">{{ user.telephone }}</a>
+                                        </td>
+                                        <td>
+                                            <a href="#">{{ user.email }}</a>
+                                        </td>
+                                        <td style="width: 20%;">
+                                            <a href="#" class="table-link">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i id="{{ user.id }}" class="fa fa-search-plus fa-stack-1x fa-inverse detailBtn"></i>
+                                                </span>
+                                            </a>
+                                            <a href="#" class="table-link">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                            <a href="#" class="table-link danger">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <br/>
+    </div>
+
+
+    <div id="userDetailPannel" >
+    </div>
+
+
+
+{% endblock content %}
+
+
+{% block javascripts  %} 
+
+    <script>
+        $(document).ready(function () {
+
+            $('.fa-close').click(function () {
+
+                $("#userDetailPannel").hide();
+
+            });
+
+            $('.detailBtn').click(function () {
+                var idUser = $(this).attr("id");
+                console.log(idUser);
+
+                $("#userDetailPannel").show();
+
+                $.ajax({
+                    type: 'get',
+                    url: 'http://localhost/LIMS/web/app_dev.php/detail_utilisateur/' + idUser,
+                    success: function (data) {
+                        $('#userDetailPannel').append(data);
+                    }
+                });
+
+            });
+
+        });
+
+    </script>
+{% endblock %}

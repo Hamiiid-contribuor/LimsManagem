@@ -64,7 +64,6 @@ class Utilisateur extends BaseUser {
      */
     private $adresse;
 
-    
     /**
      * @var string
      *
@@ -78,6 +77,20 @@ class Utilisateur extends BaseUser {
      * @ORM\Column(name="commentaire", type="text", length=255 , nullable=true)
      */
     private $commentaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=45, nullable=true)
+     */
+    private $image;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fonction", type="string" , nullable= true)
+     */
+    private $fonction;
+    
 
     /**
      * Get id
@@ -220,7 +233,6 @@ class Utilisateur extends BaseUser {
         return $this->adresse;
     }
 
-  
     /**
      * Set telephone
      *
@@ -261,8 +273,6 @@ class Utilisateur extends BaseUser {
      *
      * @return text
      */
-    
-    
     public function getCommentaire() {
         return $this->commentaire;
     }
@@ -272,4 +282,50 @@ class Utilisateur extends BaseUser {
         // your own logic
     }
 
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Utilisateur
+     */
+    public function setImage($image) {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage() {
+        return $this->image;
+    }
+
+
+    /**
+     * Set fonction
+     *
+     * @param string $fonction
+     *
+     * @return Utilisateur
+     */
+    public function setFonction($fonction)
+    {
+        $this->fonction = $fonction;
+
+        return $this;
+    }
+
+    /**
+     * Get fonction
+     *
+     * @return string
+     */
+    public function getFonction()
+    {
+        return $this->fonction;
+    }
 }

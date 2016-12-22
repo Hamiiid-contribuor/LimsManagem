@@ -1,5 +1,5 @@
-{% trans_default_domain 'FOSUserBundle' %}
-
+{#{% trans_default_domain 'FOSUserBundle' %}
+#}
 {% block stylesheets %}
 
     <style> 
@@ -62,6 +62,12 @@
                                 <img src="{{ asset('dist/img/myUser.png') }}" class=" img-responsive" alt="User Image">
                             </div>
                         </fieldset>
+                       {# <div class="form-group">
+                            <label class="col-sm-2 control-label">{{ "image" }}</label>
+                            <div class="col-sm-5">
+                                <input id="imgInp" name="image" accept="image/*"  required="" class="form-control" type="file">
+                            </div>
+                        </div>#}
 
                     </div>
                     <div class="col-md-8">

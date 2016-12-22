@@ -157,8 +157,18 @@
                                     <td>{{ categorie.commentaire }}</td>
                                     <td>{{ categorie.analyse }}</td>
                                     <td> 
-                                        <a href=""  style="color : red ; " class="fa fa-trash">     </a>
-                                        <a href="" style="color : green ; " class="fa  fa-pencil-square">     </a>
+                                        <a href="#" class="table-link">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="table-link danger">
+                                            <span style="color :red ; " class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
                                     </td>
                                 </tr>
                             {% endfor %}

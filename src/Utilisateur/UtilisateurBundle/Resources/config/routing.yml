@@ -8,8 +8,16 @@ testMailer:
 logout_user:
     path:     /logoutUser
     defaults: { _controller: UtilisateurBundle:Default:logout }
-
     
+list_of_user:
+    path:     /liste_utilisateurs
+    defaults: { _controller: UtilisateurBundle:Utilisateur:listUser }
+    
+detail_user:
+    path:     /detail_utilisateur/{id}
+    defaults: { _controller: UtilisateurBundle:Utilisateur:detailUser , id: 1 }
+
+  
 Lims:
     resource: "@AnalysesBundle/Resources/config/lims/routing.yml"
     prefix:   /Lims
