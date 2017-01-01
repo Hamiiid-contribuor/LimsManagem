@@ -7,11 +7,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Echantillonhastest
  *
- * @ORM\Table(name="echantillonhastest", indexes={@ORM\Index(name="fktest_is", columns={"test_id"}), @ORM\Index(name="fkechnatillohitem", columns={"echantillon_item_id"})})
- * @ORM\Entity
+ * @ORM\Table(name="echantillonhastest")
+ * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\EchantillonhastestRepository")
  */
-class Echantillonhastest
-{
+class Echantillonhastest {
+
     /**
      * @var integer
      *
@@ -22,34 +22,23 @@ class Echantillonhastest
     private $id;
 
     /**
-     * @var \EchantillonItem
-     *
-     * @ORM\ManyToOne(targetEntity="EchantillonItem")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="echantillon_item_id", referencedColumnName="id")
-     * })
-     */
-    private $echantillonItem;
-
-    /**
-     * @var \Test
-     *
      * @ORM\ManyToOne(targetEntity="Test")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="test_id", referencedColumnName="id")
-     * })
+     * @ORM\JoinColumn(name="test_id", referencedColumnName="id")
      */
     private $test;
 
-
+    /**
+     * @ORM\ManyToOne(targetEntity="EchantillonItem", inversedBy="echantillohnHastests")
+     * @ORM\JoinColumn(name="echantillonItem_id", referencedColumnName="id")
+     */
+    private $echantillonItem;
 
     /**
      * Get id
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -60,8 +49,7 @@ class Echantillonhastest
      *
      * @return Echantillonhastest
      */
-    public function setEchantillonItem(\Analyses\AnalysesBundle\Entity\EchantillonItem $echantillonItem = null)
-    {
+    public function setEchantillonItem(\Analyses\AnalysesBundle\Entity\EchantillonItem $echantillonItem = null) {
         $this->echantillonItem = $echantillonItem;
 
         return $this;
@@ -72,8 +60,7 @@ class Echantillonhastest
      *
      * @return \Analyses\AnalysesBundle\Entity\EchantillonItem
      */
-    public function getEchantillonItem()
-    {
+    public function getEchantillonItem() {
         return $this->echantillonItem;
     }
 
@@ -84,8 +71,7 @@ class Echantillonhastest
      *
      * @return Echantillonhastest
      */
-    public function setTest(\Analyses\AnalysesBundle\Entity\Test $test = null)
-    {
+    public function setTest(\Analyses\AnalysesBundle\Entity\Test $test = null) {
         $this->test = $test;
 
         return $this;
@@ -96,8 +82,8 @@ class Echantillonhastest
      *
      * @return \Analyses\AnalysesBundle\Entity\Test
      */
-    public function getTest()
-    {
+    public function getTest() {
         return $this->test;
     }
+
 }

@@ -20,3 +20,15 @@ EchantillonItem:
     defaults: {_controller: AnalysesBundle:LimsA:EchantillonItem}
     requirements:
         id:  \d+
+        
+addEchantItem:
+    path: /addEchantItem/{id}
+    defaults: {_controller: AnalysesBundle:LimsA:addEchantItem}
+    requirements:
+        id:  \d+
+
+addItem:
+    path: /addItem/{id}
+    defaults: {_controller: AnalysesBundle:LimsA:addItem}
+    requirements:
+        id:  \d+

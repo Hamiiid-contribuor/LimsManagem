@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="echantillon_item")
  * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\EchantillonItemRepository")
  */
-class EchantillonItem
-{
+class EchantillonItem {
+
     /**
      * @var int
      *
@@ -36,43 +36,66 @@ class EchantillonItem
     private $commentaire;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="date", type="string", length=255)
+     */
+    private $date;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Echantillon")
      * @ORM\JoinColumn(name="id_echantillon", referencedColumnName="id")
      */
-    private $echantillon ; 
-    
-      /**
-     * @ORM\OneToMany(targetEntity="Test", mappedBy="EchantillonItem")
+    private $echantillon;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Echantillonhastest", mappedBy="EchantillonItem")
      */
     private $echantillohnHastests;
-    
+
     /**
      * Get echantillohnHastests
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getechantillohnHastests() {
+    function getEchantillohnHastests() {
         return $this->echantillohnHastests;
     }
-    
-    
-      /**
+
+    /**
+     * Get date
+     *
+     * @return string
+     */
+    function getDate() {
+        return $this->date;
+    }
+
+    /**
+     * Set date
+     *
+     * @param string $date
+     *
+     * @return EchantillonItem
+     */
+    function setDate($date) {
+        $this->date = $date;
+    }
+
+    /**
      * Constructor
      */
     public function __construct() {
-       
+
         $this->echantillohnHastests = new \Doctrine\Common\Collections\ArrayCollection();
-        
     }
-    
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -83,8 +106,7 @@ class EchantillonItem
      *
      * @return EchantillonItem
      */
-    public function setReference($reference)
-    {
+    public function setReference($reference) {
         $this->reference = $reference;
 
         return $this;
@@ -95,8 +117,7 @@ class EchantillonItem
      *
      * @return string
      */
-    public function getReference()
-    {
+    public function getReference() {
         return $this->reference;
     }
 
@@ -107,8 +128,7 @@ class EchantillonItem
      *
      * @return EchantillonItem
      */
-    public function setCommentaire($commentaire)
-    {
+    public function setCommentaire($commentaire) {
         $this->commentaire = $commentaire;
 
         return $this;
@@ -119,8 +139,7 @@ class EchantillonItem
      *
      * @return string
      */
-    public function getCommentaire()
-    {
+    public function getCommentaire() {
         return $this->commentaire;
     }
 
@@ -131,8 +150,7 @@ class EchantillonItem
      *
      * @return EchantillonItem
      */
-    public function setEchantillon(\Analyses\AnalysesBundle\Entity\Echantillon $echantillon = null)
-    {
+    public function setEchantillon(\Analyses\AnalysesBundle\Entity\Echantillon $echantillon = null) {
         $this->echantillon = $echantillon;
 
         return $this;
@@ -143,8 +161,8 @@ class EchantillonItem
      *
      * @return \Analyses\AnalysesBundle\Entity\Echantillon
      */
-    public function getEchantillon()
-    {
+    public function getEchantillon() {
         return $this->echantillon;
     }
+
 }
