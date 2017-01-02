@@ -6,3 +6,8 @@ ResultaIndex:
     defaults: { _controller: AnalysesBundle:Result:ResultaIndex }
     requirements:
         id:  \d+ 
+imprimerResultaIndex:
+    path:   /imprimerResultaIndex/{id}
+    defaults: { _controller: AnalysesBundle:Result:imprimerResultaIndex }
+    requirements:
+        id:  \d+

@@ -55,4 +55,16 @@ class ResultController extends Controller {
         return $this->render("AnalysesBundle:Lims:Resultat.html.twig", array('demande' => $dmd));
     }
 
+    public function imprimerResultaIndexAction($id) {
+        $em = $this->getDoctrine()->getManager();
+        $dmd = $em->getRepository("AnalysesBundle:DemandeAnalyse")->findOneById($id);
+        $html = $this->renderView('AnalysesBundle:Lims:ResultatPrint.html.twig', array('demande' => $dmd));
+        $html2pdf = new \Html2Pdf_Html2Pdf('P', 'A4', 'fr');
+        $html2pdf->pdf->SetDisplayMode('real');
+        $html2pdf->writeHTML($html);
+        return new Response($html2pdf->Output("Recap.pdf"), 200, array('Content-Type' => 'application/pdf'));
+
+
+    }
+
 }

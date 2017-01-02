@@ -55,7 +55,10 @@
 
                 <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">
                     <span> Demande de {{demande.client.nom}}&nbsp;&nbsp; {{demande.client.prenom}}&nbsp; à&nbsp;{{demande.date}} <br>
-                        <center><b>Récaputilatif Des résultats</b> </center>  </span>
+                        <center><b>Récaputilatif Des résultats</b> </center>
+                    <a  href="{{path('imprimerResultaIndex',{'id':demande.id})}}" 
+                        id="eval"  class="btn btn-w-m btn-primary">Imprimer :</a>
+                    </span>
                 </div>
 
                 <div class="panel-body ">
@@ -172,15 +175,6 @@
 {% block javascripts  %} 
 
     <script>
-        $(document).ready(function () {
-            $('.table-bordered').DataTable({
-                "dom": 'lTfigt',
-                "tableTools": {
-                    "sSwfPath": "js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
-                }
-            });
-
-        });
 
 
     </script>

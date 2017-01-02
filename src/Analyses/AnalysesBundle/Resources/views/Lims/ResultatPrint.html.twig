@@ -1,0 +1,111 @@
+<page>
+
+
+    {% block content %}
+
+
+
+        <div >
+
+            <div >
+                <div >
+
+
+                    <div style=" font-size: 15px ;">
+                        <span> Demande de {{demande.client.nom}}&nbsp;&nbsp; {{demande.client.prenom}}&nbsp; à&nbsp;{{demande.date}} <br>
+                            <b>Récaputilatif Des résultats</b> 
+
+                        </span>
+                    </div>
+
+                    <div >
+                        <div>
+                            <table  >
+                                <thead>
+                                    <tr>
+                                        <th>Echantillon:</th>
+                                        <th>Echantillon Items</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody">
+
+                                    {% for e in demande.Echantillons %}
+
+                                        <tr style="height:100px;">
+
+
+                                            <td style="align-content: center">
+                                                <label> Echantillon {{loop.index}} :&nbsp;&nbsp;{{e.reference}}</label>
+
+                                            </td>
+                                            <td style="align-content: center">
+
+                                                <table >
+                                                    {% for i in e.echantillonItems %}
+                                                        <tr>
+                                                            <td style="width:30%">
+                                                                <a href="#">Item {{loop.index}}:</a><label> &nbsp;&nbsp;{{i.reference}}</label>
+                                                            </td>
+                                                            <td>
+                                                                <table  >
+                                                                    {% for j in i.echantillohnHastests %}
+                                                                        <tr>
+                                                                            <td style="width:30%">
+                                                                                <a href="#">Test {{loop.index}} :</a>&nbsp;&nbsp;<label>{{j.test.libelle}}</label></td>
+                                                                            <td style="width:35%">
+                                                                                {%if j.resultat!=null%}
+                                                                                    {{j.resultat.value}} {{j.test.uniteMesure.libelle}}
+                                                                                {%else%}
+                                                                                    <b>...</b>
+                                                                                {%endif%}
+                                                                            </td>
+                                                                            <td style="width:40% ;height: 50%;">
+                                                                                {%if j.resultat!=null%}
+                                                                                    {{j.resultat.commentaire}}
+                                                                                {%else%}
+                                                                                    <b>...</b>
+                                                                                {%endif%}
+
+                                                                            </td>
+
+                                                                        </tr>
+                                                                    {%endfor%}
+                                                                </table>
+
+
+
+                                                            </td>
+
+                                                        </tr>
+                                                    {%endfor%}
+                                                </table>
+
+                                            </td>
+
+                                        </tr>
+
+                                    {% endfor %}
+
+                                </tbody>
+                            </table> 
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div><!-- /.pannel-->
+            </div><!-- /.col-->
+
+
+
+        </div>  
+
+
+        <!-- fin de partie --> 
+    {% endblock content %}
+
+</page>
