@@ -49,7 +49,7 @@ class EchantillonItem {
     private $echantillon;
 
     /**
-     * @ORM\OneToMany(targetEntity="Echantillonhastest", mappedBy="EchantillonItem")
+     * @ORM\OneToMany(targetEntity="Echantillonhastest", mappedBy="echantillonItem")
      */
     private $echantillohnHastests;
 

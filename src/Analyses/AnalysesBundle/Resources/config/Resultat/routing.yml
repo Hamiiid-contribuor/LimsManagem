@@ -1,0 +1,3 @@
+AffecterResult:
+    path:     /AffecterResult
+    defaults: { _controller: AnalysesBundle:Result:AffecterResult }

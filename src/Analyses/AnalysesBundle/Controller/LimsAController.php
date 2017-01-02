@@ -74,12 +74,10 @@ class LimsAController extends Controller {
         $analyse = $em->getRepository('AnalysesBundle:Test')->findAll();
 
         $list = $echantillon->getEchantillonItems();
-       $l= $list[0] ->getechantillohnHastests();
-        
-       var_dump($l[0]);die;
+
 
         return $this->render("AnalysesBundle:Lims:EchantillonItem.html.twig", array('echantillon' => $echantillon,
-            'liste' => $list,'l' => $l));
+                    'liste' => $list));
     }
 
     public function addEchantItemAction($id) {
@@ -100,29 +98,66 @@ class LimsAController extends Controller {
         $echantillonitem->setEchantillon($echantillon);
         $em->persist($echantillonitem);
         $em->flush();
-        
+
         $delete = $request->get('delete');
-        foreach ($delete as $Id) {
-            $echantillonitemhastest = new \Analyses\AnalysesBundle\Entity\Echantillonhastest();
-            $test = $em->getRepository('AnalysesBundle:Test')->findOneById($Id);
-            $echaitem = $em->getRepository('AnalysesBundle:EchantillonItem')->findOneById($echantillonitem->getId());
-            $echantillonitemhastest->setEchantillonItem($echaitem);
-            $echantillonitemhastest->setTest($test);
-           
-            $em->persist($echantillonitemhastest);
-            $em->flush();
+
+        if (is_array($delete)) {
+            foreach ($delete as $Id) {
+                $echantillonitemhastest = new \Analyses\AnalysesBundle\Entity\Echantillonhastest();
+                $test = $em->getRepository('AnalysesBundle:Test')->findOneById($Id);
+                $echaitem = $em->getRepository('AnalysesBundle:EchantillonItem')->findOneById($echantillonitem->getId());
+                $echantillonitemhastest->setEchantillonItem($echaitem);
+                $echantillonitemhastest->setTest($test);
+
+                $em->persist($echantillonitemhastest);
+                $em->flush();
+            }
         }
         $this->addFlash('message', 'les donnée été validé avec succès');
         return $this->redirectToRoute('EchantillonItem', array('id' => $id));
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    function UpdateItemAction($id, Request $request) {
+        $em = $this->getDoctrine()->getEntityManager();
+        $data = $request->request->all();
+        $echantillonItem = $em->getRepository('AnalysesBundle:EchantillonItem')->findOneById($id);
+
+        $echantillonItem->setDate($data['date']);
+        $echantillonItem->setCommentaire($data['Description']);
+        $table = $echantillonItem->getEchantillohnHastests();
+        $em->flush();
+
+        foreach ($table as $value) {
+            $em->remove($value);
+            $em->flush();
+        }
+        $delete = $request->get('delete');
+
+        if (is_array($delete)) {
+            foreach ($delete as $Id) {
+                $echantillonitemhastest = new \Analyses\AnalysesBundle\Entity\Echantillonhastest();
+                $test = $em->getRepository('AnalysesBundle:Test')->findOneById($Id);
+                $echantillonitemhastest->setEchantillonItem($echantillonItem);
+                $echantillonitemhastest->setTest($test);
+                $em->persist($echantillonitemhastest);
+                $em->flush();
+            }
+        }
+        $ech = $echantillonItem->getEchantillon();
+        $a = $ech->getId();
+        $this->addFlash('message', 'les donnée été validé avec succès');
+        return $this->redirectToRoute('EchantillonItem', array('id' => $a));
+    }
+
+    public function DeleteItemAction($id) {
+        $em = $this->getDoctrine()->getEntityManager();
+        $echantillonItem = $em->getRepository('AnalysesBundle:EchantillonItem')->findOneById($id);
+        $em->remove($echantillonItem);
+        $em->flush();
+        $ech = $echantillonItem->getEchantillon();
+        $a = $ech->getId();
+
+        return $this->redirectToRoute('EchantillonItem', array('id' => $a));
+    }
 
 }

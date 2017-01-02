@@ -32,3 +32,19 @@ addItem:
     defaults: {_controller: AnalysesBundle:LimsA:addItem}
     requirements:
         id:  \d+
+        
+UpdateItem:
+    path: /UpdateItem/{id}
+    defaults: {_controller: AnalysesBundle:LimsA:UpdateItem}
+    requirements:
+        id:  \d+
+        
+DeleteItem:
+    path: /DeleteItem/{id}
+    defaults: {_controller: AnalysesBundle:LimsA:DeleteItem}
+    requirements:
+        id:  \d+
+        
+Result:
+    resource: "@AnalysesBundle/Resources/config/Resultat/routing.yml"
+    prefix:   /Resultat

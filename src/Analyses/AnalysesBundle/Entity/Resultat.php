@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="resultat")
  * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\ResultatRepository")
  */
-class Resultat
-{
+class Resultat {
+
     /**
      * @var int
      *
@@ -20,6 +20,12 @@ class Resultat
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Echantillonhastest")
+     * @ORM\JoinColumn(name="echantillonhastest_id", referencedColumnName="id")
+     */
+    private $echantillonhastest;
 
     /**
      * @var float
@@ -42,14 +48,34 @@ class Resultat
      */
     private $commentaire;
 
+    /**
+     * Set echantillonhastest
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Echantillonhastest $echantillonhastest
+     *
+     * @return Resultat
+     */
+    public function setEchantillonhastest(\Analyses\AnalysesBundle\Entity\Echantillonhastest $echantillonhastest = null) {
+        $this->echantillonhastest = $echantillonhastest;
+
+        return $this;
+    }
+
+    /**
+     * Get echantillonhastest
+     *
+     * @return \Analyses\AnalysesBundle\Entity\Echantillonhastest
+     */
+    public function getEchantillonhastest() {
+        return $this->echantillonhastest;
+    }
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -60,8 +86,7 @@ class Resultat
      *
      * @return Resultat
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
 
         return $this;
@@ -72,8 +97,7 @@ class Resultat
      *
      * @return float
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
@@ -84,8 +108,7 @@ class Resultat
      *
      * @return Resultat
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
 
         return $this;
@@ -96,8 +119,7 @@ class Resultat
      *
      * @return \DateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -108,8 +130,7 @@ class Resultat
      *
      * @return Resultat
      */
-    public function setCommentaire($commentaire)
-    {
+    public function setCommentaire($commentaire) {
         $this->commentaire = $commentaire;
 
         return $this;
@@ -120,8 +141,8 @@ class Resultat
      *
      * @return string
      */
-    public function getCommentaire()
-    {
+    public function getCommentaire() {
         return $this->commentaire;
     }
+
 }

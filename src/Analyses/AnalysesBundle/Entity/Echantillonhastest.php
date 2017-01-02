@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Echantillonhastest
  *
  * @ORM\Table(name="echantillonhastest")
- * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\EchantillonhastestRepository")
+ * @ORM\Entity
  */
 class Echantillonhastest {
 
@@ -32,6 +32,37 @@ class Echantillonhastest {
      * @ORM\JoinColumn(name="echantillonItem_id", referencedColumnName="id")
      */
     private $echantillonItem;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Resultat")
+     * @ORM\JoinColumn(name="resultat_id", referencedColumnName="id")
+     */
+    private $resultat;
+    
+       /**
+     * Set resultat
+     *
+     * @param \Analyses\AnalysesBundle\Entity\Resultat $resultat
+     *
+     * @return Echantillonhastest
+     */
+    public function setResultat(\Analyses\AnalysesBundle\Entity\Resultat $resultat = null) {
+        $this->resultat = $resultat;
+
+        return $this;
+    }
+
+    /**
+     * Get resultat
+     *
+     * @return \Analyses\AnalysesBundle\Entity\Resultat
+     */
+    public function getResultat() {
+        return $this->resultat;
+    }
+    
+    
+    
 
     /**
      * Get id

@@ -91,20 +91,20 @@
                 <div class="panel-body ">
 
 
-                    <div class="col-lg-10">
+                    <div class="col-lg-12">
                         <div class="tabs-container">
                             <ul class="nav nav-tabs">
-                                {% for  i in liste %} 
+                                {% for  et in echantillon.echantillonItems %} 
                                     {% if loop.index==1%}
                                         <li class="active">
-                                            <a data-toggle="tab"  href="#tab-{{i.id}}">
-                                                <b>Item Numéro {{loop.index}}  :</b><b>{{i.reference}}</b>
+                                            <a data-toggle="tab"  href="#tab-{{et.id}}">
+                                                <b>Item Num {{loop.index}}  :</b><b>{{et.reference}}</b>
                                             </a>
                                         </li>
                                     {%else%}
                                         <li>
-                                            <a data-toggle="tab" href="#tab-{{i.id}}">
-                                                <b>Item Numéro {{loop.index}}  :</b><b>{{i.reference}}</b>
+                                            <a data-toggle="tab" href="#tab-{{et.id}}">
+                                                <b>Item Num {{loop.index}}  :</b><b>{{et.reference}}</b>
                                             </a>
                                         </li>
                                     {%endif%}  
@@ -112,73 +112,138 @@
                             </ul>
                             <div class="tab-content">
 
-                                {% for  et in liste %}
+                                {% for  et in echantillon.echantillonItems %}
                                     {% if loop.index==1%}
                                         <div id="tab-{{et.id}}" class="tab-pane active">
                                             <div class="panel-body">
-                                                <strong> Description :   </strong>   {{et.commentaire}}<br> 
-                                                <strong> Quantité :   </strong>   <br> 
-                                                <strong> Date de création :  {{et.date}} </strong> <br>  
-                                                <p><b>  les tests demandés : </b></p>
+                                                <form method="post"  action="{{path('UpdateItem',{'id':et.id})}}">
+                                                    <strong> Description :   </strong> 
+                                                    <input type="text" class="form-control" name="Description" value="{{et.commentaire}}">
+                                                    <br> 
+
+                                                    <strong> Date de création :  </strong>
+                                                    <input type="date" class="form-control" name="date" value="{{et.date}}">
+                                                    <br>  
+                                                    <p><b>  les tests demandés : </b></p>
 
 
-                                                <div class="form-group ">
-                                                    {% for a in echantillon.echantillonHasAnalyses %}
+                                                    <div class="form-group ">
+                                                        {% for a in echantillon.echantillonHasAnalyses %}
 
-                                                        <label> 
-                                                            <u>Anlayse Numéro {{loop.index}} :</u> {{a.analyse.code}}  : {{a.analyse.nom}}    
-                                                        </label> 
-                                                        <br>
-                                                        {% for i in a.analyse.categories %}
                                                             <label> 
-                                                                &nbsp&nbsp&nbsp&nbsp&nbsp<input type="checkbox"  value="{{i.id}}">{{i.libelle}}
-                                                            </label><br>
-                                                            {% for j in i.tests %}
-                                                                <label> 
-                                                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                                                    <input type="checkbox" 
-                                                                           {# {% for xe in et.echantillohnHastests %}
-                                                                                {%if xe.test.id==j.id%}
-                                                                                    checked
-                                                                                {%endif%}
-                                                                            {% endfor %} #}
-                                                                           name="delete[]" value="{{j.id}}">{{j.libelle}}
-                                                                </label><br>
-
-
-
-                                                            {% endfor %}
-
-
+                                                                <u>Anlayse Numéro {{loop.index}} :</u> {{a.analyse.code}}  : {{a.analyse.nom}}    
+                                                            </label> 
                                                             <br>
+                                                            {% for i in a.analyse.categories %}
+                                                                <label> 
+                                                                    &nbsp&nbsp&nbsp&nbsp&nbsp<input type="checkbox"  value="{{i.id}}">{{i.libelle}}
+                                                                </label><br>
+                                                                {% for j in i.tests %}
+                                                                    <label> 
+                                                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                                        <input type="checkbox" 
+                                                                               {% for xe in et.echantillohnHastests %}
+                                                                                   {%if xe.test.id==j.id%}
+                                                                                       checked
+                                                                                   {%endif%}
+                                                                               {% endfor %} 
+                                                                               name="delete[]" value="{{j.id}}">{{j.libelle}}
+                                                                    </label><br>
+
+
+
+                                                                {% endfor %}
+
+
+                                                                <br>
+                                                            {% endfor %}
+                                                            <br>
+
                                                         {% endfor %}
-                                                        <br>
 
-                                                    {% endfor %}
-
-                                                </div>
+                                                    </div>
 
 
 
 
+                                                    <a OnClick="return confirm('Etes-Vous Sure de vouloir supprimer cet Item ! ')" href="{{path('DeleteItem',{'id':et.id}) }}" style="width: 11%; margin-left: 660px;"  class=" form-control btn btn-danger">Supprimer</a>
 
-                                                <button  style="width: 15%; margin-left: 660px;"  class=" form-control btn btn-danger ">Valider</button>
-
+                                                    <input type="submit" style="width: 11%; margin-left: 780px; margin-top: -35px; background-color: buttonshadow;color:white;" value="Valider" class=" form-control btn-danger-dark">
+                                                    <a  title="Affecter les Résultats"  style="width: 5%;     margin-left: 888px;
+                                                        margin-top: -59px; background-color: #707070;color:white;"  class=" form-control btn"
+                                                        data-toggle="modal"
+                                                        onclick="load({{ et.id }})"
+                                                        href="#{{ et.id }}"
+                                                        ><i class="fa fa-book"></i>
+                                                    </a>
+                                                </form>
                                             </div>
                                         </div>
                                     {%else%}    
                                         <div id="tab-{{et.id}}" class="tab-pane">
                                             <div class="panel-body">
-                                                <strong> Description :   </strong>   {{et.commentaire}}<br> 
-                                                <strong> Quantité :   </strong>  <br> 
-                                                <strong> Date de création :   </strong>  <br> 
-                                                <p><b>  les tests demandés : </b></p> 
+                                                <form  method="post"  action="{{path('UpdateItem',{'id':et.id})}}">
+                                                    <strong> Description :   </strong> 
+                                                    <input type="text" class="form-control" name="Description" value="{{et.commentaire}}">
+                                                    <br> 
 
-                                                {#  {%for j in i.echantillohnHastests %}
-                                                      
-                                                      {{j.test.libelle}}
-                                                      {%endfor%}#}
-                                                <button  style="width: 15%; margin-left: 660px;"  class=" form-control btn btn-danger ">Valider</button>
+                                                    <strong> Date de création : </strong>
+                                                    <input type="date" class="form-control" name="date" value="{{et.date}}">
+                                                    <br>
+                                                    <p><b>  les tests demandés : </b></p>
+
+
+                                                    <div class="form-group ">
+                                                        {% for a in echantillon.echantillonHasAnalyses %}
+
+                                                            <label> 
+                                                                <u>Anlayse Numéro {{loop.index}} :</u> {{a.analyse.code}}  : {{a.analyse.nom}}    
+                                                            </label> 
+                                                            <br>
+                                                            {% for i in a.analyse.categories %}
+                                                                <label> 
+                                                                    &nbsp&nbsp&nbsp&nbsp&nbsp<input  type="checkbox"  value="{{i.id}}">{{i.libelle}}
+                                                                </label><br>
+                                                                {% for j in i.tests %}
+                                                                    <label> 
+                                                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                                        <input type="checkbox" 
+                                                                               {% for xe in et.echantillohnHastests %}
+                                                                                   {%if xe.test.id==j.id%}
+                                                                                       checked
+                                                                                   {%endif%}
+                                                                               {% endfor %} 
+                                                                               name="delete[]" value="{{j.id}}">{{j.libelle}}
+                                                                    </label><br>
+
+
+
+                                                                {% endfor %}
+
+
+                                                                <br>
+                                                            {% endfor %}
+                                                            <br>
+
+                                                        {% endfor %}
+
+                                                    </div>
+
+
+
+
+
+                                                    <a OnClick="return confirm('Etes-Vous Sure de vouloir supprimer cet Item ! ')" href="{{path('DeleteItem',{'id':et.id}) }}" style="width: 11%; margin-left: 660px;"  class=" form-control btn btn-danger">Supprimer</a>
+
+                                                    <input type="submit" style="width: 11%; margin-left: 780px; margin-top: -35px; background-color: buttonshadow;color:white;"  value="Valider" class=" form-control btn-danger-dark">
+                                                    <a  title="Affecter les Résultats"  style="width: 5%;     margin-left: 888px;
+                                                        margin-top: -59px; background-color: #707070;color:white;"  class=" form-control btn"
+                                                        data-toggle="modal"
+                                                        onclick="load({{ et.id }})"
+                                                        href="#{{ et.id }}"
+                                                        ><i class="fa fa-book"></i></a>
+
+                                                </form>
                                             </div>
                                         </div>
                                     {%endif%}
@@ -189,21 +254,108 @@
 
                         </div>
                     </div>
+                    {% for  i in echantillon.echantillonItems %}
+                        <div style="display: none;" class="modal inmodal" tabindex="-1" id="{{ i.id }}" role="dialog"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated bounceInRight">
+
+                                    <div class="modal-header">
+                                        <h4> <u>Réference d'échantillon:</u> &nbsp; {{ echantillon.reference }}&nbsp;:&nbsp;<br>
+                                            <u>Echantillon Item Réference:</u> &nbsp; {{i.reference}}
+                                        </h4>
+                                        <hr>
+                                        <h5> Les résultats :</h5>
+
+                                        <form method="post" action="{{ path('AffecterResult') }}">
+                                            <input type="hidden" value="{{echantillon.id}}" name="echaID"/>
+                                            <table class="table ">
+                                                <thead>
+                                                <th>Test Concerné:</th>
+                                                <th>Valeur</th>
+                                                <th> Min</th>
+                                                <th> Max</th>
+                                                <th> Unité</th>
+                                                <th>Commentaire</th>
+                                                </thead>
+                                                <tbody id="tbody">
+
+                                                    {% for emp in i.echantillohnHastests %}
+
+                                                        <tr style="height:100px;">
+
+                                                            <td style="align-content: center" >{{ emp.test.libelle }}
+                                                            </td>
+                                                    <input type="hidden" value="{{emp.id}}" name="{{emp.id}}"/>
+
+                                                    <td style="align-content: center">
+                                                        <div class="form-group ">
+                                                            <input type="number" step="0.0001" style="width: 50%;"
+                                                                   id="value{{loop.index}}" name="value{{emp.id}}"
+                                                                   {%if emp.resultat!=null%}
+                                                                       value="{{emp.resultat.value}}"
+                                                                   {%endif%}
+                                                                   >
+                                                        </div>
+                                                    </td>
+                                                    <td style="align-content: center">
+                                                        <label>{{emp.test.valeurMin}}</label>
+                                                    </td>
+                                                    <td style="align-content: center">
+                                                        <label>{{emp.test.valeurMax}}</label>
+                                                    </td>
+
+                                                    <td style="align-content: center">
+                                                        <label>{{emp.test.uniteMesure.libelle}}</label>
+                                                    </td>
 
 
 
-       
-                                
-                      
-                    {% for  ez in l%}
-                        
+                                                    <td style="align-content: center">
+                                                        <div class="form-group ">
+                                                            <textarea  name="comment{{emp.id}}" 
 
 
-                        
+                                                                       class="form-control" >
+                                                                {%if emp.resultat!=null%}
+                                                                    {{emp.resultat.commentaire}}
+                                                                {%endif%}
+                                                            </textarea>
 
-                    {%endfor%}  
+                                                        </div>
+                                                    </td>
 
-     
+                                                    </tr>
+
+                                                {% endfor %}
+
+                                                </tbody>
+                                            </table>     
+                                            <br>
+                                            <a style="margin-right: 400px;background-color: #1ab394 !important;color:#fff"  href="{{path('EchantillonItem',{'id':echantillon.id})}}" class="btn btn-w-m btn-default">Annuler</a>
+                                            <input type="submit" id="eval" value="Enregistrer " class="btn btn-w-m btn-primary"/>
+                                        </form>
+
+
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    {%endfor%}
+
+
+
+
+
+
+
+
 
 
 
@@ -221,19 +373,6 @@
                 </div>
             </div><!-- /.pannel-->
         </div><!-- /.col-->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
