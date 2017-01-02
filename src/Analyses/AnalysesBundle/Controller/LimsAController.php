@@ -84,7 +84,10 @@ class LimsAController extends Controller {
 
         $em = $this->getDoctrine()->getEntityManager();
         $echantillon = $em->getRepository('AnalysesBundle:Echantillon')->findOneById($id);
-        return $this->render("AnalysesBundle:Lims:addEchantillonItem.html.twig", array('echantillon' => $echantillon));
+        $liste = $em->getRepository('AnalysesBundle:Test')->findAll();
+        
+        return $this->render("AnalysesBundle:Lims:addEchantillonItem.html.twig", 
+                array('echantillon' => $echantillon,'liste'=>$liste));
     }
 
     public function addItemAction($id, Request $request) {

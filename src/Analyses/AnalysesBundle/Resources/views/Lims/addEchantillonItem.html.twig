@@ -122,7 +122,11 @@
                                         </label><br>
                                         {% for j in i.tests %}
                                             <label> 
-                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="checkbox" name="delete[]" value="{{j.id}}">{{j.libelle}}
+                                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                <input type="checkbox" name="delete[]" value="{{j.id}}">
+                                                <a   data-toggle="modal"
+                                                   onclick="load({{ j.id }})"
+                                                   href="#{{ j.id }}">{{j.libelle}}</a>
                                             </label><br>
 
 
@@ -156,28 +160,37 @@
 
                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
             </div><!-- /.pannel-->
         </div><!-- /.col-->
 
+        {% for a in echantillon.echantillonHasAnalyses %}
+
+            {% for i in a.analyse.categories %}
+
+                {% for j in i.tests %}
+                    <div style="display: none;" class="modal inmodal" tabindex="-1" id="{{ j.id }}" role="dialog"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content animated bounceInRight">
+
+                                <div class="modal-header">
+                                    <h4> <u>Mode Opératoire:</u> &nbsp; {{ j.libelle }}&nbsp;:&nbsp;<br>
+
+                                    </h4>
+                                    <hr>
+                                    <p>{{ j.commentaire }}</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                {%endfor%}
+        {%endfor%}
+        {%endfor%}
 
 
 

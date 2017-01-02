@@ -54,10 +54,17 @@
 
 
                 <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">
-                    <span>Liste des Analyses</span>
+                    <span> Demande de {{demande.client.nom}}&nbsp;&nbsp; {{demande.client.prenom}}&nbsp; à&nbsp;{{demande.date}} <br>
+                        <center><b>Liste des Echantillons</b></center>  </span>
                     <i  style="color: #3c8dbc;" class="pull-right fa  fa-plus-square fa-lg"></i>
                 </div>
+
                 <div class="panel-body ">
+                    <a  href="{{path('ResultaIndex',{'id':demande.id})}}" 
+                        id="eval"  class="btn btn-w-m btn-primary">L'avancement du demande :</a>
+                    <a  href="#" 
+                        id="eval"  class="btn btn-w-m btn-danger">Supprimer La demande </a>
+
 
                     <div id="panelAjout" class="col-md-5 col-md-offset-1">
                         <div class="panel panel-default">
@@ -132,7 +139,7 @@
 
                                     </div>
                                 </form>
-                                            <div style="    margin-top: -69PX; margin-left: 177px;" class="col-md-6" >
+                                <div style="    margin-top: -69PX; margin-left: 177px;" class="col-md-6" >
                                     <label>  </label>
                                     <button id="btnAnnuler"  class=" form-control btn btn-danger ">Annuler</button>
                                 </div>

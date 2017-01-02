@@ -1,0 +1,187 @@
+{% extends '::base.html.twig' %}
+
+
+{% block content %}
+
+
+    <style> 
+        .input {
+            border: 1px solid #eee;
+            box-shadow: none;
+            border-radius: 7px ; 
+            font-family : inherit;
+            font-size   : 100%;
+            padding: 10px;
+
+            box-shadow: inset 1px 1px 1px 0 #707070;
+            transition: box-shadow 0.3s;
+
+        }
+
+        .input:focus {
+            border: 1px solid #30a5ff;
+            outline: 0;
+            box-shadow: inset 0px 0px 0px 1px #30a5ff;
+            font-family : inherit;
+            font-size   : 100%;
+        }
+        .row{
+            margin-left: 20px;
+        }
+
+        #panelAjout{
+            margin-left: 5px !important;
+        }
+
+
+    </style>
+
+
+    <div>
+        <br/>
+        <br/>
+    </div>
+
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-md-11 ">
+            <div class="panel panel-default">
+
+
+                <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">
+                    <span> Demande de {{demande.client.nom}}&nbsp;&nbsp; {{demande.client.prenom}}&nbsp; à&nbsp;{{demande.date}} <br>
+                        <center><b>Récaputilatif Des résultats</b> </center>  </span>
+                </div>
+
+                <div class="panel-body ">
+                    <div class="ibox-content">
+                        <table class="table table-bordered" >
+                            <thead>
+                            <th>Echantillon:</th>
+                            <th>Echantillon Items</th>
+
+
+                            </thead>
+                            <tbody id="tbody">
+
+                                {% for e in demande.Echantillons %}
+
+                                    <tr style="height:100px;">
+
+
+                                        <td style="align-content: center">
+                                            <label> Echantillon {{loop.index}} :&nbsp;&nbsp;{{e.reference}}</label>
+
+                                        </td>
+                                        <td style="align-content: center">
+
+                                            <table class="table table-bordered" >
+                                                {% for i in e.echantillonItems %}
+                                                    <tr>
+                                                        <td style="width:30%">
+                                                            <a href="#">Item {{loop.index}}:</a><label> &nbsp;&nbsp;{{i.reference}}</label>
+                                                        </td>
+                                                        <td>
+                                                            <table class="table table-striped table-bordered table-hover dataTables-example" >
+                                                                {% for j in i.echantillohnHastests %}
+                                                                    <tr>
+                                                                        <td style="width:30%">
+                                                                            <a href="#">Test {{loop.index}} :</a>&nbsp;&nbsp;<label>{{j.test.libelle}}</label></td>
+                                                                        <td style="width:35%">
+                                                                            {%if j.resultat!=null%}
+                                                                                {{j.resultat.value}} {{j.test.uniteMesure.libelle}}
+                                                                            {%else%}
+                                                                                <b>...</b>
+                                                                            {%endif%}
+                                                                        </td>
+                                                                        <td style="width:40% ;height: 50%;">
+                                                                            {%if j.resultat!=null%}
+                                                                                {{j.resultat.commentaire}}
+                                                                            {%else%}
+                                                                                <b>...</b>
+                                                                            {%endif%}
+
+                                                                        </td>
+
+                                                                    </tr>
+                                                                {%endfor%}
+                                                            </table>
+
+
+
+                                                        </td>
+
+                                                    </tr>
+                                                {%endfor%}
+                                            </table>
+
+                                        </td>
+
+                                    </tr>
+
+                                {% endfor %}
+
+                            </tbody>
+                        </table> 
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div><!-- /.pannel-->
+        </div><!-- /.col-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>  
+
+
+
+
+
+
+
+
+
+    <!-- fin de partie --> 
+{% endblock content %}
+
+{% block javascripts  %} 
+
+    <script>
+        $(document).ready(function () {
+            $('.table-bordered').DataTable({
+                "dom": 'lTfigt',
+                "tableTools": {
+                    "sSwfPath": "js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
+                }
+            });
+
+        });
+
+
+    </script>
+{% endblock %}

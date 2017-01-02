@@ -41,11 +41,18 @@ class ResultController extends Controller {
             }
         }
         $em->flush();
-        
+
         $E = $em->getRepository("AnalysesBundle:Echantillon")->findOneById($data['echaID']);
         $a = $E->getId();
 
         return $this->redirectToRoute('EchantillonItem', array('id' => $a));
+    }
+
+    public function ResultaIndexAction($id) {
+        $em = $this->getDoctrine()->getManager();
+        $dmd = $em->getRepository("AnalysesBundle:DemandeAnalyse")->findOneById($id);
+
+        return $this->render("AnalysesBundle:Lims:Resultat.html.twig", array('demande' => $dmd));
     }
 
 }

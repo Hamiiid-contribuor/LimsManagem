@@ -1,3 +1,8 @@
 AffecterResult:
     path:     /AffecterResult
     defaults: { _controller: AnalysesBundle:Result:AffecterResult }
+ResultaIndex:
+    path:   /ResultaIndex/{id}
+    defaults: { _controller: AnalysesBundle:Result:ResultaIndex }
+    requirements:
+        id:  \d+ 
