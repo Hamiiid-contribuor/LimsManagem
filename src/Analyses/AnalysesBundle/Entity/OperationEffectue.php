@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="operation_effectue")
  * @ORM\Entity(repositoryClass="Analyses\AnalysesBundle\Repository\OperationEffectueRepository")
  */
-class OperationEffectue
-{
+class OperationEffectue {
+
     /**
      * @var int
      *
@@ -22,32 +22,36 @@ class OperationEffectue
     private $id;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date", type="date")
+     * @ORM\Column(name="date", type="string", length=255)
      */
     private $date;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="operation", type="string", length=255)
+     */
+    private $operation;
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
     /**
      * Set date
      *
-     * @param \DateTime $date
+     * @param string $date
      *
      * @return OperationEffectue
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
 
         return $this;
@@ -56,10 +60,32 @@ class OperationEffectue
     /**
      * Get date
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
+
+    /**
+     * Set operation
+     *
+     * @param string $operation
+     *
+     * @return OperationEffectue
+     */
+    public function setOperation($operation) {
+        $this->operation = $operation;
+
+        return $this;
+    }
+
+    /**
+     * Get operation
+     *
+     * @return string
+     */
+    public function getOperation() {
+        return $this->operation;
+    }
+
 }

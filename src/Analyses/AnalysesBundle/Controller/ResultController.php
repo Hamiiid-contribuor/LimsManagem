@@ -66,5 +66,10 @@ class ResultController extends Controller {
 
 
     }
+    public function ValiderDemandeAction($id){
+        $em = $this->getDoctrine()->getManager();
+        $dmd = $em->getRepository("AnalysesBundle:DemandeAnalyse")->findOneById($id);
+        
+    }
 
 }

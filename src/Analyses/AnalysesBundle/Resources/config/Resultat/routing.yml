@@ -11,3 +11,8 @@ imprimerResultaIndex:
     defaults: { _controller: AnalysesBundle:Result:imprimerResultaIndex }
     requirements:
         id:  \d+
+ValiderDemande:
+    path:   /ValiderDemande/{id}
+    defaults: { _controller: AnalysesBundle:Result:ValiderDemande }
+    requirements:
+        id:  \d+

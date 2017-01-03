@@ -85,9 +85,8 @@ class LimsAController extends Controller {
         $em = $this->getDoctrine()->getEntityManager();
         $echantillon = $em->getRepository('AnalysesBundle:Echantillon')->findOneById($id);
         $liste = $em->getRepository('AnalysesBundle:Test')->findAll();
-        
-        return $this->render("AnalysesBundle:Lims:addEchantillonItem.html.twig", 
-                array('echantillon' => $echantillon,'liste'=>$liste));
+
+        return $this->render("AnalysesBundle:Lims:addEchantillonItem.html.twig", array('echantillon' => $echantillon, 'liste' => $liste));
     }
 
     public function addItemAction($id, Request $request) {
@@ -155,11 +154,20 @@ class LimsAController extends Controller {
     public function DeleteItemAction($id) {
         $em = $this->getDoctrine()->getEntityManager();
         $echantillonItem = $em->getRepository('AnalysesBundle:EchantillonItem')->findOneById($id);
-        $em->remove($echantillonItem);
-        $em->flush();
+        $table = $echantillonItem->getEchantillohnHastests();
+        foreach ($table as $value) {
+            $res = $value->getResultat();
+            $value->setResultat(null);
+            $em->remove($res);
+            $em->flush();
+            $em->remove($value);
+            $em->flush();
+        }
         $ech = $echantillonItem->getEchantillon();
         $a = $ech->getId();
 
+        $em->remove($echantillonItem);
+        $em->flush();
         return $this->redirectToRoute('EchantillonItem', array('id' => $a));
     }
 

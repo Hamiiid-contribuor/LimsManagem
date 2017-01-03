@@ -57,7 +57,9 @@
                     <span> Demande de {{demande.client.nom}}&nbsp;&nbsp; {{demande.client.prenom}}&nbsp; à&nbsp;{{demande.date}} <br>
                         <center><b>Récaputilatif Des résultats</b> </center>
                     <a  href="{{path('imprimerResultaIndex',{'id':demande.id})}}" 
-                        id="eval"  class="btn btn-w-m btn-primary">Imprimer :</a>
+                        id="eval"  class="btn btn-w-m btn-primary">Imprimer </a>
+                         <a  href="{{path('ValiderDemande',{'id':demande.id})}}" 
+                        id="eval"  class="btn btn-w-m btn-primary">Valider Résultat </a>
                     </span>
                 </div>
 

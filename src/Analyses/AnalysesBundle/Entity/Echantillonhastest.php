@@ -34,7 +34,7 @@ class Echantillonhastest {
     private $echantillonItem;
 
     /**
-     * @ORM\OneToOne(targetEntity="Resultat")
+     * @ORM\OneToOne(targetEntity="Resultat",cascade={"remove"})
      * @ORM\JoinColumn(name="resultat_id", referencedColumnName="id")
      */
     private $resultat;
