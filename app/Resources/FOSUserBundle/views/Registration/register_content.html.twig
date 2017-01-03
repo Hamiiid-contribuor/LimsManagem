@@ -3,6 +3,7 @@
 
 
     <style> 
+
         .input {
             border: 1px solid #eee;
             box-shadow: none;
@@ -52,7 +53,7 @@
 
             <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">Nouveau Utilisateur </div>
             <div class="panel-body ">
-                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}        
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register' , 'id': 'form_Registration_User'}}) }}        
 
                 <div class="row col-md-10 col-md-offset-1">
                     <div class="col-md-4 form-group ">
@@ -93,12 +94,13 @@
                     <div class="col-md-4 form-group ">
                         <label>Nom Utilisation (*) </label>
                         <label><span style="color: #f68484!important">{{form_errors(form.username)}}</span></label>
-                            {{ form_widget(form.username , { 'attr': {'class': 'form-control input' }  }) }}
+                            {{ form_widget(form.username , { 'attr': {'class': 'form-control input ' }  }) }}
                     </div>
                     <div class="col-md-5 form-group ">
                         <label>Date Embauche </label>
                         <label><span style="color: #f68484!important">{{form_errors(form.dateEmbauche)}}</span></label>
-                            {{ form_widget(form.dateEmbauche , { 'attr': {'class': 'form-control input'}  }) }}
+                            {{ form_widget(form.dateEmbauche , { 'attr': {'class': 'form-control input dateStyle'}  }) }}
+
                     </div>
                     <div class="col-md-3 form-group ">
 
@@ -120,15 +122,13 @@
 
                     </div>
                 </div>
-                <div>
-                    <br/>
-                </div>
                 <div class="row col-md-10 col-md-offset-1">
-                    <div class="form-group">
+                    <div class="form-group col-md-12">
                         <label>Description   </label>
                         <label><span style="color: #f68484!important">{{form_errors(form.commentaire)}}</span></label>
                             {{ form_widget(form.commentaire , { 'attr': {'class': 'form-control input' }  }) }}
                     </div>
+
                 </div>
                 <div class="col-md-3 pull-right">
                     <label>  </label>
@@ -143,5 +143,68 @@
 
 
 {% block javascripts %}
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $('.dateStyle').datepicker({});
+
+
+            $("#form_Registration_User").validate({
+                rules: {
+                    'fos_user_registration_form[prenom]': {
+                        required: true,
+                        maxlength: 10
+                    }{#,
+                    'facture_facturebundle_facture[dateEdition]': {
+                        required: true,
+                        date: true
+                    },
+                    'facture_facturebundle_facture[observ]': {
+                        required: true,
+                        minlength: 4
+                    }#}
+                }
+                , messages: {
+                    'fos_user_registration_form[prenom]': {
+                        required: "Ce champ ne doit pas étre vide",
+                        maxlength: "Ce champ doit être un nombre inférieure à 100 %"
+
+                    }{#,
+                    'facture_facturebundle_facture[dateEdition]': {
+                        required: "Ce champ ne doit pas étre vide",
+                        date: "Format de date incorrecte"
+                    },
+                    'facture_facturebundle_facture[observ]': {
+                        required: "Ce champ ne doit pas étre vide",
+                        minlength: "Ce champ doit etre composé au moins de 4 caractères"
+                    }#}
+                },
+                errorElement: "em",
+                errorPlacement: function (error, element) {
+                    // Add the `help-block` class to the error element
+                    error.addClass("error");
+                    if (element.prop('id') == "fos_user_registration_form_prenom") {
+
+                        var placement = element.prev();
+                        placement.append(error);
+
+                    } {#else if (element.prop('id') == "facture_facturebundle_facture_dateEdition") {
+
+                        var placement = element.parent().prev();
+                        placement.append(error);
+
+                    } else if (element.prop('id') == "facture_facturebundle_facture_observ") {
+
+                        var placement = element.prev();
+                        placement.append(error);
+
+                    }#}
+                },
+            });
+
+        });
+    </script>
 
 {% endblock %}

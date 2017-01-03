@@ -8,11 +8,9 @@
 
 namespace Utilisateur\UtilisateurBundle\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-
-
+use Utilisateur\UtilisateurBundle\Entity\Utilisateur;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Description of UtilisateurController
@@ -23,6 +21,34 @@ class UtilisateurController extends Controller {
 
 //put your code here
 
+
+    public function activateUserAction($id) {
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('UtilisateurBundle:Utilisateur')->find($id);
+        $user->setEnabled(true);
+        $em->flush($user);
+
+        return $this->redirectToRoute('list_of_user');
+    }
+     public function disactivateUserAction($id) {
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('UtilisateurBundle:Utilisateur')->find($id);
+        $user->setEnabled(false);
+        $em->flush($user);
+
+        return $this->redirectToRoute('list_of_user');
+    }
+
+    public function deleteUserAction(Utilisateur $utilisateur) {
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($utilisateur);
+        $em->flush($utilisateur);
+
+        return $this->redirectToRoute('list_of_user');
+    }
 
     public function listUserAction() {
         $em = $this->getDoctrine()->getManager();

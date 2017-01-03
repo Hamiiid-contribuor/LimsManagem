@@ -2,6 +2,7 @@
 
 namespace Utilisateur\UtilisateurBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -44,9 +45,9 @@ class Utilisateur extends BaseUser {
     private $prenom;
 
     /**
-     * @var \DateTime
+     * @var \String
      *
-     * @ORM\Column(name="dateEmbauche", type="date" , nullable=true)
+     * @ORM\Column(name="dateEmbauche", type="string" , nullable=true)
      */
     private $dateEmbauche;
 
@@ -81,16 +82,46 @@ class Utilisateur extends BaseUser {
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=45, nullable=true)
-     */
-    private $image;
-    /**
-     * @var string
-     *
      * @ORM\Column(name="fonction", type="string" , nullable= true)
      */
     private $fonction;
-    
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    public $pictureName;
+
+    /**
+     * @Assert\File(maxSize="500k")
+     */
+    public $file;
+
+    public function getWebPath() {
+        return null === $this->pictureName ? null : $this->getUploadDir() . '/' . $this->pictureName;
+    }
+
+    protected function getUploadRootDir() {
+        // le chemin absolu du répertoire dans lequel sauvegarder les photos de profil
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+    }
+
+    protected function getUploadDir() {
+        // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
+        return 'uploads/pictures';
+    }
+
+    public function uploadProfilePicture() {
+        // Nous utilisons le nom de fichier original, donc il est dans la pratique 
+        // nécessaire de le nettoyer pour éviter les problèmes de sécurité
+        // move copie le fichier présent chez le client dans le répertoire indiqué.
+        $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());
+
+        // On sauvegarde le nom de fichier
+        $this->pictureName = $this->file->getClientOriginalName();
+
+        // La propriété file ne servira plus
+        $this->file = null;
+    }
 
     /**
      * Get id
@@ -170,7 +201,7 @@ class Utilisateur extends BaseUser {
     /**
      * Set dateEmbauche
      *
-     * @param \DateTime $dateEmbauche
+     * @param \String $dateEmbauche
      *
      * @return Utilisateur
      */
@@ -183,7 +214,7 @@ class Utilisateur extends BaseUser {
     /**
      * Get dateEmbauche
      *
-     * @return \DateTime
+     * @return \String
      */
     public function getDateEmbauche() {
         return $this->dateEmbauche;
@@ -283,37 +314,13 @@ class Utilisateur extends BaseUser {
     }
 
     /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return Utilisateur
-     */
-    public function setImage($image) {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage() {
-        return $this->image;
-    }
-
-
-    /**
      * Set fonction
      *
      * @param string $fonction
      *
      * @return Utilisateur
      */
-    public function setFonction($fonction)
-    {
+    public function setFonction($fonction) {
         $this->fonction = $fonction;
 
         return $this;
@@ -324,8 +331,32 @@ class Utilisateur extends BaseUser {
      *
      * @return string
      */
-    public function getFonction()
-    {
+    public function getFonction() {
         return $this->fonction;
+    }
+
+
+    /**
+     * Set pictureName
+     *
+     * @param string $pictureName
+     *
+     * @return Utilisateur
+     */
+    public function setPictureName($pictureName)
+    {
+        $this->pictureName = $pictureName;
+
+        return $this;
+    }
+
+    /**
+     * Get pictureName
+     *
+     * @return string
+     */
+    public function getPictureName()
+    {
+        return $this->pictureName;
     }
 }

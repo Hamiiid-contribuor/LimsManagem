@@ -12,7 +12,9 @@
 
 
         {% endblock %}
-        
+
+
+
         <!--Tooltipster-->
         <link href="{{ asset('plugins/tooltipster-master/css/tooltipster.css') }}" rel="stylesheet" type="text/css"/>
         <!-- DataTables -->
@@ -46,6 +48,12 @@
         <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
         <!-- Select 2-->
         <link href="{{ asset('assets/plugins/bootstrap-select2/select2.css') }}" rel="stylesheet" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="{{ asset("Datetimepicker/jquery.datetimepicker.css") }}">
+        <!--jqueryConfirm-->
+        <link rel="stylesheet" href="{{ asset('jqueryConfirm/dist/jquery-confirm.min.css') }}">
+        <!--Growl-->
+        <link rel="stylesheet" href="{{ asset('plugins/growl/jquery.growl.css') }}">
+
 
         <!-- jQuery 2.1.4 -->
         <script src="{{ asset('plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
@@ -71,8 +79,13 @@
         <script src="{{ asset('plugins/tooltipster-master/js/jquery.tooltipster.min.js') }}" type="text/javascript"></script>
         <!--DatePicker-->
         <script src="{{ asset('plugins/datepicker/bootstrap-datepicker.js') }}" type="text/javascript"></script>
-
-         
+        <script type="text/javascript" src="{{ asset('Datetimepicker/jquery.datetimepicker.js') }}"></script>
+        <!--jqueryConfirm-->
+        <script src="{{ asset('jqueryConfirm/dist/jquery-confirm.min.js') }}" type="text/javascript"></script>
+        <!--Growl-->
+        <script src="{{ asset('plugins/growl/jquery.growl.js') }}" type="text/javascript"></script>
+        <!--Growl-->
+        <script src="{{ asset('assets/plugins/jquery-validation/js/jquery.validate.min.js') }}" type="text/javascript"></script>
 
         {% block javascripts %}
 
@@ -82,8 +95,8 @@
         {% block body %}
 
         <body class="hold-transition skin-blue sidebar-mini">
-            <div class="wrapper">
-                <header class="main-header">
+            <div  class="wrapper">
+                <header  style="background-color:  #222d32 ; " class="main-header">
                     <!-- Logo -->
                     <a href="#" class="logo">
                         <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -92,7 +105,7 @@
                         <span class="logo-lg"><b></b></span>
                     </a>
                     <!-- Header Navbar: style can be found in header.less -->
-                    <nav class="navbar navbar-static-top" role="navigation">
+                    <nav style="background-color:  #222d32 ; " class="navbar navbar-static-top" role="navigation">
                         <!-- Sidebar toggle button-->
                         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                             <span class="sr-only">Toggle navigation</span>
@@ -222,16 +235,25 @@
                                 <!-- User Account: style can be found in dropdown.less -->
                                 <li class="dropdown user user-menu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="{{ asset('dist/img/myUser.png') }}" class="user-image" alt="User Image">
-                                        <span class="hidden-xs">{#{{ user.nom }} {{ user.prenom }} #}Nom Prenom </span>
+                                        {% if(app.user.getWebPath())!= NULL %}
+                                            <img src="{{ asset(app.user.getWebPath()) }}" class="user-image" alt="User Image">
+                                        {% elseif(app.user.getWebPath()) == NULL %}
+                                            <img src="{{ asset('dist/img/myUser.png') }}" class="user-image" alt="User Image">
+                                        {% endif %}
+                                        <span class="hidden-xs">{{ app.user.prenom }} {{ app.user.nom }} </span>
                                     </a>
                                     <ul class="dropdown-menu">
                                         <!-- User image -->
-                                        <li class="user-header">
-                                            <img src="{{ asset('dist/img/myUser.png') }}" class="img-circle" alt="User Image">
+                                        <li style="background-color: #374850;" class="user-header">
+                                            {% if(app.user.getWebPath()) != NULL %}
+                                                <img src="{{ asset(app.user.getWebPath()) }}" class="img-circle" alt="User Image">
+                                            {% elseif(app.user.getWebPath()) == NULL %}
+                                                <img src="{{ asset('dist/img/myUser.png') }}" class="img-circle" alt="User Image">
+                                            {% endif %}
                                             <p>
-                                                Nom Prenom
-                                                <small>Membere depuis Nov. 2012</small>
+
+                                                {{ app.user.prenom }} {{ app.user.nom }} 
+                                                <small>Membere depuis {{ app.user.dateEmbauche }}</small>
                                             </p>
                                         </li>
                                         <!-- Menu Body -->
@@ -263,10 +285,14 @@
                         <!-- Sidebar user panel -->
                         <div class="user-panel">
                             <div class="pull-left image">
-                                <img src="{{ asset('dist/img/myUser.png') }}" class="img-circle" alt="User Image">
+                                {% if(app.user.getWebPath()) != NULL %}
+                                    <img src="{{ asset(app.user.getWebPath()) }}" class="img-circle" alt="User Image">
+                                {% elseif(app.user.getWebPath()) == NULL %}
+                                    <img src="{{ asset('dist/img/myUser.png') }}" class="img-circle" alt="User Image">
+                                {% endif %}
                             </div>
                             <div class="pull-left info">
-                                <p>{#{{ user.nom }}  {{ user.prenom }}#}Nom Prenom</p>
+                                <p>{{ app.user.prenom }} {{ app.user.nom }} </p>
                                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                             </div>
                         </div>
@@ -423,12 +449,12 @@
 
                     {% endblock content %}
                 </div><!-- /.content-wrapper -->
-{#
-                <footer class="main-footer">
-                    <div class="pull-center">
-                        <strong>Copyright &copy; 2016-2017 <a href="#">Group ISI FSSM</a>.</strong> All rights reserved.
-                    </div>
-                </footer>#}
+                {#
+                                <footer class="main-footer">
+                                    <div class="pull-center">
+                                        <strong>Copyright &copy; 2016-2017 <a href="#">Group ISI FSSM</a>.</strong> All rights reserved.
+                                    </div>
+                                </footer>#}
 
 
 

@@ -5,60 +5,54 @@ namespace Utilisateur\UtilisateurBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class ProfileType extends AbstractType
-{
-    
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+class ProfileType extends AbstractType {
+
+    public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder->add('nom');
         $builder->add('prenom');
         $builder->add('adresse');
         $builder->add('telephone');
-        
-        
+        $builder->add('file');
     }
 
-    public function getParent()
-    {
+    public function getParent() {
         return 'FOS\UserBundle\Form\Type\ProfileFormType';
-
     }
 
-    public function getBlockPrefix()
-    {
+    public function getBlockPrefix() {
         return 'app_user_profile';
     }
 
-    public function getNom()
-    {
+    public function getNom() {
         return $this->getBlockPrefix();
     }
-    public function getPrenom()
-    {
+
+    public function getPrenom() {
         return $this->getBlockPrefix();
     }
-    public function getAge()
-    {
+
+    public function getAge() {
         return $this->getBlockPrefix();
     }
-    public function getAdresse()
-    {
+
+    public function getAdresse() {
         return $this->getBlockPrefix();
     }
-    public function getTelephone()
-    {
+
+    public function getTelephone() {
         return $this->getBlockPrefix();
     }
-    public function getMatricule()
-    {
+
+    public function getMatricule() {
         return $this->getBlockPrefix();
     }
-    public function getCommentaire()
-    {
+
+    public function getCommentaire() {
         return $this->getBlockPrefix();
     }
-    public function getDateEmbauche()
-    {
+
+    public function getDateEmbauche() {
         return $this->getBlockPrefix();
     }
+
 }

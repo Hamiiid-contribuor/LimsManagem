@@ -7,8 +7,27 @@
     </div>
 
 
-    <div  class="row col-md-10 col-md-offset-1">
-        <div class="col-lg-12">
+    <!-- le navbar de parametrage -->
+    <div>
+        <br/>
+    </div>
+    <nav class=" col-md-10 col-md-offset-1 navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a style="font-family: 'Times New Roman' ; font-size: 25px ; font-weight: bold;" class="navbar-brand " href="#">Profil</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ><a href="{{ path('fos_user_profile_edit') }}">Modifier </a></li>
+                <li class="active"><a href="{{ path('fos_user_profile_show') }}">Consulter</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <div class="row">
+        <div  class="row col-md-10 col-md-offset-1">
+
             <div class="panel panel-default">
                 <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">
                     <span>Vos informations sont modifier avec <b>Succes</b></span>
@@ -21,7 +40,7 @@
                         <fieldset>
                             <legend>Photo </legend>
                             <div id="myImage" class="image">
-                                <img src="{{ asset('dist/img/myUser.png') }}" class=" img-responsive" alt="User Image">
+                                <img  src="{{ asset(user.getWebPath()) }}" class=" img-responsive" alt="User Image">
                             </div>
                         </fieldset>
                     </div>

@@ -13,7 +13,9 @@
                     <fieldset>
                         <legend>Photo </legend>
                         <div id="myImage" class="image">
-                            <img src="{{ asset('dist/img/myUser.png') }}" class=" img-responsive" alt="User Image">
+                            {#                            <img src="{{ asset('dist/img/myUser.png') }}" class=" img-responsive" alt="User Image">#}
+                            <img src="{{ asset(user.getWebPath()) }}" class=" img-responsive " alt="User Image">
+
                         </div>
                     </fieldset>
                 </div>

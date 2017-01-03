@@ -149,7 +149,12 @@
                                 {% for user in users %}
                                     <tr>
                                         <td>
-                                            <img src="{{ asset('dist/img/myUser.png') }}" alt="">
+                                            {% if user.getWebPath() != NULL %}
+                                                <img  src="{{ asset(user.getWebPath()) }}" class=" img-responsive " alt="User Image">
+                                            {% elseif user.getWebPath() ==  NULL %}
+                                                <img  src="{{ asset('dist/img/myUser.png') }}" class=" img-responsive " alt="User Image">
+                                            {% endif %}
+
                                             <a href="#" class="user-link">{{ user.nom }} {{ user.prenom }} </a>
                                             <span class="user-subhead">{{ user.fonction }}</span>
                                         </td>
@@ -179,12 +184,29 @@
                                                     <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                                 </span>
                                             </a>
-                                            <a href="#" class="table-link danger">
+                                            <a href="{{ path('delete_user', { 'id': user.id }) }}" class="table-link danger deleteIcon">
                                                 <span class="fa-stack">
                                                     <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                    <i  class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                                 </span>
                                             </a>
+                                            {% if(user.enabled == false) %}
+                                                <button  class="btn-large btn-animated btn-success  btn-xs">
+                                                    <a  href="{{ path('activate_user', { 'id': user.id }) }}" class="">
+                                                        <span>
+                                                            <b> Activer</b>
+                                                        </span>
+                                                    </a>
+                                                </button>
+                                            {% elseif(user.enabled == true) %}
+                                                <button  class="btn-large btn-danger  btn-xs">
+                                                    <a href="{{ path('disactivate_user', { 'id': user.id }) }}" class="">
+                                                        <span>
+                                                            <b> blocker </b>
+                                                        </span>
+                                                    </a>
+                                                </button>
+                                            {% endif %}
                                         </td>
                                     </tr>
 
@@ -217,10 +239,36 @@
         $(document).ready(function () {
 
 
-            $('.fa-close').click(function () {
-                alert('koko');
+
+            function koko() {
+
+
+                $.confirm({
+                    title: false,
+                    closeIcon: true
+                });
+
+
+            }
+
+
+            //fonction javascript pour zommer  sur l'image
+            $('.img-responsive').click(function () {
+
+                var src = $(this).attr('src');
+                console.log(src);
+
+                $.confirm({
+                    title: false,
+                    closeIcon: true,
+                    content: '<div style="width: 300px ; height = 300px; ">' +
+                            '<img src="' + src + '"/>' +
+                            '</div>',
+                });
             });
 
+
+            //fonction pour afficher les detail d'un utilisateur
             $('.detailBtn').click(function () {
                 var idUser = $(this).attr("id");
                 console.log(idUser);
