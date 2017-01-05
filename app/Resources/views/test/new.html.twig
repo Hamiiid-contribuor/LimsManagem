@@ -67,21 +67,21 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label>Analyse</label>
-                                <select class="form-control select2">
-                                    <option>Option 1</option>
-                                    <option>Option 2</option>
-                                    <option>Option 3</option>
-                                    <option>Option 4</option>
+                                <select name="forme" class="form-control select2" style="width:100%;  ">
+                                    <option>Choisir un type</option>
+                                    {% for analyse in analyses%}
+                                        <option value="{{analyse.id}}" >{{analyse.nom}}</option>;
+                                    {% endfor%}
                                 </select>
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label>Categorie</label>
-                                <select class="form-control select2">
-                                    <option>Option 1</option>
-                                    <option>Option 2</option>
-                                    <option>Option 3</option>
-                                    <option>Option 4</option>
+                                <select name="forme" class="form-control select2" style="width:100%;  ">
+                                    <option>Choisir un type</option>
+                                    {% for categorie in categories%}
+                                        <option value="{{categorie.id}}" >{{categorie.libelle}}</option>;
+                                    {% endfor%}
                                 </select>
                             </div>
 
@@ -128,9 +128,6 @@
                                 {{ form_widget(form.uniteMesure , { 'attr': {'class': 'form-control select2' }  }) }}
                         </div>
 
-                        <div class="col-md-2">
-                            <i style=" margin-top:  28px ;color: #3c8dbc;" class="pull-right fa  fa-plus-square-o fa-2x"></i>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-5">

@@ -47,6 +47,40 @@
     </nav>
 
 
+
+    <!-- Modal -->
+
+    {% for analyse in analyses %}
+        <div class="modal fade"  tabindex="-1" id="{{ analyse.id }}" role="dialog" data-toggle="modal" 
+             aria-hidden="true" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h4 id="details">Vous Voulez Vraiment Supprimer cet Utilisateur  </h4>
+                    </div>
+
+                    <div class="modal-footer">
+
+
+                        <a class="btn btn-danger btn-cons btn-animated from-left fa fa-trash" href="{{ path('delete_analyse', { 'id': analyse.id }) }}">Supprimer</a></button>
+                        <button class="btn btn-default pull-right btn-cons btn-animated from-left fa fa-remove "
+                                data-dismiss="modal">
+                            <span class="bold">Fermer</span></button>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    {%endfor%}
+
+
+
     <!-- pannel  de recherche -->
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -162,7 +196,7 @@
                                                 <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                             </span>
                                         </a>
-                                        <a href="#" class="table-link danger">
+                                        <a onclick="load({{ analyse.id }})" href="#{{analyse.id}}" class="table-link danger" data-toggle="modal">
                                             <span style="color :red ; " class="fa-stack">
                                                 <i class="fa fa-square fa-stack-2x"></i>
                                                 <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

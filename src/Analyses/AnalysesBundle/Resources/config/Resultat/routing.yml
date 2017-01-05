@@ -16,3 +16,6 @@ ValiderDemande:
     defaults: { _controller: AnalysesBundle:Result:ValiderDemande }
     requirements:
         id:  \d+
+delete_analyse:
+    path:     /deleteAnalyse/{id}
+    defaults: { _controller: AnalysesBundle:Analyse:deleteAnalyse , id: 1 }

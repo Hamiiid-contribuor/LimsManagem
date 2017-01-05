@@ -63,12 +63,13 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Analyse</label>
-                                <select class="form-control  select2">
-                                    <option>Option 1</option>
-                                    <option>Option 2</option>
-                                    <option>Option 3</option>
-                                    <option>Option 4</option>
+                                <select name="forme" class="form-control select2" style="width:100%;  ">
+                                    <option>Choisir un type</option>
+                                    {% for analyse in analyses%}
+                                        <option value="{{analyse.id}}" >{{analyse.nom}}</option>;
+                                    {% endfor%}
                                 </select>
+
                             </div>
 
                             <div class=" form-group col-md-3">

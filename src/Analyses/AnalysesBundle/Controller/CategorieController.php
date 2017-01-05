@@ -47,13 +47,14 @@ class CategorieController extends Controller {
 
             $em->persist($categorie);
             $em->flush($categorie);
-
         }
         $categories = $em->getRepository('AnalysesBundle:Categorie')->findAll();
+        $analyses = $em->getRepository('AnalysesBundle:Analyse')->findAll();
         return $this->render('categorie/new.html.twig', array(
                     'categorie' => $categorie,
                     'form' => $form->createView(),
                     'categories' => $categories,
+                    'analyses' => $analyses,
         ));
     }
 

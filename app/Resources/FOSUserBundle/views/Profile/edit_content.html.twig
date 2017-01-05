@@ -7,13 +7,13 @@
         .form-control {
             border: 1px solid #eee;
             box-shadow: none;
-            border-radius: 7px ; 
+            border-radius: 3px ; 
             font-family : inherit;
             font-size   : 100%;
-            padding: 10px;
+            padding: 13px;
 
             box-shadow: inset 1px 1px 1px 0 #707070;
-            transition: box-shadow 0.3s;
+            transition: box-shadow 0.6s;
 
         }
 
@@ -74,7 +74,11 @@
                         <fieldset>
                             <legend>Photo </legend>
                             <div id="myImage" class="image">
-                                <img src="{{ asset('dist/img/myUser.png') }}" class=" img-responsive" alt="User Image">
+                                {% if(app.user.getWebPath())!= NULL %}
+                                            <img src="{{ asset(app.user.getWebPath()) }}" class=" img-responsive" alt="User Image">
+                                        {% elseif(app.user.getWebPath()) == NULL %}
+                                            <img src="{{ asset('dist/img/myUser.png') }}" class=" img-responsive" alt="User Image">
+                                        {% endif %}
                                 <br/>
                                 {{ form_widget(form.file, { 'attr': {'class': ' ui-autocomplete-input'} }) }}
                             </div>
@@ -131,7 +135,7 @@
                         <div class="row">
                             <div class="col-md-3 pull-right">
                                 <label>  </label>
-                                <button type="submit" class=" form-control btn btn-primary">Modifier</button>
+                                <button type="submit" class=" form-control btn btn-large btn-primary">Modifier</button>
                             </div>
                         </div>
 

@@ -49,11 +49,15 @@ class TestController extends Controller {
             $em->flush($test);
         }
         $tests = $em->getRepository('AnalysesBundle:Test')->findAll();
+        $categories = $em->getRepository('AnalysesBundle:Categorie')->findAll();
+        $analyses = $em->getRepository('AnalysesBundle:Analyse')->findAll();
 
         return $this->render('test/new.html.twig', array(
                     'test' => $test,
                     'form' => $form->createView(),
                     'tests' => $tests,
+                    'analyses' => $analyses,
+                    'categories' => $categories,
         ));
     }
 

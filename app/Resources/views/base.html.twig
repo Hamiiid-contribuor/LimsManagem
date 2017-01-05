@@ -9,6 +9,15 @@
         </title>
         {% block stylesheets %}
 
+            <style type="text/css"> 
+                .skin-blue .main-header .logo {
+                    background-color: white;
+                    color: #fff;
+                    border-bottom: 0 solid transparent;
+                } 
+
+            </style>
+
 
 
         {% endblock %}
@@ -98,11 +107,13 @@
             <div  class="wrapper">
                 <header  style="background-color:  #222d32 ; " class="main-header">
                     <!-- Logo -->
-                    <a href="#" class="logo">
+                    <a  style="background-color: #ecf0f5;" href="#" class="logo">
+                        <img style="background-color: #ecf0f5;" src="{{asset('assetsE/img/pp.png')}}" class="logo">
+
                         <!-- mini logo for sidebar mini 50x50 pixels -->
 
                         <!-- logo for regular state and mobile devices -->
-                        <span class="logo-lg"><b></b></span>
+                        <span class="logo-lg">jhjl<b></b></span>
                     </a>
                     <!-- Header Navbar: style can be found in header.less -->
                     <nav style="background-color:  #222d32 ; " class="navbar navbar-static-top" role="navigation">
@@ -261,7 +272,7 @@
                                         <!-- Menu Footer-->
                                         <li class="user-footer">
                                             <div class="pull-left">
-                                                <a href="{{ path('fos_user_profile_edit')  }} " class="btn btn-default btn-flat">Profil</a>
+                                                <a href="{{ path('fos_user_profile_edit')  }} " class="btn btn-default ">Profil</a>
                                             </div>
                                             <div class="pull-right">
                                                 <a href="{{ path('logout_user') }}" class="btn btn-default btn-flat">Deconexion</a>
@@ -311,25 +322,14 @@
                             <li class="header">Menu Principale</li>
                             <li class="active treeview">
                                 <a href="#">
-                                    <i class="fa fa-dashboard"></i> <span>Gestion de Patient</span> <i class="fa fa-angle-left pull-right"></i>
+                                    <i class="fa fa-dashboard"></i> <span>Dashboord</span> <i class="fa fa-angle-left pull-right"></i>
                                 </a>
-                                {# <ul class="treeview-menu">
-                                     <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                                     <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                                 </ul>#}
                             </li>
                             <li class="treeview">
                                 <a href="{{ path('LimsIndex')  }}">
                                     <i class="fa fa-files-o"></i>
                                     <span>LIMS</span>
-                                    <span class="label label-primary pull-right">4</span>
                                 </a>
-                                {#<ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> </a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> </a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> </a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> </a></li>
-                                </ul>#}
                             </li>
                             <li>
                                 <a href="#">
@@ -356,7 +356,7 @@
                                 </a>
                                 <ul class="treeview-menu">
                                     <li><a href="#"><i class="fa fa-circle-o"></i>Configuration Lobaratoire </a></li>
-                                    <li><a href="{{ path('list_of_user') }}"><i class="fa fa-circle-o"></i>Gestion Utilisateurs</a></li>
+                                    <li><a href="{{ path('list_of_user') }}"><i class="fa fa-users"></i>Gestion Utilisateurs</a></li>
                                     <li><a href="{{ path('analyse_new')  }}"><i class="fa fa-circle-o"></i>Gestion d'analyses  </a></li>
                                     <li><a href="#"><i class="fa fa-circle-o"></i>Personalisation  </a></li>
                                 </ul>

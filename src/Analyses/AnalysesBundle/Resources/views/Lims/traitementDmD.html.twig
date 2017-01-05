@@ -56,10 +56,11 @@
                 <div class="panel-heading" style="font-family: 'Times New Roman' ; font-size: 15px ;">
                     <span> Demande de {{demande.client.nom}}&nbsp;&nbsp; {{demande.client.prenom}}&nbsp; à&nbsp;{{demande.date}} <br>
                         <center><b>Liste des Echantillons</b></center>  </span>
-                    <i  style="color: #3c8dbc;" class="pull-right fa  fa-plus-square fa-lg"></i>
+
                 </div>
 
                 <div class="panel-body ">
+                    <button   class="btn btn-w-m btn-primary koko">Ajouter</button>
                     <a  href="{{path('ResultaIndex',{'id':demande.id})}}" 
                         id="eval"  class="btn btn-w-m btn-primary">L'avancement du demande :</a>
                     <a  href="#" 
@@ -82,7 +83,7 @@
 
                                     <div class="form-group ">
 
-                                        <label><span style="color: gray!important">Date :</span></label>
+                                        <label><span cless="dateStyle" style="color: gray!important">Date :</span></label>
                                         <input type="Date" class="form-control" name="date">
 
 
@@ -306,8 +307,9 @@
             $('#panelAjout').hide();
         });
         $(document).ready(function () {
+            $('.dateStyle').datepicker({});
 
-            $('.fa-plus-square').tooltipster({
+            $('.koko').tooltipster({
                 contentAsHTML: true,
                 animation: 'fade',
                 content: $('<p>Nouvel Echantillon</p>'),
@@ -337,7 +339,7 @@
                 $("#pannelList").addClass("col-md-offset-1");
             });
 
-            $('.fa-plus-square').click(function () {
+            $('.koko').click(function () {
 
                 $('#panelAjout').show();
                 $("#pannelList").removeClass("col-md-10").addClass("col-md-6");

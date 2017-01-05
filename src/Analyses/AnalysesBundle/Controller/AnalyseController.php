@@ -30,6 +30,16 @@ class AnalyseController extends Controller
             'analyses' => $analyses,
         ));
     }
+    
+     public function deleteAnalyseAction(Analyse $analyse) {
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($analyse);
+        $em->flush($analyse);
+
+        return $this->redirectToRoute('analyse_new');
+    }
+
 
     /**
      * Creates a new analyse entity.
